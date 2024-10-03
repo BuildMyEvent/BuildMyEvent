@@ -1,22 +1,25 @@
 import type { Metadata } from "next";
 import NavBarComponent from "app/components/NavBar";
+
 export const metadata: Metadata = {
     title: "Landing Page",
     description: "This is Build My Event",
 };
 
-export default function RootLayout({
+export default function LandingLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
         <html lang="en">
-            <body>
-                <header>
+            <body className="flex flex-col min-h-screen">
+                <header id="hero" className="mb-[10rem] ">
                     <NavBarComponent />
                 </header>
-                {children}
+                <main className="flex-1">
+                    {children}
+                </main>
             </body>
         </html>
     );

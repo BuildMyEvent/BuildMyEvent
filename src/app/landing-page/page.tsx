@@ -25,8 +25,8 @@ export default function LandingPage() {
 
             <section className="mt-[22rem] flex gap-16 flex-col">
                 <h2 className="text-3xl text-center font-medium text-strong-blue">
-                    Con <strong className="text-light-blue">BuildMyEvent </strong>¡un usuario puede tener diferentes {" "}
-                    <strong className="text-light-blue">eventos</strong>!
+                    Con <strong className="text-light-blue">BuildMyEvent </strong>puedes crear tus diferentes {" "}
+                    <strong className="text-light-blue">eventos</strong> fácilmente!
                 </h2>
                 <AnimatedBeamMultipleOutputDemo />
             </section>

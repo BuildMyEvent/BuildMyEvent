@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import NavBarComponent from "app/components/NavBar";
+import NavBarComponent from "@/components/NavBar";
 
 export const metadata: Metadata = {
     title: "Landing Page",

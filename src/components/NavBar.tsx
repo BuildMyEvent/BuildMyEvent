@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { NavBarInterface } from "app/types/interfaces";
+import { NavBarInterface } from "@/types/interfaces";
 import Link from "next/link";
 
 const navItems: NavBarInterface[] = [

@@ -1,5 +1,4 @@
 import React, { CSSProperties } from "react";
-
 import { cn } from "app/lib/utils";
 
 export interface ShimmerButtonProps

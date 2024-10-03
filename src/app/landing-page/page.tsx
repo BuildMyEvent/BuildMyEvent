@@ -1,14 +1,8 @@
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
-
-interface Item {
-  name: string;
-  description: string;
-  icon: string;
-  color: string;
-  time: string;
-}
+import Iphone15Pro from "@/components/magicui/iphone-15-pro"
+import { Item } from "@/types/interfaces";
 
 const notifications = [
   {
@@ -87,11 +81,13 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="flex animate-float w-[40%] flex-col gap-5">
-          <AnimatedList>
-            {notifications.map((item, idx) => (
-              <Notification {...item} key={idx} />
-            ))}
-          </AnimatedList>
+            <Iphone15Pro className="size-full" src="/notifications.gif"/>
+                {/* <AnimatedList delay={2000}>
+                    {notifications.map((notification) => (
+                    <Notification key={notification.name} {...notification} />
+                    ))}
+                </AnimatedList> */}
+            {/* </Iphone15Pro> */}
         </div>
       </section>
 

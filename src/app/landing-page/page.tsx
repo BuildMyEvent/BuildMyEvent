@@ -1,7 +1,7 @@
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
-import TerminalComponent from "@/components/Terminal";
+import TerminalComponent from "@/components/terminal";
 
 interface Item {
   name: string;

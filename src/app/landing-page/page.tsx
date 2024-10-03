@@ -1,6 +1,7 @@
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
+import TerminalComponent from "@/components/Terminal";
 
 interface Item {
   name: string;
@@ -95,12 +96,25 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="mt-[22rem] flex gap-16 flex-col">
+      <section className="mt-[20rem] flex gap-16 flex-col">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
           Con <strong className="text-light-blue">BuildMyEvent</strong> puedes crear tus diferentes{" "}
           <strong className="text-light-blue">eventos</strong> !
         </h2>
-        <AnimatedBeamMultipleOutputDemo />
+        <article className="flex w-full justify-evenly ">
+          <div className="w-[46%]">
+            <TerminalComponent>
+              <AnimatedBeamMultipleOutputDemo />
+            </TerminalComponent>
+          </div>
+          <div className="w-[40%]">
+            <ul className="text-xl font-raleway">
+              <li>Personalización completa del evento.</li>
+              <li>Gestión y organización descentralizada.</li>
+              <li>Seguimiento en tiempo real de invitados y confirmaciones.</li>
+            </ul>
+          </div>
+        </article>
       </section>
     </>
   );

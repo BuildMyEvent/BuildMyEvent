@@ -1,5 +1,6 @@
-import ShimmerButton from "app/components/magicui/shimmer-button"
-import { AnimatedBeamMultipleOutputDemo } from "app/components/Beam"
+import ShimmerButton from "@/components/magicui/shimmer-button"
+import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam"
+import { AnimatedList } from ""
 
 export default function LandingPage() {
     return (
@@ -20,6 +21,7 @@ export default function LandingPage() {
                     </div>
                 </div>
                 <div className="flex animate-float">
+
                 </div>
             </section>
 

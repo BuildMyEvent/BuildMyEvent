@@ -1,37 +1,44 @@
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
-import Iphone15Pro from "@/components/magicui/iphone-15-pro"
-import { Item } from "@/types/interfaces";
+import TerminalComponent from "@/components/Terminal";
+
+interface Item {
+  name: string;
+  description: string;
+  icon: string;
+  color: string;
+  time: string;
+}
 
 const notifications = [
   {
-    name: "Payment received",
-    description: "Ethereum Pura vida",
+    name: "Crea un nuevo evento",
+    description: "Crea tu evento en cuestión de minutos",
+    time: "2m ago",
+    icon: "🚀",
+    color: "#1E86FF",
+  },
+  {
+    name: "Personaliza tu evento",
+    description: "Tienes plantillas a tu dispocisión",
+    time: "5m ago",
+    icon: "🎨",
+    color: "#FF3D71",
+  },
+  {
+    name: "Recibe pagos",
+    description: "Recibe pagos de tus clientes",
     time: "15m ago",
     icon: "💸",
     color: "#00C9A7",
   },
   {
-    name: "User signed up",
-    description: "Base Meetup",
+    name: "Usa nuestra API",
+    description: "Si eres desarrollador puedes usar nuestra API",
     time: "10m ago",
-    icon: "👤",
+    icon: "👨🏻‍💻",
     color: "#FFB800",
-  },
-  {
-    name: "New User",
-    description: "added to the console",
-    time: "5m ago",
-    icon: "💬",
-    color: "#FF3D71",
-  },
-  {
-    name: "New event",
-    description: "BaseLatam",
-    time: "2m ago",
-    icon: "🗞️",
-    color: "#1E86FF",
   },
 ];
 
@@ -91,12 +98,25 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="mt-[22rem] flex gap-16 flex-col">
+      <section className="mt-[20rem] flex gap-16 flex-col">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
           Con <strong className="text-light-blue">BuildMyEvent</strong> puedes crear tus diferentes{" "}
-          <strong className="text-light-blue">eventos</strong> fácilmente!
+          <strong className="text-light-blue">eventos</strong> !
         </h2>
-        <AnimatedBeamMultipleOutputDemo />
+        <article className="flex w-full justify-evenly ">
+          <div className="w-[46%]">
+            <TerminalComponent>
+              <AnimatedBeamMultipleOutputDemo />
+            </TerminalComponent>
+          </div>
+          <div className="w-[40%]">
+            <ul className="text-xl font-raleway">
+              <li>Personalización completa del evento.</li>
+              <li>Gestión y organización descentralizada.</li>
+              <li>Seguimiento en tiempo real de invitados y confirmaciones.</li>
+            </ul>
+          </div>
+        </article>
       </section>
     </>
   );

@@ -41,7 +41,7 @@ export function AnimatedBeamMultipleOutputDemo({
   return (
     <div
       className={cn(
-        "relative flex h-[300px] w-full items-center justify-center overflow-hidden rounded-lg bg-background  md:shadow-xl",
+        "relative flex h-[300px] w-[600px] items-center justify-center overflow-hidden rounded-lg  ",
         className,
       )}
       ref={containerRef}

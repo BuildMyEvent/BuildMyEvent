@@ -81,12 +81,12 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="flex animate-float w-[40%] flex-col gap-5">
-            <Iphone15Pro className="size-full" src="/notifications.gif"/>
-                {/* <AnimatedList delay={2000}>
+            {/* <Iphone15Pro className="size-full" src="/notifications.gif"/> */}
+                <AnimatedList delay={2000}>
                     {notifications.map((notification) => (
                     <Notification key={notification.name} {...notification} />
                     ))}
-                </AnimatedList> */}
+                </AnimatedList>
             {/* </Iphone15Pro> */}
         </div>
       </section>

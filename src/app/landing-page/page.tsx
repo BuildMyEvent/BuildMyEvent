@@ -1,37 +1,43 @@
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
-import Iphone15Pro from "@/components/magicui/iphone-15-pro"
-import { Item } from "@/types/interfaces";
+
+interface Item {
+  name: string;
+  description: string;
+  icon: string;
+  color: string;
+  time: string;
+}
 
 const notifications = [
   {
-    name: "Payment received",
-    description: "Ethereum Pura vida",
+    name: "Crea un nuevo evento",
+    description: "Crea tu evento en cuestión de minutos",
+    time: "2m ago",
+    icon: "🚀",
+    color: "#1E86FF",
+  },
+  {
+    name: "Personaliza tu evento",
+    description: "Tienes plantillas a tu dispocisión",
+    time: "5m ago",
+    icon: "🎨",
+    color: "#FF3D71",
+  },
+  {
+    name: "Recibe pagos",
+    description: "Recibe pagos de tus clientes",
     time: "15m ago",
     icon: "💸",
     color: "#00C9A7",
   },
   {
-    name: "User signed up",
-    description: "Base Meetup",
+    name: "Usa nuestra API",
+    description: "Si eres desarrollador puedes usar nuestra API",
     time: "10m ago",
-    icon: "👤",
+    icon: "👨🏻‍💻",
     color: "#FFB800",
-  },
-  {
-    name: "New User",
-    description: "added to the console",
-    time: "5m ago",
-    icon: "💬",
-    color: "#FF3D71",
-  },
-  {
-    name: "New event",
-    description: "BaseLatam",
-    time: "2m ago",
-    icon: "🗞️",
-    color: "#1E86FF",
   },
 ];
 
@@ -81,20 +87,18 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="flex animate-float w-[40%] flex-col gap-5">
-            <Iphone15Pro className="size-full" src="/notifications.gif"/>
-                {/* <AnimatedList delay={2000}>
-                    {notifications.map((notification) => (
-                    <Notification key={notification.name} {...notification} />
-                    ))}
-                </AnimatedList> */}
-            {/* </Iphone15Pro> */}
+          <AnimatedList>
+            {notifications.map((item, idx) => (
+              <Notification {...item} key={idx} />
+            ))}
+          </AnimatedList>
         </div>
       </section>
 
       <section className="mt-[22rem] flex gap-16 flex-col">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
-          ¡<strong className="text-light-blue">BuildMyEvent</strong> te permite crear fácilmente tus diferentes{" "}
-          <strong className="text-light-blue">eventos</strong>!
+          Con <strong className="text-light-blue">BuildMyEvent</strong> puedes crear tus diferentes{" "}
+          <strong className="text-light-blue">eventos</strong> !
         </h2>
         <AnimatedBeamMultipleOutputDemo />
       </section>

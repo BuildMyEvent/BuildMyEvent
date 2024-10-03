@@ -1,14 +1,7 @@
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
-
-interface Item {
-  name: string;
-  description: string;
-  icon: string;
-  color: string;
-  time: string;
-}
+import { Item } from "@/types/interfaces";
 
 const notifications = [
   {

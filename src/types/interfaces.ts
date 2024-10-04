@@ -7,7 +7,6 @@ export interface Item {
     description: string;
     icon: string;
     color: string;
-    time: string;
   }
 export interface Event {
     id:string,

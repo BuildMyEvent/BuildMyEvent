@@ -5,6 +5,7 @@ import TerminalComponent from "@/components/terminal";
 import Iphone15Pro from "@/components/Iphone15pro";
 import { Item, Event } from "@/types/interfaces";
 import EventComponent from "@/components/Event";
+import { FolderSync, LayoutTemplate, PaintbrushVertical } from "lucide-react";
 
 const notifications: Item[] = [
   {
@@ -42,37 +43,37 @@ const events: Event[] = [
     id: "1",
     title: "Ethereum Pura Vida",
     description: "Evento de prueba",
-    img:"/NatureProof.webp",
+    img: "/NatureProof.webp",
   },
   {
     id: "2",
     title: "MeetUp Base",
     description: "Evento de prueba",
-    img:"/NatureProof.webp",
+    img: "/NatureProof.webp",
   },
   {
     id: "3",
     title: "CofiBlocks meetUp",
     description: "Evento de prueba",
-    img:"/NatureProof.webp",
+    img: "/NatureProof.webp",
   },
   {
     id: "4",
     title: "Ethereum Pura Vida",
     description: "Evento de prueba",
-    img:"/NatureProof.webp",
+    img: "/NatureProof.webp",
   },
   {
     id: "5",
     title: "MeetUp Base",
     description: "Evento de prueba",
-    img:"/NatureProof.webp",
+    img: "/NatureProof.webp",
   },
   {
     id: "6",
     title: "CofiBlocks meetUp",
     description: "Evento de prueba",
-    img:"/NatureProof.webp",
+    img: "/NatureProof.webp",
   },
 ];
 
@@ -148,10 +149,30 @@ export default function LandingPage() {
             </TerminalComponent>
           </div>
           <div className="w-[40%]">
-            <ul className="text-xl font-raleway">
-              <li>Personalización completa del evento.</li>
-              <li>Gestión y organización descentralizada.</li>
-              <li>Seguimiento en tiempo real de invitados y confirmaciones.</li>
+            <ul className="text-xl font-raleway h-full flex flex-col gap-6 justify-center">
+              <li className="flex items-center w-full gap-6">
+                <PaintbrushVertical size={36} color="#000"/>
+                <p>
+                  <strong className="text-light-blue">Personalización</strong>{" "}
+                  completa del evento.
+                </p>
+              </li>
+              <li className="flex items-center w-full gap-6">
+                <LayoutTemplate size={36} color="#000" />
+                <p>
+                  Gestión y organización{" "}
+                  <strong className="text-light-blue">descentralizada</strong>.
+                </p>
+              </li>
+              <li className="flex items-center w-full gap-6">
+                <FolderSync size={36} color="#000"/>
+                <p>
+                  {" "}
+                  Seguimiento en{" "}
+                  <strong className="text-light-blue">tiempo real</strong> de
+                  invitados y confirmaciones.
+                </p>
+              </li>
             </ul>
           </div>
         </article>
@@ -163,13 +184,10 @@ export default function LandingPage() {
         </h2>
         <ul className="flex flex-wrap justify-center gap-8 p-4">
           {events.map((event, idx) => (
-            <EventComponent key={idx} {...event}/>
+            <EventComponent key={idx} {...event} />
           ))}
         </ul>
       </section>
     </>
   );
 }
-
-
-

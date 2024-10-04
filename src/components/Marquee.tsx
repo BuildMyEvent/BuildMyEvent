@@ -7,7 +7,7 @@ const reviews: MarqueeInterface[] = [
     {
         name: "Base Meetup",
         body: "Este evento es para dar una charla introductoria a Base.",
-        img: ImgMarquee.male, // Mantén las imágenes por ahora
+        img: ImgMarquee.male, 
       },
       {
         name: "Taller de Productividad",

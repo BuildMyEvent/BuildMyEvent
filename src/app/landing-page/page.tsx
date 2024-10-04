@@ -71,7 +71,7 @@ export default function LandingPage() {
 
       <section className="mt-[10rem] flex gap-16 flex-col">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
-        ¡Con <strong className="text-light-blue">BuildMyEvent</strong> puedes
+          ¡Con <strong className="text-light-blue">BuildMyEvent</strong> puedes
           crear tus diferentes{" "}
           <strong className="text-light-blue">eventos</strong>!
         </h2>
@@ -113,7 +113,7 @@ export default function LandingPage() {
 
       <section className="flex flex-col gap-8 items-center mt-[10rem]">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
-          Dale un vistazo a los eventos actuales que están en <strong className="text-light-blue">BuildMyEvent</strong> 
+          Dale un vistazo a los eventos actuales que están en <strong className="text-light-blue">BuildMyEvent</strong>
         </h2>
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
           <MarqueeDemo />

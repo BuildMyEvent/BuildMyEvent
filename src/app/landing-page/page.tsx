@@ -116,7 +116,7 @@ export default function LandingPage() {
                 <p>
                   {" "}
                   Tú solución a unos clics gracias a nuestra tecnología{" "}
-                  <strong className="text-dark-blue">No Code</strong>.
+                  <strong className="text-dark-blue">No-Code</strong>.
                 </p>
               </li>
             </ul>
@@ -189,7 +189,7 @@ export default function LandingPage() {
                 </code>
               </div>
               <div className="w-full flex justify-center">
-                <Link href="/docs">
+                <Link href="/landing-page/docs">
                   <ShimmerButton>Visita la documentación</ShimmerButton>
                 </Link>
               </div>

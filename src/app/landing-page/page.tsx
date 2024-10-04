@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import '../../app/globals.css'
-import PricingCard from "@/components/Tickets";
+import Tickets from "@/components/Tickets";
 
 const notifications: Item[] = [
   {
@@ -116,7 +116,7 @@ export default function LandingPage() {
           <strong className="text-light-blue">eventos</strong>!
         </h2>
         <article className="mt-[4rem]">
-          <PricingCard />
+          <Tickets />
         </article>
       </section>
 

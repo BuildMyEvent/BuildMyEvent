@@ -3,8 +3,8 @@ import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
 import TerminalComponent from "@/components/Terminal";
 import Iphone15Pro from "@/components/Iphone15pro";
-import { Item, Event } from "@/types/interfaces";
-import EventComponent from "@/components/Event";
+import { MarqueeDemo } from "@/components/Marquee";
+import { Item } from "@/types/interfaces";
 import { FolderSync, LayoutTemplate, PaintbrushVertical } from "lucide-react";
 
 const notifications: Item[] = [
@@ -17,7 +17,7 @@ const notifications: Item[] = [
   },
   {
     name: "Personaliza tu evento",
-    description: "Tienes plantillas a tu dispocisión",
+    description: "Tienes plantillas a tu disposición",
     time: "5m ago",
     icon: "🎨",
     color: "#FF3D71",
@@ -31,51 +31,100 @@ const notifications: Item[] = [
   },
   {
     name: "Usa nuestra API",
-    description: "Si eres desarrollador puedes usar nuestra API",
+    description: "Puedes usar nuestra API",
     time: "10m ago",
     icon: "👨🏻‍💻",
     color: "#FFB800",
   },
 ];
 
-const events: Event[] = [
-  {
-    id: "1",
-    title: "Ethereum Pura Vida",
-    description: "Evento de prueba",
-    img: "/NatureProof.webp",
-  },
-  {
-    id: "2",
-    title: "MeetUp Base",
-    description: "Evento de prueba",
-    img: "/NatureProof.webp",
-  },
-  {
-    id: "3",
-    title: "CofiBlocks meetUp",
-    description: "Evento de prueba",
-    img: "/NatureProof.webp",
-  },
-  {
-    id: "4",
-    title: "Ethereum Pura Vida",
-    description: "Evento de prueba",
-    img: "/NatureProof.webp",
-  },
-  {
-    id: "5",
-    title: "MeetUp Base",
-    description: "Evento de prueba",
-    img: "/NatureProof.webp",
-  },
-  {
-    id: "6",
-    title: "CofiBlocks meetUp",
-    description: "Evento de prueba",
-    img: "/NatureProof.webp",
-  },
-];
+
+export default function LandingPage() {
+  return (
+    <>
+      <section className="flex min-h-3/4 flex-col items-center md:items-stretch md:flex-row w-full mt-[4rem] justify-evenly">
+        <div className="flex w-[40%] flex-col gap-7 mt-20">
+          <h1 className="text-strong-blue font-medium text-3xl text-center">
+            Con <strong className="text-light-blue">BuildMyEvent</strong> ¡Nunca
+            había sido tan sencillo que las personas creen sus propios{" "}
+            <strong className="text-light-blue">eventos</strong>!
+          </h1>
+
+          <div className="flex items-center justify-center">
+            <ShimmerButton className="shadow-2xl">
+              <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                ¡Crea el tuyo ya mismo!
+              </span>
+            </ShimmerButton>
+          </div>
+        </div>
+        <div className="flex animate-float w-[40%] mt-[-80px] flex-col gap-5">
+          <Iphone15Pro>
+            <AnimatedList delay={1000}>
+              {notifications.map((notification) => (
+                <Notification key={notification.name} {...notification} />
+              ))}
+            </AnimatedList>
+          </Iphone15Pro>
+        </div>
+      </section>
+
+      <section className="mt-[20rem] flex gap-16 flex-col">
+        <h2 className="text-3xl text-center font-medium text-strong-blue">
+          Con <strong className="text-light-blue">BuildMyEvent</strong> puedes
+          crear tus diferentes{" "}
+          <strong className="text-light-blue">eventos</strong> !
+        </h2>
+        <article className="flex w-full justify-evenly">
+          <div className="w-[46%]">
+            <TerminalComponent>
+              <AnimatedBeamMultipleOutputDemo />
+            </TerminalComponent>
+          </div>
+          <div className="w-[40%]">
+            <ul className="text-xl font-raleway h-full flex flex-col gap-6 justify-center">
+              <li className="flex items-center w-full gap-6">
+                <PaintbrushVertical size={36} color="#4461F2" />
+                <p>
+                  <strong className="text-dark-blue">Personalización</strong>{" "}
+                  completa del evento.
+                </p>
+              </li>
+              <li className="flex items-center w-full gap-6">
+                <LayoutTemplate size={36} color="#4461F2" />
+                <p>
+                  Gestión y organización{" "}
+                  <strong className="text-dark-blue">descentralizada</strong>.
+                </p>
+              </li>
+              <li className="flex items-center w-full gap-6">
+                <FolderSync size={36} color="#4461F2" />
+                <p>
+                  {" "}
+                  Seguimiento en{" "}
+                  <strong className="text-dark-blue">tiempo real</strong> de
+                  invitados y confirmaciones.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section className="flex flex-col gap-8 items-center mt-32">
+        <h2 className="text-black text-4xl">
+          Clientes que confiaron en{" "}
+          <strong className="text-light-blue">BuildMyEvent.</strong>
+        </h2>
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+          <MarqueeDemo />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+        </div>
+      </section>
+    </>
+  );
+}
 
 const Notification = ({ name, description, icon, color, time }: Item) => {
   return (
@@ -103,89 +152,3 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
     </figure>
   );
 };
-
-export default function LandingPage() {
-  return (
-    <>
-      <section className="flex min-h-3/4 flex-col items-center md:items-stretch  md:flex-row w-full mt-[1rem] justify-evenly">
-        <div className="flex w-[40%] flex-col gap-7 mt-20">
-          <h1 className="text-strong-blue font-medium text-3xl text-center">
-            Con <strong className="text-light-blue">BuildMyEvent</strong> ¡Nunca
-            había sido tan sencillo que las personas creen sus propios{" "}
-            <strong className="text-light-blue">eventos</strong>!
-          </h1>
-
-          <div className="flex items-center justify-center">
-            <ShimmerButton className="shadow-2xl">
-              <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                ¡Crea el tuyo ya mismo!
-              </span>
-            </ShimmerButton>
-          </div>
-        </div>
-        <div className="flex w-[40%] flex-col gap-5">
-          <Iphone15Pro>
-            <AnimatedList delay={1000}>
-              {notifications.map((notification) => (
-                <Notification key={notification.name} {...notification} />
-              ))}
-            </AnimatedList>
-          </Iphone15Pro>
-        </div>
-      </section>
-
-      <section className="mt-[20rem] flex gap-16 flex-col">
-        <h2 className="text-3xl text-center font-medium text-strong-blue">
-          Con <strong className="text-light-blue">BuildMyEvent</strong> puedes
-          crear tus diferentes{" "}
-          <strong className="text-light-blue">eventos</strong> !
-        </h2>
-        <article className="flex w-full justify-evenly ">
-          <div className="w-[46%]">
-            <TerminalComponent>
-              <AnimatedBeamMultipleOutputDemo />
-            </TerminalComponent>
-          </div>
-          <div className="w-[40%]">
-            <ul className="text-xl font-raleway h-full flex flex-col gap-6 justify-center">
-              <li className="flex items-center w-full gap-6">
-                <PaintbrushVertical size={36} color="#000"/>
-                <p>
-                  <strong className="text-light-blue">Personalización</strong>{" "}
-                  completa del evento.
-                </p>
-              </li>
-              <li className="flex items-center w-full gap-6">
-                <LayoutTemplate size={36} color="#000" />
-                <p>
-                  Gestión y organización{" "}
-                  <strong className="text-light-blue">descentralizada</strong>.
-                </p>
-              </li>
-              <li className="flex items-center w-full gap-6">
-                <FolderSync size={36} color="#000"/>
-                <p>
-                  {" "}
-                  Seguimiento en{" "}
-                  <strong className="text-light-blue">tiempo real</strong> de
-                  invitados y confirmaciones.
-                </p>
-              </li>
-            </ul>
-          </div>
-        </article>
-      </section>
-      <section className="flex flex-col gap-8 items-center mt-32">
-        <h2 className="text-black text-4xl">
-          Clientes que confiaron en{" "}
-          <strong className="text-light-blue">BuildMyEvent.</strong>
-        </h2>
-        <ul className="flex flex-wrap justify-center gap-8 p-4">
-          {events.map((event, idx) => (
-            <EventComponent key={idx} {...event} />
-          ))}
-        </ul>
-      </section>
-    </>
-  );
-}

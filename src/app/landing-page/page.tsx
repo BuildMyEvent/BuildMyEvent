@@ -3,16 +3,10 @@ import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
 import TerminalComponent from "@/components/terminal";
 import Iphone15Pro from "@/components/Iphone15pro";
+import { Item, Event } from "@/types/interfaces";
+import EventComponent from "@/components/Event";
 
-interface Item {
-  name: string;
-  description: string;
-  icon: string;
-  color: string;
-  time: string;
-}
-
-const notifications = [
+const notifications: Item[] = [
   {
     name: "Crea un nuevo evento",
     description: "Crea tu evento en cuestión de minutos",
@@ -40,6 +34,45 @@ const notifications = [
     time: "10m ago",
     icon: "👨🏻‍💻",
     color: "#FFB800",
+  },
+];
+
+const events: Event[] = [
+  {
+    id: "1",
+    title: "Ethereum Pura Vida",
+    description: "Evento de prueba",
+    img:"/NatureProof.webp",
+  },
+  {
+    id: "2",
+    title: "MeetUp Base",
+    description: "Evento de prueba",
+    img:"/NatureProof.webp",
+  },
+  {
+    id: "3",
+    title: "CofiBlocks meetUp",
+    description: "Evento de prueba",
+    img:"/NatureProof.webp",
+  },
+  {
+    id: "4",
+    title: "Ethereum Pura Vida",
+    description: "Evento de prueba",
+    img:"/NatureProof.webp",
+  },
+  {
+    id: "5",
+    title: "MeetUp Base",
+    description: "Evento de prueba",
+    img:"/NatureProof.webp",
+  },
+  {
+    id: "6",
+    title: "CofiBlocks meetUp",
+    description: "Evento de prueba",
+    img:"/NatureProof.webp",
   },
 ];
 
@@ -123,6 +156,20 @@ export default function LandingPage() {
           </div>
         </article>
       </section>
+      <section className="flex flex-col gap-8 items-center mt-32">
+        <h2 className="text-black text-4xl">
+          Clientes que confiaron en{" "}
+          <strong className="text-light-blue">BuildMyEvent.</strong>
+        </h2>
+        <ul className="flex flex-wrap justify-center gap-8">
+          {events.map((event, idx) => (
+            <EventComponent key={idx} {...event}/>
+          ))}
+        </ul>
+      </section>
     </>
   );
 }
+
+
+

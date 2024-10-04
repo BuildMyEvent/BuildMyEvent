@@ -1,7 +1,7 @@
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
-import TerminalComponent from "@/components/terminal";
+import TerminalComponent from "@/components/Terminal";
 import Iphone15Pro from "@/components/Iphone15pro";
 import { Item, Event } from "@/types/interfaces";
 import EventComponent from "@/components/Event";
@@ -107,7 +107,7 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
 export default function LandingPage() {
   return (
     <>
-      <section className="flex min-h-3/4 flex-col items-center md:items-stretch  md:flex-row w-full mt-[4rem] justify-evenly">
+      <section className="flex min-h-3/4 flex-col items-center md:items-stretch  md:flex-row w-full mt-[1rem] justify-evenly">
         <div className="flex w-[40%] flex-col gap-7 mt-20">
           <h1 className="text-strong-blue font-medium text-3xl text-center">
             Con <strong className="text-light-blue">BuildMyEvent</strong> ¡Nunca
@@ -123,16 +123,14 @@ export default function LandingPage() {
             </ShimmerButton>
           </div>
         </div>
-        <div className="flex animate-float w-[40%] mt-[-125px] flex-col gap-5">
+        <div className="flex w-[40%] flex-col gap-5">
           <Iphone15Pro>
-            <AnimatedList delay={2000}>
+            <AnimatedList delay={1000}>
               {notifications.map((notification) => (
                 <Notification key={notification.name} {...notification} />
               ))}
             </AnimatedList>
           </Iphone15Pro>
-          {/* <Iphone15Pro className="size-full" src="/notifications.gif"/> */}
-          {/* </Iphone15Pro> */}
         </div>
       </section>
 

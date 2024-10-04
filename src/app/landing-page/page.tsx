@@ -15,6 +15,7 @@ import {
   TerminalIcon,
 } from "lucide-react";
 import Link from "next/link";
+import '../../app/globals.css'
 
 const notifications: Item[] = [
   {
@@ -73,7 +74,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="mt-[10rem] flex gap-16 flex-col">
+      <section className="mt-[10rem] flex gap-16 flex-col ">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
           ¡Con <strong className="text-light-blue">BuildMyEvent</strong> puedes
           crear tus diferentes{" "}

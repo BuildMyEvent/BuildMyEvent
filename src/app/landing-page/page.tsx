@@ -8,14 +8,12 @@ import { Item } from "@/types/interfaces";
 import {
   ArrowUp01,
   BookOpen,
-  FolderSync,
-  LayoutTemplate,
   PaintbrushVertical,
-  Terminal,
   TerminalIcon,
 } from "lucide-react";
 import Link from "next/link";
 import '../../app/globals.css'
+import PricingCard from "@/components/Tickets";
 
 const notifications: Item[] = [
   {
@@ -50,8 +48,7 @@ export default function LandingPage() {
       <section className="flex min-h-3/4 flex-col items-center md:items-stretch md:flex-row w-full mt-[4rem] justify-evenly">
         <div className="flex w-[40%] flex-col gap-7 mt-20">
           <h1 className="text-strong-blue font-medium text-3xl text-center">
-            Con <strong className="text-light-blue">BuildMyEvent</strong> ¡Nunca
-            había sido tan sencillo que las personas creen sus propios{" "}
+            Con <strong className="text-light-blue">BuildMyEvent</strong> ¡Nunca ahabía sido tan sencillo crear tu propio{" "}
             <strong className="text-light-blue">eventos</strong>!
           </h1>
 
@@ -63,7 +60,7 @@ export default function LandingPage() {
             </ShimmerButton>
           </div>
         </div>
-        <div className="flex animate-float w-[40%] mt-[-80px] flex-col gap-5">
+        <div className="flex w-[40%] mt-[-80px] flex-col gap-5">
           <Iphone15Pro>
             <AnimatedList delay={1000}>
               {notifications.map((notification) => (
@@ -80,47 +77,46 @@ export default function LandingPage() {
           crear tus diferentes{" "}
           <strong className="text-light-blue">eventos</strong>!
         </h2>
-        <article className="flex w-full justify-evenly">
-          <div className="w-[46%]">
+        <article className="flex w-full justify-evenly flex-row-reverse">
+          <div className="w-[40%] flex animate-float">
             <TerminalComponent>
               <AnimatedBeamMultipleOutputDemo />
             </TerminalComponent>
           </div>
-          <div className="w-[40%]">
+          <div className="w-[35%]">
             <ul className="text-xl font-raleway h-full flex flex-col gap-6 justify-center">
-              <li className="flex items-center w-full gap-6">
-                <PaintbrushVertical size={36} color="#4461F2" />
+              <li className="flex items-center w-full gap-4">
+                <strong className="text-light-yellow">●</strong>
                 <p>
-                  <strong className="text-dark-blue">Personalización</strong>{" "}
-                  completa del evento.
+                  <strong className="text-light-blue">¡Personalización</strong> completa del evento!
                 </p>
               </li>
-              <li className="flex items-center w-full gap-6">
-                <LayoutTemplate size={36} color="#4461F2" />
+              <li className="flex items-center w-full gap-4">
+                <strong className="text-light-green">●</strong>
                 <p>
-                  Gestión y organización{" "}
-                  <strong className="text-dark-blue">descentralizada</strong>.
+                  Gestión y organización <strong className="text-light-blue">descentralizada</strong>.
                 </p>
               </li>
-              <li className="flex items-center w-full gap-6">
-                <FolderSync size={36} color="#4461F2" />
+              <li className="flex items-center w-full gap-4">
+                <strong className="text-red-500">●</strong>
                 <p>
-                  {" "}
-                  Seguimiento en{" "}
-                  <strong className="text-dark-blue">tiempo real</strong> de
-                  invitados y confirmaciones.
-                </p>
-              </li>
-              <li className="flex items-center w-full gap-6">
-                <Terminal size={36} color="#4461F2" />
-                <p>
-                  {" "}
-                  Tú solución a unos clics gracias a nuestra tecnología{" "}
-                  <strong className="text-dark-blue">No Code</strong>.
+                  Tu solución a unos clics, gracias a nuestra tecnología <strong className="text-light-blue">No Code</strong>.
                 </p>
               </li>
             </ul>
           </div>
+        </article>
+      </section >
+
+
+      <section className="mt-[8rem]">
+        <h2 className="text-3xl text-center font-medium text-strong-blue">
+          ¡Crea distintos tipos de <strong className="text-light-blue">Tickets</strong> para tus
+          {" "}
+          <strong className="text-light-blue">eventos</strong>!
+        </h2>
+        <article className="mt-[4rem]">
+          <PricingCard />
         </article>
       </section>
 

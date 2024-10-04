@@ -1,3 +1,7 @@
+import BaseLogo from '../../public/BaseLogo.webp'
+import OPLogo from '../../public/OP-Logo.png'
+import a from '../../public/EthLogo.png'
+
 export interface NavBarInterface {
     title: string,
     url: string
@@ -16,12 +20,13 @@ export interface Event {
 }
 
 export enum ImgMarquee {
-    male = "https://github.com/user-attachments/assets/00c5f17e-17f8-42a3-8e24-4783125216bb",
-    female = "https://github.com/user-attachments/assets/931ae195-52e4-42bd-90cf-99018b37034e"
+    BASE = 'https://github.com/user-attachments/assets/5d0523e7-7946-442d-827a-e64cd180f4c9',
+    OPTIMISM = "https://github.com/user-attachments/assets/c62366a6-133f-4882-9323-d58a36bf0ae6",
+    ETH = "https://github.com/user-attachments/assets/29b09a7a-cdab-419b-9f09-ff863a1706a2"
 }
 
 export interface MarqueeInterface {
-    name: string,
-    body: string,
+    title: string,
+    description: string,
     img: ImgMarquee
 }

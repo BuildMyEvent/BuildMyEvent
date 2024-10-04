@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import NavBarComponent from "@/components/NavBar";
-import Footer from "@/components/footer";
+import FooterComponent from "@/components/LadingFooter";
 
 export const metadata: Metadata = {
     title: "Landing Page",
@@ -21,7 +21,7 @@ export default function LandingLayout({
                 <main className="flex-1">
                     {children}
                 </main>
-                <Footer/>
+                <FooterComponent/>
             </body>
         </html>
     );

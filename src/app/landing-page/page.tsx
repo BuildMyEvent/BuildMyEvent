@@ -185,7 +185,7 @@ export default function LandingPage() {
                 </code>
               </div>
               <div className="w-full flex justify-center">
-                <Link href="/docs">
+                <Link href="/landing-page/docs">
                   <ShimmerButton>Visita la documentación</ShimmerButton>
                 </Link>
               </div>

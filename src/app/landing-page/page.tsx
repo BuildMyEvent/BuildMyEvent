@@ -162,6 +162,7 @@ export default function LandingPage() {
                 <p>
                   {" "}
                   Obtén <strong className="text-dark-blue">métricas</strong>
+                  {" "}
                   importantes de tus eventos.
                 </p>
               </li>

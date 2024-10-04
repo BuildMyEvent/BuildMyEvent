@@ -161,7 +161,7 @@ export default function LandingPage() {
           Clientes que confiaron en{" "}
           <strong className="text-light-blue">BuildMyEvent.</strong>
         </h2>
-        <ul className="flex flex-wrap justify-center gap-8">
+        <ul className="flex flex-wrap justify-center gap-8 p-4">
           {events.map((event, idx) => (
             <EventComponent key={idx} {...event}/>
           ))}

@@ -18,3 +18,14 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #59545452;
 }
+
+/* Oculta la barra de scroll, pero permite desplazamiento */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  

@@ -3,8 +3,8 @@ import NavBarComponent from "@/components/NavBar";
 import FooterComponent from "@/components/LadingFooter";
 
 export const metadata: Metadata = {
-    title: "Landing Page",
-    description: "This is Build My Event",
+    title: "BuildMyEvent",
+    description: "This is Build My Event Landing Page",
 };
 
 export default function LandingLayout({

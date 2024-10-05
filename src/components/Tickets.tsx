@@ -9,7 +9,7 @@ export default function Tickets() {
     return (
         <section className="flex flex-col lg:flex-row justify-center items-center gap-10 py-12 relative">
             {/* Left License Card */}
-            <div className="bg-[#f8f8f9] border rounded-2xl p-8 max-w-md w-full relative lg:-mr-12 -mt-9 ">
+            <div className="bg-[#f8f8f9] border-[0.1rem] rounded-2xl p-8 max-w-md w-full relative lg:-mr-12 -mt-9 ">
                 <h2 className="text-xl font-semibold mb-4">Ticket <span className='text-light-yellow'>General</span></h2>
                 <div className='flex justify-center w-full mb-2'>
                     <Image src={GeneralTicket} alt='General Ticket' width={120} className='rounded-xl' />
@@ -17,7 +17,7 @@ export default function Tickets() {
                 <div className="flex items-center mb-2">
                     <span className="text-3xl font-bold">$6</span>
                 </div>
-                <p className="mb-6 text-gray-700 pr-6">
+                <p className="mb-2 text-gray-700 pr-6">
                     Acceso a todas las charlas y oportunidades de networking en el meetup de Base en Costa Rica.
                 </p>
                 <ul className="mb-6 space-y-2">
@@ -34,7 +34,7 @@ export default function Tickets() {
             </div>
 
             {/* Center License Card (Highlighted) */}
-            <div className="bg-white shadow-2xl border rounded-2xl p-8 max-w-md w-full relative z-10 lg:-mt-16 lg:-ml-12">
+            <div className="bg-white shadow-2xl border-[0.1rem] rounded-2xl p-8 max-w-md w-full relative z-10 lg:-mt-16 lg:-ml-12">
                 <div className="absolute top-4 right-4 bg-green-200 text-green-500 px-2 py-1 rounded">Recomendada</div>
                 <h2 className="text-xl font-semibold mb-4">Ticket para <span className='text-light-yellow'>Builder</span></h2>
                 <div className='flex justify-center w-full mb-2'>
@@ -44,7 +44,7 @@ export default function Tickets() {
                     <span className="text-3xl font-bold">$10</span>
                 </div>
                 <span className="text-sm text-gray-500 mb-2 block">Para comprar, necesitas 10 puntos en <a href='https://www.talentprotocol.com/' className='font-bold text-light-blue'>Talent Protocol</a></span>
-                <p className="mb-6 text-gray-700">
+                <p className="mb-2 text-gray-700">
                     Talleres prácticos y sesiones interactivas para aprender sobre este Layer2 con expertos.
                 </p>
                 <ul className="mb-6 space-y-2">
@@ -53,9 +53,6 @@ export default function Tickets() {
                     </li>
                     <li className="flex items-center">
                         <span className="text-light-yellow mr-2">●</span> Recursos exclusivos
-                    </li>
-                    <li className="flex items-center">
-                        <span className="text-light-yellow mr-2">●</span> Networking con desarrolladores
                     </li>
                 </ul>
                 <div className='w-full flex justify-center'>
@@ -66,7 +63,7 @@ export default function Tickets() {
             </div>
 
             {/* Right License Card (Same as Left) */}
-            <div className="bg-[#f8f8f9] border rounded-2xl p-8 max-w-md w-full relative  lg:-ml-12 -mt-8">
+            <div className="bg-[#f8f8f9] border-[0.1rem] rounded-2xl p-8 max-w-md w-full relative  lg:-ml-12 -mt-8">
                 <h2 className="text-xl font-semibold mb-4">Ticket <span className='text-light-yellow'>VIP</span></h2>
                 <div className='flex justify-center w-full mb-2'>
                     <Image src={VIPTicket} alt='General Ticket' width={120} className='rounded-xl' />
@@ -74,7 +71,7 @@ export default function Tickets() {
                 <div className="flex items-center mb-2">
                     <span className="text-3xl font-bold">$8</span>
                 </div>
-                <p className="mb-6 text-gray-700">
+                <p className="mb-2 text-gray-700">
                     Incluye acceso a sesiones privadas con ponentes y beneficios exclusivos.
                 </p>
                 <ul className="mb-6 space-y-2">

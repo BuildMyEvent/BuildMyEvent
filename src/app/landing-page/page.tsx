@@ -45,7 +45,7 @@ const notifications: Item[] = [
 export default function LandingPage() {
   return (
     <>
-      <section className="flex min-h-3/4 flex-col items-center md:items-stretch md:flex-row w-full mt-[4rem] justify-evenly">
+      <section id="start" className="flex min-h-3/4 flex-col items-center md:items-stretch md:flex-row w-full mt-[4rem] justify-evenly">
         <div className="flex w-[40%] flex-col gap-7 mt-20">
           <h1 className="text-strong-blue font-medium text-3xl text-center">
             Con <strong className="text-light-blue">BuildMyEvent</strong> ¡Nunca ahabía sido tan sencillo crear tu propio{" "}
@@ -71,7 +71,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="mt-[10rem] flex gap-16 flex-col ">
+      <section id="functionalities" className="mt-[10rem] flex gap-16 flex-col ">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
           ¡Con <strong className="text-light-blue">BuildMyEvent</strong> puedes
           crear tus diferentes{" "}
@@ -120,7 +120,7 @@ export default function LandingPage() {
         </article>
       </section>
 
-      <section className="flex flex-col gap-8 items-center mt-[10rem]">
+      <section id="events" className="flex flex-col gap-8 items-center mt-[6rem]">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
           Dale un vistazo a los eventos actuales que están en{" "}
           <strong className="text-light-blue">BuildMyEvent</strong>
@@ -132,7 +132,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="mt-[5rem] flex gap-16 flex-col">
+      <section id="docs" className="mt-[5rem] flex gap-16 flex-col">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
           Si eres desarrollador dale un vistazo a nuestra{" "}
           <strong className="text-light-blue">Documentación</strong>

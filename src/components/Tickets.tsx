@@ -1,5 +1,7 @@
 import ShimmerButton from './magicui/shimmer-button';
-import GeneralTicket from '../../public/GeneralTicket.png'
+import GeneralTicket from '../../public/GeneralTicket.svg'
+import BuilderTicket from '../../public/BuilderTicket.svg'
+import VIPTicket from '../../public/VIPTicket.svg'
 import Image from 'next/image';
 import React from 'react';
 
@@ -9,8 +11,8 @@ export default function Tickets() {
             {/* Left License Card */}
             <div className="bg-[#f8f8f9] border rounded-2xl p-8 max-w-md w-full relative z-10 lg:-mr-12 -mt-9 ">
                 <h2 className="text-lg font-semibold mb-4">Ticket General</h2>
-                <div className='flex justify-start w-full mb-2'>
-                    <Image src={GeneralTicket} alt='General Ticket' width={300} className='rounded-xl' />
+                <div className='flex justify-center w-full mb-2'>
+                    <Image src={GeneralTicket} alt='General Ticket' width={120} className='rounded-xl' />
                 </div>
                 <div className="flex items-center mb-2">
                     <span className="text-3xl font-bold">$6</span>
@@ -36,14 +38,14 @@ export default function Tickets() {
                 <div className="absolute top-4 right-4 bg-green-200 text-green-500 px-2 py-1 rounded">Recomendada</div>
                 <h2 className="text-lg font-semibold mb-4">Ticket para Builder</h2>
                 <div className='flex justify-center w-full mb-2'>
-                    <Image src={GeneralTicket} alt='General Ticket' width={300} className='rounded-xl' />
+                    <Image src={BuilderTicket} alt='General Ticket' width={120} className='rounded-xl' />
                 </div>
                 <div className="flex items-center mb-2">
                     <span className="text-3xl font-bold">$10</span>
                 </div>
-                <span className="text-sm text-gray-500 mb-6 block">Para comprar, necesitas 20 puntos en <a href='https://www.talentprotocol.com/' className='font-bold text-light-blue'>Talent Protocol</a></span>
+                <span className="text-sm text-gray-500 mb-2 block">Para comprar, necesitas 10 puntos en <a href='https://www.talentprotocol.com/' className='font-bold text-light-blue'>Talent Protocol</a></span>
                 <p className="mb-6 text-gray-700">
-                    Talleres prácticos y sesiones interactivas para aprender sobre Layer2 con expertos.
+                    Talleres prácticos y sesiones interactivas para aprender sobre este Layer2 con expertos.
                 </p>
                 <ul className="mb-6 space-y-2">
                     <li className="flex items-center">
@@ -67,7 +69,7 @@ export default function Tickets() {
             <div className="bg-[#f8f8f9] border rounded-2xl p-8 max-w-md w-full relative z-10 lg:-ml-12 -mt-8">
                 <h2 className="text-lg font-semibold mb-4">Ticket VIP</h2>
                 <div className='flex justify-center w-full mb-2'>
-                    <Image src={GeneralTicket} alt='General Ticket' width={300} className='rounded-xl' />
+                    <Image src={VIPTicket} alt='General Ticket' width={120} className='rounded-xl' />
                 </div>
                 <div className="flex items-center mb-2">
                     <span className="text-3xl font-bold">$8</span>

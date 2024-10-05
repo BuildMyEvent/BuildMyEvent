@@ -120,7 +120,7 @@ export default function LandingPage() {
         </article>
       </section>
 
-      <section className="flex flex-col gap-8 items-center mt-[10rem]">
+      <section className="flex flex-col gap-8 items-center mt-[6rem]">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
           Dale un vistazo a los eventos actuales que están en{" "}
           <strong className="text-light-blue">BuildMyEvent</strong>

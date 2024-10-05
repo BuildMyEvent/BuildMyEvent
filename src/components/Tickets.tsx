@@ -1,15 +1,19 @@
-import { BadgeCheck, Dot  } from 'lucide-react';
 import ShimmerButton from './magicui/shimmer-button';
+import GeneralTicket from '../../public/GeneralTicket.png'
+import Image from 'next/image';
 import React from 'react';
 
 export default function Tickets() {
     return (
-        <section className="flex flex-col  lg:flex-row justify-center items-center gap-10 py-12 relative">
+        <section className="flex flex-col lg:flex-row justify-center items-center gap-10 py-12 relative">
             {/* Left License Card */}
             <div className="bg-[#f8f8f9] border rounded-2xl p-8 max-w-md w-full relative z-10 lg:-mr-12 -mt-9 ">
                 <h2 className="text-lg font-semibold mb-4">Ticket General</h2>
+                <div className='flex justify-start w-full mb-2'>
+                    <Image src={GeneralTicket} alt='General Ticket' width={300} className='rounded-xl' />
+                </div>
                 <div className="flex items-center mb-2">
-                    <span className="text-4xl font-bold">$6</span>
+                    <span className="text-3xl font-bold">$6</span>
                 </div>
                 <p className="mb-6 text-gray-700 pr-6">
                     Acceso a todas las charlas y oportunidades de networking en el meetup de Base en Costa Rica.
@@ -31,8 +35,11 @@ export default function Tickets() {
             <div className="bg-white shadow-2xl border rounded-2xl p-8 max-w-md w-full relative z-20 lg:-mt-16 lg:-ml-12">
                 <div className="absolute top-4 right-4 bg-green-200 text-green-500 px-2 py-1 rounded">Recomendada</div>
                 <h2 className="text-lg font-semibold mb-4">Ticket para Builder</h2>
+                <div className='flex justify-center w-full mb-2'>
+                    <Image src={GeneralTicket} alt='General Ticket' width={300} className='rounded-xl' />
+                </div>
                 <div className="flex items-center mb-2">
-                    <span className="text-4xl font-bold">$10</span>
+                    <span className="text-3xl font-bold">$10</span>
                 </div>
                 <span className="text-sm text-gray-500 mb-6 block">Para comprar, necesitas 20 puntos en <a href='https://www.talentprotocol.com/' className='font-bold text-light-blue'>Talent Protocol</a></span>
                 <p className="mb-6 text-gray-700">
@@ -59,8 +66,11 @@ export default function Tickets() {
             {/* Right License Card (Same as Left) */}
             <div className="bg-[#f8f8f9] border rounded-2xl p-8 max-w-md w-full relative z-10 lg:-ml-12 -mt-8">
                 <h2 className="text-lg font-semibold mb-4">Ticket VIP</h2>
+                <div className='flex justify-center w-full mb-2'>
+                    <Image src={GeneralTicket} alt='General Ticket' width={300} className='rounded-xl' />
+                </div>
                 <div className="flex items-center mb-2">
-                    <span className="text-4xl font-bold">$8</span>
+                    <span className="text-3xl font-bold">$8</span>
                 </div>
                 <p className="mb-6 text-gray-700">
                     Incluye acceso a sesiones privadas con ponentes y beneficios exclusivos.
@@ -74,7 +84,7 @@ export default function Tickets() {
                     </li>
                 </ul>
                 <div className='w-full flex justify-center'>
-                <button className="border border-gray-700 text-black shadow-2xl  py-2 px-4 rounded-xl  w-[70%]">Obtener Tickets </button>
+                    <button className="border border-gray-700 text-black shadow-2xl  py-2 px-4 rounded-xl  w-[70%]">Obtener Tickets </button>
                 </div>
             </div>
         </section>

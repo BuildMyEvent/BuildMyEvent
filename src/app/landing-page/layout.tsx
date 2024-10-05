@@ -15,7 +15,7 @@ export default function LandingLayout({
     return (
         <html lang="en" className="scroll-smooth">
             <body className="flex flex-col min-h-screen">
-                <header id="hero" className="mb-[10rem] ">
+                <header  className="mb-[10rem] ">
                     <NavBarComponent />
                 </header>
                 <main className="flex-1">

@@ -4,10 +4,10 @@ import { NavBarInterface } from "@/types/interfaces";
 import Link from "next/link";
 
 const navItems: NavBarInterface[] = [
-  { title: "Inicio", url: "#modules" },
-  { title: "Funcionalidades", url: "#opinions" },
-  { title: "Documentación", url: "#functionalities" },
-  { title: "Contacto", url: "#contact" },
+  { title: "Inicio", url: "#start" },
+  { title: "Funcionalidades", url: "#functionalities" },
+  { title: "Eventos", url: "#events" },
+  { title: "Documentación", url: "#docs" },
 ];
 
 const NavBarComponent = () => {
@@ -18,7 +18,7 @@ const NavBarComponent = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
 
-      const sections = ["modules", "opinions", "functionalities", "contact"];
+      const sections = ["start", "events", "functionalities", "docs"];
       const offset = 400;
 
       sections.forEach((section) => {

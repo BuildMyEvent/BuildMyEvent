@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import CheckoutModal from './CheckoutModal'
 
 // Assuming you have these images imported or replace with your actual image paths
 // import GeneralTicket from '/placeholder.svg?height=120&width=120'
@@ -122,7 +123,7 @@ export default function TicketsSlider() {
                 <CardHeader>
                   <CardTitle>{ticket.title}</CardTitle>
                   <div className='flex justify-center w-full mb-2 mt-4'>
-                    {ticket?.image && <img src={ticket?.image} alt={ticket.title}  className='rounded-xl h-[300px] object-cover' />}
+                    {ticket?.image && <img src={ticket?.image} alt={ticket.title} className='rounded-xl h-[300px] object-cover' />}
                   </div>
                   <div className="flex items-center mb-2">
                     <span className="text-3xl font-bold">{ticket.price}</span>
@@ -141,7 +142,9 @@ export default function TicketsSlider() {
                   </ul>
                 </CardContent>
                 <CardFooter className="mt-auto">
-                  <Button className="w-full">Obtener Tickets</Button>
+                  {/* <Button className="w-full">Obtener Tickets</Button> */}
+
+                  <CheckoutModal />
                 </CardFooter>
               </Card>
             </div>

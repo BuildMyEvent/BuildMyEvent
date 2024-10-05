@@ -39,7 +39,7 @@ const NavBarComponent = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 z-10 w-full mx-auto transition-all duration-300 ${isScrolled ? "mt-2" : "mt-8"}`}>
+    <header className={`fixed top-0 z-20 w-full mx-auto transition-all duration-300 ${isScrolled ? "mt-2" : "mt-8"}`}>
       <nav
         className={`flex items-center justify-center transition-all duration-300 ${isScrolled ? "gap-[1rem]" : "gap-[42rem]"} text-[16px] font-medium rounded-full 
           ${isScrolled ? "text-gray-600 dark:text-gray-200 bg-white/50 shadow-lg ring-1 backdrop-blur ring-white/10" : ""}

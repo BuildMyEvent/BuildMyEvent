@@ -9,7 +9,7 @@ export default function Tickets() {
     return (
         <section className="flex flex-col lg:flex-row justify-center items-center gap-10 py-12 relative">
             {/* Left License Card */}
-            <div className="bg-[#f8f8f9] border rounded-2xl p-8 max-w-md w-full relative z-10 lg:-mr-12 -mt-9 ">
+            <div className="bg-[#f8f8f9] border rounded-2xl p-8 max-w-md w-full relative lg:-mr-12 -mt-9 ">
                 <h2 className="text-lg font-semibold mb-4">Ticket General</h2>
                 <div className='flex justify-center w-full mb-2'>
                     <Image src={GeneralTicket} alt='General Ticket' width={120} className='rounded-xl' />
@@ -34,7 +34,7 @@ export default function Tickets() {
             </div>
 
             {/* Center License Card (Highlighted) */}
-            <div className="bg-white shadow-2xl border rounded-2xl p-8 max-w-md w-full relative z-20 lg:-mt-16 lg:-ml-12">
+            <div className="bg-white shadow-2xl border rounded-2xl p-8 max-w-md w-full relative z-10 lg:-mt-16 lg:-ml-12">
                 <div className="absolute top-4 right-4 bg-green-200 text-green-500 px-2 py-1 rounded">Recomendada</div>
                 <h2 className="text-lg font-semibold mb-4">Ticket para Builder</h2>
                 <div className='flex justify-center w-full mb-2'>
@@ -66,7 +66,7 @@ export default function Tickets() {
             </div>
 
             {/* Right License Card (Same as Left) */}
-            <div className="bg-[#f8f8f9] border rounded-2xl p-8 max-w-md w-full relative z-10 lg:-ml-12 -mt-8">
+            <div className="bg-[#f8f8f9] border rounded-2xl p-8 max-w-md w-full relative  lg:-ml-12 -mt-8">
                 <h2 className="text-lg font-semibold mb-4">Ticket VIP</h2>
                 <div className='flex justify-center w-full mb-2'>
                     <Image src={VIPTicket} alt='General Ticket' width={120} className='rounded-xl' />

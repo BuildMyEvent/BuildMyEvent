@@ -132,7 +132,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="mt-[5rem] flex gap-16 flex-col">
+      <section id="docs" className="mt-[5rem] flex gap-16 flex-col">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
           Si eres desarrollador dale un vistazo a nuestra{" "}
           <strong className="text-light-blue">Documentación</strong>

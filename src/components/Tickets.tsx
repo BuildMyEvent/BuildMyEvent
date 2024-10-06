@@ -12,14 +12,14 @@ export default function Tickets() {
         hidden: {
             opacity: 0,
             x: direction === 'left' ? -300 : direction === 'right' ? 200 : 0,
-            y: direction === 'bottom' ? 300 : 0,
+            y: direction === 'bottom' ? 50 : 0,
         },
         visible: {
             opacity: 1,
             x: 0,
             y: 0,
             transition: {
-                duration: 1.2,
+                duration: 0.9,
                 bounce: 0.4,
             },
         },
@@ -29,7 +29,7 @@ export default function Tickets() {
             y: direction === 'bottom' ? 200 : 0,
             transition: {
                 type: 'spring',
-                duration: 1.5,
+                duration: 1.2,
             },
         },
     });
@@ -74,8 +74,7 @@ export default function Tickets() {
 
             {/* Center License Card */}
             <div
-                className="bg-white shadow-2xl border-[0.1rem] rounded-2xl p-8 max-w-md w-full relative z-10 lg:-mt-12 lg:-ml-12 pointer-events-none"
-            >
+                className="bg-white shadow-2xl border-[0.1rem] rounded-2xl p-8 max-w-md w-full relative z-10 lg:-mt-12 lg:-ml-12 pointer-events-none">
                 <div className="absolute top-4 right-4 bg-green-200 text-green-500 px-2 py-1 rounded">
                     Recomendada
                 </div>

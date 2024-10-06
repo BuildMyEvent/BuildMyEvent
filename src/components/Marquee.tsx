@@ -2,60 +2,43 @@ import { cn } from "@/lib/utils";
 import Marquee from "@/components/magicui/marquee";
 import { ImgMarquee, MarqueeInterface } from "@/types/interfaces";
 
-import OP from '../../public/OP.png'
-import ETH from '../../public/ETH-Banner.jpg'
-import Link from "../../node_modules/next/link";
 
 const reviews: MarqueeInterface[] = [
-  {
-    title: "Base Events",
-    description: "Explora la infraestructura de Base para construir dApps escalables y eficientes en Ethereum.",
-    img: ImgMarquee.BASE,
-    banner: 'https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fc2ae16d9-481e-449e-b82c-0e529a4333a7%2FBanner-d3eaae72-a78a-431e-aec7-e3ed3cd22ba5?alt=media&token=2bfd2168-4f5e-4328-a490-d966eaaf00a0',
-    link: '/event/base'
-  },
-  {
-    title: "Optimism Scaling",
-    description: "Aprende cómo Optimism usa rollups optimistas para mejorar el rendimiento y reducir costos en Ethereum.",
-    img: ImgMarquee.OPTIMISM,
-    banner: 'https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fc2ae16d9-481e-449e-b82c-0e529a4333a7%2FBanner-d3eaae72-a78a-431e-aec7-e3ed3cd22ba5?alt=media&token=2bfd2168-4f5e-4328-a490-d966eaaf00a0',
-    link: '/event/base'
-  },
-  {
-    title: "ETH Hackathon",
-    description: "Desarrolla soluciones innovadoras en Web3 utilizando contratos inteligentes y la blockchain de Ethereum.",
-    img: ImgMarquee.ETH,
-    banner: 'https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fc2ae16d9-481e-449e-b82c-0e529a4333a7%2FBanner-d3eaae72-a78a-431e-aec7-e3ed3cd22ba5?alt=media&token=2bfd2168-4f5e-4328-a490-d966eaaf00a0',
-    link: '/event/base'
-  },
-  {
-    title: "Task Management on Base",
-    description: "Descubre cómo Base facilita la gestión de tareas y la creación de soluciones Web3 escalables.",
-    img: ImgMarquee.BASE,
-    banner: 'https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fc2ae16d9-481e-449e-b82c-0e529a4333a7%2FBanner-d3eaae72-a78a-431e-aec7-e3ed3cd22ba5?alt=media&token=2bfd2168-4f5e-4328-a490-d966eaaf00a0',
-    link: '/event/base'
-  },
-  {
-    title: "Optimism Strategies",
-    description: "Mejora la organización y enfoque en proyectos Web3 utilizando la tecnología de Optimism.",
-    img: ImgMarquee.OPTIMISM,
-    banner: 'https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fc2ae16d9-481e-449e-b82c-0e529a4333a7%2FBanner-d3eaae72-a78a-431e-aec7-e3ed3cd22ba5?alt=media&token=2bfd2168-4f5e-4328-a490-d966eaaf00a0',
-    link: '/event/base'
-  },
-  {
-    title: "Base Events",
-    description: "Conéctate con desarrolladores y emprendedores que construyen soluciones en el ecosistema de Base.",
-    img: ImgMarquee.BASE,
-    banner: 'https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fc2ae16d9-481e-449e-b82c-0e529a4333a7%2FBanner-d3eaae72-a78a-431e-aec7-e3ed3cd22ba5?alt=media&token=2bfd2168-4f5e-4328-a490-d966eaaf00a0',
-    link: '/event/base'
-  },
-  {
-    title: "On-Time Deliveries",
-    description: "Implementa estrategias con Optimism para asegurar entregas eficientes y a tiempo en proyectos Web3.",
-    img: ImgMarquee.OPTIMISM,
-    banner: 'https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fc2ae16d9-481e-449e-b82c-0e529a4333a7%2FBanner-d3eaae72-a78a-431e-aec7-e3ed3cd22ba5?alt=media&token=2bfd2168-4f5e-4328-a490-d966eaaf00a0',
-    link: '/event/base'
-  }
+    {
+      title: "Base Ecosystem",
+      description: "Explora la infraestructura de Base y su ecosistema.",
+      img: ImgMarquee.BASE,
+    },
+    {
+      title: "Optimism Scaling",
+      description: "Aprende cómo Optimism usa rollups optimistas.",
+      img: ImgMarquee.OPTIMISM,
+    },
+    {
+      title: "ETH Hackathon",
+      description: "Desarrolla soluciones innovadoras en Web3.",
+      img: ImgMarquee.ETH,
+    },
+    {
+      title: "Task Management on Base",
+      description: "Descubre cómo Base facilita la creación de soluciones Web3.",
+      img: ImgMarquee.BASE,
+    },
+    {
+      title: "Optimism Strategies",
+      description: "Descubre como crear proyectos con el Stack de Optimism.",
+      img: ImgMarquee.OPTIMISM,
+    },
+    {
+      title: "Base Networking",
+      description: "Conéctate con desarrolladores que construyen soluciones en Base.",
+      img: ImgMarquee.BASE,
+    },
+    {
+      title: "SuperChain",
+      description: "Conoce que es el SuperChain de Optimism.",
+      img: ImgMarquee.OPTIMISM,
+    }  
 ];
 
 const firstRow = reviews.slice(0, reviews.length / 2);
@@ -65,12 +48,9 @@ const ReviewCard = ({
   img,
   title,
   description,
-  banner,
-  link
 }: MarqueeInterface) => {
   return (
-    <Link
-      href={link ?? ''}
+    <figure
       className={cn(
         "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
         // light styles
@@ -88,7 +68,7 @@ const ReviewCard = ({
         </div>
       </div>
       <blockquote className=" text-sm">{description}</blockquote>
-    </Link>
+    </figure>
   );
 };
 

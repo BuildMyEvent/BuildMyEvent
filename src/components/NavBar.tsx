@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { NavBarInterface } from "@/types/interfaces";
+import BMELogo from '../../public/WhiteV1.png'
+import Image from "next/image";
 import Link from "next/link";
 
 const navItems: NavBarInterface[] = [
@@ -45,14 +47,19 @@ const NavBarComponent = () => {
           ${isScrolled ? "text-gray-600 dark:text-gray-200 bg-white/50 shadow-lg ring-1 backdrop-blur ring-white/10" : ""}
           max-w-xl mx-auto`}
       >
-        <h1 className={`transition-all duration-300`}>Logo</h1>
-        <ul className={`flex transition-all duration-300 ${isScrolled ? "text-[17.5px]" : "text-lg"}`}>
+        <Image
+          src={BMELogo}
+          alt="Logo"
+          className={`cursor-pointer transition-all duration-200 ${isScrolled ? "h-[2.2em] w-auto" : "h-[4.2rem] w-auto"}`}
+          onClick={() => (window.location.href = "/#")}
+        />
+
+        <ul className={`flex justify-center items-center transition-all duration-300 ${isScrolled ? "text-[17.5px]" : "text-lg"}`}>
           {navItems.map(({ title, url }: NavBarInterface) => (
             <Link
               key={title}
-              className={`relative hover:text-blue-500 block px-2 py-2 transition-colors duration-300 ${
-                activeSection === url.slice(1) ? "text-blue-500" : "text-gray-600"
-              }`}
+              className={`relative hover:text-blue-500 block px-2 py-2 transition-colors duration-300 ${activeSection === url.slice(1) ? "text-blue-500" : "text-gray-600"
+                }`}
               href={url}
             >
               {title}

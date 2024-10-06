@@ -1,8 +1,3 @@
-import BaseLogo from '../../public/BaseLogo.webp'
-import OPLogo from '../../public/OP-Logo.png'
-import a from '../../public/EthLogo.png'
-import OP from '../../public/OP.png'
-
 export interface NavBarInterface {
     title: string,
     url: string

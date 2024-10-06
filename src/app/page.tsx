@@ -12,8 +12,9 @@ import {
   TerminalIcon,
 } from "lucide-react";
 import Link from "next/link";
-import '../app/globals.css'
+import "../app/globals.css";
 import Tickets from "@/components/Tickets";
+import Card from "@/components/Card"
 
 const notifications: Item[] = [
   {
@@ -48,7 +49,8 @@ export default function LandingPage() {
       <section className="flex min-h-3/4 flex-col items-center md:items-stretch md:flex-row w-full mt-[0] md:mt-[4rem] justify-evenly">
         <div className="flex w-full md:w-[40%] flex-col gap-7 md:mt-20 mt-0 md:h-auto h-[300px]">
           <h1 className="text-strong-blue font-medium text-3xl text-center">
-            Con <strong className="text-light-blue">BuildMyEvent</strong> ¡Nunca había sido tan sencillo crear tu propios{" "}
+            Con <strong className="text-light-blue">BuildMyEvent</strong> ¡Nunca
+            había sido tan sencillo crear tu propios{" "}
             <strong className="text-light-blue">eventos</strong>!
           </h1>
 
@@ -79,39 +81,42 @@ export default function LandingPage() {
         </h2>
         <article className="flex w-full justify-evenly md:flex-row-reverse flex-col">
           <div className="w-full md:w-[40%] flex animate-float">
-            <TerminalComponent>
+            <Card>
               <AnimatedBeamMultipleOutputDemo />
-            </TerminalComponent>
+            </Card>
           </div>
           <div className="w-full md:w-[35%] mt-[15px] md:mt-0 ">
             <ul className="text-xl font-raleway h-full flex flex-col gap-6 justify-center">
               <li className="flex items-center w-full gap-4">
                 <strong className="text-light-yellow">●</strong>
                 <p>
-                  <strong className="text-light-blue">¡Personalización</strong> completa del evento!
+                  <strong className="text-light-blue">¡Personalización</strong>{" "}
+                  completa del evento!
                 </p>
               </li>
               <li className="flex items-center w-full gap-4">
                 <strong className="text-light-green">●</strong>
                 <p>
-                  Gestión y organización <strong className="text-light-blue">descentralizada</strong>.
+                  Gestión y organización{" "}
+                  <strong className="text-light-blue">descentralizada</strong>.
                 </p>
               </li>
               <li className="flex items-center w-full gap-4">
                 <strong className="text-red-500">●</strong>
                 <p>
-                  Tu solución a unos clics, gracias a nuestra tecnología <strong className="text-light-blue">No Code</strong>.
+                  Tu solución a unos clics, gracias a nuestra tecnología{" "}
+                  <strong className="text-light-blue">No Code</strong>.
                 </p>
               </li>
             </ul>
           </div>
         </article>
-      </section >
+      </section>
 
       <section className="mt-[6rem] md:p-0 p-[10px]">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
-          ¡Crea distintos tipos de <strong className="text-light-blue">Tickets</strong> para tus
-          {" "}
+          ¡Crea distintos tipos de{" "}
+          <strong className="text-light-blue">Tickets</strong> para tus{" "}
           <strong className="text-light-blue">eventos</strong>!
         </h2>
         <article className="mt-[4rem]">
@@ -120,7 +125,10 @@ export default function LandingPage() {
       </section>
 
       <section className="flex flex-col gap-8 items-center mt-[6rem]">
-        <h2 className="text-3xl text-center font-medium text-strong-blue" id="events">
+        <h2
+          className="text-3xl text-center font-medium text-strong-blue"
+          id="events"
+        >
           ¡Dale un vistazo a los eventos actuales que están en{" "}
           <strong className="text-light-blue">BuildMyEvent</strong>!
         </h2>
@@ -132,7 +140,10 @@ export default function LandingPage() {
       </section>
 
       <section className="mt-[5rem] flex gap-16 flex-col">
-        <h2 className="text-3xl text-center font-medium text-strong-blue" id="docs">
+        <h2
+          className="text-3xl text-center font-medium text-strong-blue"
+          id="docs"
+        >
           Si eres desarrollador ¡dale un vistazo a nuestra{" "}
           <strong className="text-light-blue">Documentación</strong>!
         </h2>
@@ -157,8 +168,9 @@ export default function LandingPage() {
                 <ArrowUp01 size={36} color="#4461F2" />
                 <p>
                   {" "}
-                  Obtén <strong className="text-dark-blue">métricas</strong>
-                  {" "}
+                  Obtén <strong className="text-dark-blue">
+                    métricas
+                  </strong>{" "}
                   importantes de tus eventos.
                 </p>
               </li>
@@ -183,11 +195,11 @@ export default function LandingPage() {
                   Bearer YOUR_ACCESS_TOKEN"
                 </code>
               </div>
-              <div className="w-full flex justify-center">
-                <Link href="/landing-page/docs">
-                  <ShimmerButton>Visita la documentación</ShimmerButton>
-                </Link>
-              </div>
+              <div className="w-full flex justify-center mt-10">
+              <Link href="/landing-page/docs">
+                <ShimmerButton>Visita la documentación</ShimmerButton>
+              </Link>
+            </div>
             </TerminalComponent>
           </div>
         </article>

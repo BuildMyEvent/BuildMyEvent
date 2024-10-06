@@ -1,0 +1,5 @@
+export { default as Netlify } from "./netlify.svg"
+export { default as Thirdweb } from "./thirdweb.svg"
+export { default as Base } from "./base.png"
+export { default as Excel } from "./excel.svg"
+export { default as TalentProtocol } from "./talentprotocol.jpeg"

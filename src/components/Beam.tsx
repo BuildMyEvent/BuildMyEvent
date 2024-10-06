@@ -2,9 +2,15 @@
 import React, { forwardRef, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "./magicui/animated-beam";
-import BME from '@public/BME-Logos/BME.svg'
+import BME from "@public/BME-Logos/BME.svg";
 import Image from "next/image";
-
+import {
+  Base,
+  Netlify,
+  Thirdweb,
+  Excel,
+  TalentProtocol,
+} from "../../public/icons/";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -15,7 +21,7 @@ const Circle = forwardRef<
       ref={ref}
       className={cn(
         "z-10 flex size-12 items-center justify-center rounded-full bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
-        className,
+        className
       )}
     >
       {children}
@@ -43,7 +49,7 @@ export function AnimatedBeamMultipleOutputDemo({
     <div
       className={cn(
         "relative flex h-[300px] w-[600px] items-center justify-center overflow-hidden rounded-lg  ",
-        className,
+        className
       )}
       ref={containerRef}
     >
@@ -55,24 +61,24 @@ export function AnimatedBeamMultipleOutputDemo({
         </div>
         <div className="flex flex-col justify-center">
           <Circle ref={div6Ref} className="size-[4.5rem]">
-            <Image src={BME} alt="BuildMyEvent Logo" width={200}/>    
+            <Image src={BME} alt="BuildMyEvent Logo" width={200} />
           </Circle>
         </div>
         <div className="flex flex-col justify-center gap-2">
-          <Circle ref={div1Ref}>
-            <Icons.googleDrive />
-          </Circle>
+          {/* <Circle ref={div1Ref}>
+            <Image src={Thirdweb} alt="Thirdweb Logo" width={200} />
+          </Circle> */}
           <Circle ref={div2Ref}>
-            <Icons.googleDocs />
+            <Image src={Base} alt="Base Logo" width={200} />
           </Circle>
           <Circle ref={div3Ref}>
-            <Icons.whatsapp />
+            <Image src={Netlify} alt="Netlify Logo" width={200} />
           </Circle>
           <Circle ref={div4Ref}>
-            <Icons.messenger />
+            <Image src={Excel} alt="Excel Logo" width={200} />
           </Circle>
           <Circle ref={div5Ref}>
-            <Icons.notion />
+            <Image src={TalentProtocol} alt="Talent Logo" width={200} />
           </Circle>
         </div>
       </div>

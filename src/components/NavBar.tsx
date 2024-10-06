@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { NavBarInterface } from "@/types/interfaces";
-import BMELogo from '../../public/WhiteV1.svg'
+import BMELogo from '../../public/BME-Dark.svg'
 import Image from "next/image";
 import Link from "next/link";
 
@@ -50,7 +50,7 @@ const NavBarComponent = () => {
         <Image
           src={BMELogo}
           alt="Logo"
-          className={`cursor-pointer transition-all duration-200 ${isScrolled ? "h-[2.2em] w-auto" : "h-[4.2rem] w-auto"}`}
+          className={`cursor-pointer transition-all duration-200 ${isScrolled ? "h-[1.8em] w-auto" : "h-[4rem] w-auto"}`}
           onClick={() => (window.location.href = "/#")}
         />
 

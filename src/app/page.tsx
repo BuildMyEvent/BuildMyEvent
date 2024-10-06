@@ -48,7 +48,7 @@ export default function LandingPage() {
       <section className="flex min-h-3/4 flex-col items-center md:items-stretch md:flex-row w-full mt-[0] md:mt-[4rem] justify-evenly">
         <div className="flex w-full md:w-[40%] flex-col gap-7 md:mt-20 mt-0 md:h-auto h-[300px]">
           <h1 className="text-strong-blue font-medium text-3xl text-center">
-            Con <strong className="text-light-blue">BuildMyEvent</strong> ¡Nunca ahabía sido tan sencillo crear tu propio{" "}
+            Con <strong className="text-light-blue">BuildMyEvent</strong> ¡Nunca había sido tan sencillo crear tu propios{" "}
             <strong className="text-light-blue">eventos</strong>!
           </h1>
 
@@ -121,8 +121,8 @@ export default function LandingPage() {
 
       <section className="flex flex-col gap-8 items-center mt-[5rem] md:mt-[10rem]">
         <h2 className="text-3xl text-center font-medium text-strong-blue" id="events">
-          Dale un vistazo a los eventos actuales que están en{" "}
-          <strong className="text-light-blue">BuildMyEvent</strong>
+          ¡Dale un vistazo a los eventos actuales que están en{" "}
+          <strong className="text-light-blue">BuildMyEvent</strong>!
         </h2>
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
           <MarqueeDemo />
@@ -133,8 +133,8 @@ export default function LandingPage() {
 
       <section className="mt-[5rem] flex gap-16 flex-col">
         <h2 className="text-3xl text-center font-medium text-strong-blue" id="docs">
-          Si eres desarrollador dale un vistazo a nuestra{" "}
-          <strong className="text-light-blue">Documentación</strong>
+          Si eres desarrollador ¡dale un vistazo a nuestra{" "}
+          <strong className="text-light-blue">Documentación</strong>!
         </h2>
         <article className="flex w-full justify-evenly flex-col md:flex-row md:p-0 p-[10px]">
           <div className="w-full md:w-[40%] mb-[20px] md:mb-0">

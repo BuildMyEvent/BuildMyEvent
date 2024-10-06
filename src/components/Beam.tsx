@@ -1,8 +1,9 @@
 "use client";
-
 import React, { forwardRef, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "./magicui/animated-beam";
+import BME from '../../public/BME.svg'
+import Image from "next/image";
 
 
 const Circle = forwardRef<
@@ -53,8 +54,8 @@ export function AnimatedBeamMultipleOutputDemo({
           </Circle>
         </div>
         <div className="flex flex-col justify-center">
-          <Circle ref={div6Ref} className="size-16">
-            <Icons.openai />
+          <Circle ref={div6Ref} className="size-[4.5rem]">
+            <Image src={BME} alt="BuildMyEvent Logo" width={200}/>    
           </Circle>
         </div>
         <div className="flex flex-col justify-center gap-2">

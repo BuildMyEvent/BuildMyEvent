@@ -18,7 +18,7 @@ export default function LandingLayout({
                 <header id="hero" className="mb-[10rem] ">
                     <NavBarComponent />
                 </header>
-                <main className="flex-1">
+                <main className="flex-1 ">
                     {children}
                 </main>
                 <FooterComponent/>

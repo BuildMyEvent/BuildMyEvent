@@ -1,6 +1,9 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/magicui/marquee";
 import { ImgMarquee, MarqueeInterface } from "@/types/interfaces";
+
+import OP from '../../public/OP.png'
+import ETH from '../../public/ETH-Banner.jpg'
 import Link from "../../node_modules/next/link";
 
 const reviews: MarqueeInterface[] = [
@@ -76,18 +79,15 @@ const ReviewCard = ({
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
       )}
     >
-      <div className="mb-2">
-        <img className="w-full h-[100px] object-cover" alt="" src={banner} />
-      </div>
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="36" height="34" alt="" src={img} />
-        <div className="flex flex-col">
-          <figcaption className="text-[16px] font-medium dark:text-white">
+      <div className="flex flex-row items-center">
+        <div className="flex flex-col justify-center">
+          <img src={img} alt="Event image" width={220} height={80}/>
+          <figcaption className="mt-2 text-[16px] font-medium dark:text-white">
             {title}
           </figcaption>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{description}</blockquote>
+      <blockquote className=" text-sm">{description}</blockquote>
     </Link>
   );
 };

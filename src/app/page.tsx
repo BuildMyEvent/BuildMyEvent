@@ -108,7 +108,7 @@ export default function LandingPage() {
         </article>
       </section >
 
-      <section className="mt-[8rem] md:p-0 p-[10px]">
+      <section className="mt-[6rem] md:p-0 p-[10px]">
         <h2 className="text-3xl text-center font-medium text-strong-blue">
           ¡Crea distintos tipos de <strong className="text-light-blue">Tickets</strong> para tus
           {" "}
@@ -119,7 +119,7 @@ export default function LandingPage() {
         </article>
       </section>
 
-      <section className="flex flex-col gap-8 items-center mt-[5rem] md:mt-[10rem]">
+      <section className="flex flex-col gap-8 items-center mt-[6rem]">
         <h2 className="text-3xl text-center font-medium text-strong-blue" id="events">
           ¡Dale un vistazo a los eventos actuales que están en{" "}
           <strong className="text-light-blue">BuildMyEvent</strong>!

@@ -2,7 +2,7 @@
 import React, { forwardRef, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "./magicui/animated-beam";
-import BME from '../../public/BME.svg'
+import BME from '@public/BME-Logos/BME.svg'
 import Image from "next/image";
 
 

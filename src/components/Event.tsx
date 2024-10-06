@@ -1,7 +1,6 @@
 import { Event } from "@/types/interfaces";
 import Image from "next/image";
 import Link from "next/link";
-import ShimmerButton from "./magicui/shimmer-button";
 import { ExternalLink } from "lucide-react";
 export default function EventComponent({ title, description, img, id }: Event) {
   return (

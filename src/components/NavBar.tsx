@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { NavBarInterface } from "@/types/interfaces";
-import BMELogo from '../../public/BME-Dark.svg'
+import BMELogo from '../../public/BME-Logos/BME-Logo-Over-White1.svg';
+import BMELogo2 from '../../public/BME-Logos/BME-Logo-Full-Strong-Blue.svg';
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,10 +16,18 @@ const navItems: NavBarInterface[] = [
 const NavBarComponent = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
+  const [logo, setLogo] = useState(BMELogo); // Estado para el logo
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
+
+      // Cambiar el logo según el scroll
+      if (window.scrollY > 0) {
+        setLogo(BMELogo2);
+      } else {
+        setLogo(BMELogo);
+      }
 
       const sections = ["start", "events", "functionalities", "docs"];
       const offset = 400;
@@ -43,14 +52,14 @@ const NavBarComponent = () => {
   return (
     <header className={`fixed top-0 z-20 w-full mx-auto transition-all duration-300 ${isScrolled ? "mt-2" : "mt-8"}`}>
       <nav
-        className={`flex items-center justify-center transition-all duration-300 ${isScrolled ? "gap-[1rem]" : "gap-[42rem]"} text-[16px] font-medium rounded-full 
-          ${isScrolled ? "text-gray-600 dark:text-gray-200 bg-white/50 shadow-lg ring-1 backdrop-blur ring-white/10" : ""}
+        className={`flex items-center justify-center  transition-all duration-300 ${isScrolled ? "gap-[1rem]" : "gap-[42rem]"} text-[16px] font-medium rounded-full 
+          ${isScrolled ? "text-gray-600 dark:text-gray-200 bg-white/50 shadow-lg ring-1 backdrop-blur ring-white/10" : ""} 
           max-w-xl mx-auto`}
       >
         <Image
-          src={BMELogo}
+          src={logo} // Usa el estado del logo aquí
           alt="Logo"
-          className={`cursor-pointer transition-all duration-200 ${isScrolled ? "h-[1.8em] w-auto" : "h-[4rem] w-auto"}`}
+          className={`cursor-pointer transition-all duration-200 ${isScrolled ? "h-[1rem] ml-2 mt-[3.5px] w-auto" : "h-[4rem] w-auto"}`}
           onClick={() => (window.location.href = "/#")}
         />
 

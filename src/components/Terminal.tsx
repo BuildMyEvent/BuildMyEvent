@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 
-
 interface TerminalComponentProps {
   children: ReactNode;
 }

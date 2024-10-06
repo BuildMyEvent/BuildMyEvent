@@ -1,7 +1,4 @@
-import ShimmerButton from './magicui/shimmer-button';
-import GeneralTicket from '../../public/GeneralTicket.svg'
-import BuilderTicket from '../../public/BuilderTicket.svg'
-import VIPTicket from '../../public/VIPTicket.svg'
+import GeneralTicket from '@public/GeneralTicket.svg'
 import Image from 'next/image';
 import React from 'react';
 

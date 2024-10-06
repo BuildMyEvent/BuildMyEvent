@@ -1,8 +1,8 @@
 "use client";
 import ShimmerButton from './magicui/shimmer-button';
-import GeneralTicket from '../../public/GeneralTicket.svg';
-import BuilderTicket from '../../public/BuilderTicket.svg';
-import VIPTicket from '../../public/VIPTicket.svg';
+import GeneralTicket from '@public/GeneralTicket.svg';
+import BuilderTicket from '@public/BuilderTicket.svg';
+import VIPTicket from '@public/VIPTicket.svg';
 import Image from 'next/image';
 import React from 'react';
 import { motion } from 'framer-motion';

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { NavBarInterface } from "@/types/interfaces";
-import BMELogo from '../../public/WhiteV1.png'
+import BMELogo from '../../public/WhiteV1.svg'
 import Image from "next/image";
 import Link from "next/link";
 

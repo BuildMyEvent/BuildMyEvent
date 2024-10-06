@@ -25,4 +25,6 @@ export interface MarqueeInterface {
     title: string,
     description: string,
     img: ImgMarquee
+    banner?: string
+    link?: string
 }

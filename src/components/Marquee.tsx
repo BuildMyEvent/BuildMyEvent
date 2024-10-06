@@ -1,9 +1,7 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/magicui/marquee";
 import { ImgMarquee, MarqueeInterface } from "@/types/interfaces";
-import OP from '../../public/OP.png'
-import ETH from '../../public/ETH-Banner.jpg'
-import Image from "next/image";
+
 
 const reviews: MarqueeInterface[] = [
     {

@@ -37,7 +37,7 @@ export default function Header() {
           className="border-light-blue text-light-blue transition-opacity opacity-80 hover:opacity-100"
         >
           <LogOut/>
-          Log Out
+          Sign Out
         </Button>
       </div>
 

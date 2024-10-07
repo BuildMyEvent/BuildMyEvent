@@ -1,22 +1,21 @@
 import type { Metadata } from "next";
-import FooterComponent from "@/components/LadingFooter";
+import "./globals.css";
 
 export const metadata: Metadata = {
-    title: "Landing Page",
-    description: "This is Build My Event",
+  title: "BuildMyEvent",
+  description: "This is Build My Event",
 };
 
-export default function LandingLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
-    return (
-        <html lang="en" className="scroll-smooth">
-            <body className="flex flex-col min-h-screen">
-                    {children}
-                <FooterComponent/>
-            </body>
-        </html>
-    );
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className="scroll-smooth">
+      <body className="flex flex-col min-h-screen bg-light-White text-gray-900">
+        {children}
+      </body>
+    </html>
+  );
 }

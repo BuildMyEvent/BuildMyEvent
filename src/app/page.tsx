@@ -16,6 +16,7 @@ import "../app/globals.css";
 import Tickets from "@/components/Tickets";
 import Card from "@/components/Card";
 import NavBarComponent from "@/components/NavBar";
+import FooterComponent from "@/components/LadingFooter";
 
 
 const notifications: Item[] = [
@@ -212,6 +213,8 @@ export default function LandingPage() {
         </article>
       </section>
       </main>
+
+      <FooterComponent/>
     </>
   );
 }

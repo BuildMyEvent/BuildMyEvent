@@ -76,15 +76,6 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-}
 
 /* Oculta la barra de scroll, pero permite desplazamiento */
 .no-scrollbar::-webkit-scrollbar {

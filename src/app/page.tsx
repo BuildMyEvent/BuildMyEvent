@@ -14,7 +14,9 @@ import {
 import Link from "next/link";
 import "../app/globals.css";
 import Tickets from "@/components/Tickets";
-import Card from "@/components/Card"
+import Card from "@/components/Card";
+import NavBarComponent from "@/components/NavBar";
+
 
 const notifications: Item[] = [
   {
@@ -46,6 +48,11 @@ const notifications: Item[] = [
 export default function LandingPage() {
   return (
     <>
+      <header id="hero" className="mb-[10rem] ">
+        <NavBarComponent />
+      </header>
+      <main className="flex-1 ">
+
       <section className="flex min-h-3/4 flex-col items-center md:items-stretch md:flex-row w-full mt-[0] md:mt-[4rem] justify-evenly">
         <div className="flex w-full md:w-[40%] flex-col gap-7 md:mt-20 mt-0 md:h-auto h-[300px]">
           <h1 className="text-strong-blue font-medium text-3xl text-center">
@@ -196,14 +203,15 @@ export default function LandingPage() {
                 </code>
               </div>
               <div className="w-full flex justify-center mt-10">
-              <Link href="/landing-page/docs">
-                <ShimmerButton>Visita la documentación</ShimmerButton>
-              </Link>
-            </div>
+                <Link href="/docs">
+                  <ShimmerButton>Visita la documentación</ShimmerButton>
+                </Link>
+              </div>
             </TerminalComponent>
           </div>
         </article>
       </section>
+      </main>
     </>
   );
 }

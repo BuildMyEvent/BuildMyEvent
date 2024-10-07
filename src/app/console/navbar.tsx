@@ -12,7 +12,7 @@ export default function Header() {
   const router = useRouter();
 
   const navOptions = [
-    { label: "Home", route: "/home" },
+    { label: "Home", route: "/" },
     { label: "My Page", route: "/my-page" },
     { label: "Events", route: "/events" },
     { label: "Orders", route: "/orders" },

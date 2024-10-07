@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+import React from "react";
+import { Metadata } from "next";
 import "../globals.css";
+import Header from "./navbar"; // Importamos el componente Header
 
 export const metadata: Metadata = {
   title: "BuildMyEvent",
@@ -8,13 +10,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body>
-        {children}
+      <body className="bg-light-White text-gray-900">
+        <Header /> {/* Usamos el Header aquí */}
+        <main className="container mx-auto p-8">
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -88,14 +88,14 @@ export default function LandingPage() {
           <strong className="text-light-blue">eventos</strong>!
         </h2>
         <article className="flex w-full justify-evenly md:flex-row-reverse flex-col">
-          <div className="w-[35%] flex animate-float">
+          <div className="w-[40%] flex animate-float">
             <Card>
               <AnimatedBeamMultipleOutputDemo />
             </Card>
           </div>
           <div className="w-[40%] mt-[15px] md:mt-0 ">
-            <ul className="text-[1.36rem] font-raleway h-full flex flex-col gap-6 justify-center">
-            <li className="flex text-[1.42rem] items-center w-full gap-4">
+            <ul className="text-[1.26rem] font-raleway h-full flex flex-col gap-6 justify-center">
+            <li className="flex text-[1.32rem] items-center w-full gap-4">
                 <p>
                   <strong className="text-stellar-blue">Beneficios de BuildMyEvent:</strong>{" "}
                 </p>
@@ -164,21 +164,21 @@ export default function LandingPage() {
             <div className="w-[40%] mb-[20px] md:mb-0">
               <ul className="text-xl font-raleway h-full flex flex-col gap-6 justify-center">
                 <li className="flex items-center w-full gap-6">
-                  <PaintbrushVertical size={32} color="#4461F2" />
+                  <PaintbrushVertical size={26} color="#4461F2" />
                   <p>
                     <strong className="text-dark-blue">Crea</strong> tu evento
                     utilizando nuestra API.
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
-                  <BookOpen size={32} color="#4461F2" />
+                  <BookOpen size={26} color="#4461F2" />
                   <p>
                     <strong className="text-dark-blue">Implementa</strong>{" "}
                     fácilmente en tu página tecnología BlockChain.
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
-                  <ArrowUp01 size={32} color="#4461F2" />
+                  <ArrowUp01 size={26} color="#4461F2" />
                   <p>
                     {" "}
                     Analiza las <strong className="text-dark-blue">

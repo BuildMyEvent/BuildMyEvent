@@ -14,10 +14,9 @@ import {
 import Link from "next/link";
 import "../app/globals.css";
 import Tickets from "@/components/Tickets";
-import Card from "@/components/Card";
 import NavBarComponent from "@/components/NavBar";
 import FooterComponent from "@/components/LadingFooter";
-import CreateEvent from "@/landing-sections/CreateEvent";
+import { Card } from "@/components/ui/card";
 
 
 const notifications: Item[] = [
@@ -83,13 +82,49 @@ export default function LandingPage() {
         </section>
 
         <section className="mt-[10rem] flex gap-16 flex-col md:p-0 p-[10px]">
-          <h2 className="text-3xl text-center font-medium text-strong-blue">
-            ¡Con <strong className="text-light-blue">BuildMyEvent</strong> puedes
-            crear tus diferentes{" "}
-            <strong className="text-light-blue">eventos</strong>!
-          </h2>
-          <CreateEvent />
-        </section>
+        <h2 className="text-3xl text-center font-medium text-strong-blue">
+          ¡Con <strong className="text-light-blue">BuildMyEvent</strong> puedes
+          crear tus diferentes{" "}
+          <strong className="text-light-blue">eventos</strong>!
+        </h2>
+        <article className="flex w-full justify-evenly md:flex-row-reverse flex-col">
+          <div className="w-[35%] flex animate-float">
+            <Card>
+              <AnimatedBeamMultipleOutputDemo />
+            </Card>
+          </div>
+          <div className="w-[40%] mt-[15px] md:mt-0 ">
+            <ul className="text-[1.36rem] font-raleway h-full flex flex-col gap-6 justify-center">
+            <li className="flex text-[1.42rem] items-center w-full gap-4">
+                <p>
+                  <strong className="text-stellar-blue">Beneficios de BuildMyEvent:</strong>{" "}
+                </p>
+              </li> 
+              <li className="flex items-center w-full gap-4">
+                <strong className="text-light-yellow">●</strong>
+                <p>
+                  <strong className="text-light-blue">Personalización</strong>{" "}
+                  completa del evento!
+                </p>
+              </li>
+              <li className="flex items-center w-full gap-4">
+                <strong className="text-light-green">●</strong>
+                <p>
+                  Gestión y organización{" "}
+                  <strong className="text-light-blue">descentralizada</strong>.
+                </p>
+              </li>
+              <li className="flex items-center w-full gap-4">
+                <strong className="text-red-500">●</strong>
+                <p>
+                  Tu solución a unos clics, gracias a nuestra tecnología{" "}
+                  <strong className="text-light-blue">No Code</strong>.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
 
         <section className="mt-[6rem] md:p-0 p-[10px]">
           <h2 className="text-3xl text-center font-medium text-strong-blue">
@@ -126,35 +161,35 @@ export default function LandingPage() {
             <strong className="text-light-blue">Documentación</strong>!
           </h2>
           <article className="flex w-full justify-evenly flex-col md:flex-row md:p-0 p-[10px]">
-            <div className="w-full md:w-[40%] mb-[20px] md:mb-0">
+            <div className="w-[40%] mb-[20px] md:mb-0">
               <ul className="text-xl font-raleway h-full flex flex-col gap-6 justify-center">
                 <li className="flex items-center w-full gap-6">
-                  <PaintbrushVertical size={36} color="#4461F2" />
+                  <PaintbrushVertical size={32} color="#4461F2" />
                   <p>
                     <strong className="text-dark-blue">Crea</strong> tu evento
-                    utilizando nuestra Api.
+                    utilizando nuestra API.
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
-                  <BookOpen size={36} color="#4461F2" />
+                  <BookOpen size={32} color="#4461F2" />
                   <p>
                     <strong className="text-dark-blue">Implementa</strong>{" "}
-                    fácilmente en tu página.
+                    fácilmente en tu página tecnología BlockChain.
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
-                  <ArrowUp01 size={36} color="#4461F2" />
+                  <ArrowUp01 size={32} color="#4461F2" />
                   <p>
                     {" "}
-                    Obtén <strong className="text-dark-blue">
+                    Analiza las <strong className="text-dark-blue">
                       métricas
                     </strong>{" "}
-                    importantes de tus eventos.
+                    más importantes de tus eventos.
                   </p>
                 </li>
               </ul>
             </div>
-            <div className="w-full md:w-[46%]">
+            <div className="w-[35%]">
               <TerminalComponent>
                 <div className="flex items-center mb-4">
                   <TerminalIcon className="text-blue-600 mr-2" />

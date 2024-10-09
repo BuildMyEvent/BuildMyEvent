@@ -15,7 +15,6 @@ import {
 import Link from "next/link";
 import "../app/globals.css";
 import Tickets from "@/components/Tickets";
-import Card from "@/components/Card";
 import NavBarComponent from "@/components/NavBar";
 import FooterComponent from "@/components/LadingFooter";
 import CreateEvent from "@/landing-sections/CreateEvent";
@@ -23,6 +22,7 @@ import CreateEventLanding from "@/components/CreateEventLanding";
 import { useState } from "react";
 import BMELogo from '../../public/BME-Logos/BME-Logo-Over-White1.svg';
 import BMELogo2 from '../../public/BME-Logos/BME-Logo-Full-Strong-Blue.svg';
+import { Card } from "@/components/ui/card";
 
 const notifications: Item[] = [
   {
@@ -70,11 +70,13 @@ export default function LandingPage() {
             </h1>
 
             <div className="flex items-center justify-center">
-              <ShimmerButton className="shadow-2xl">
-                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  ¡Crea el tuyo ya mismo!
-                </span>
-              </ShimmerButton>
+              <Link href="/register">
+                <ShimmerButton className="shadow-2xl">
+                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                    ¡Crea el tuyo ya mismo!
+                  </span>
+                </ShimmerButton>
+              </Link>
             </div>
           </div>
           <div className="flex w-full md:w-[40%] mt-[-80px] flex-col gap-5">
@@ -128,39 +130,44 @@ export default function LandingPage() {
             className="text-3xl text-center font-medium text-strong-blue"
             id="docs"
           >
-            Si eres desarrollador ¡dale un vistazo a nuestra{" "}
+            Si eres <strong className="text-light-blue">desarrollador</strong>  un vistazo a nuestra{" "}
             <strong className="text-light-blue">Documentación</strong>!
           </h2>
           <article className="flex w-full justify-evenly flex-col md:flex-row md:p-0 p-[10px]">
-            <div className="w-full md:w-[40%] mb-[20px] md:mb-0">
-              <ul className="text-xl font-raleway h-full flex flex-col gap-6 justify-center">
-                <li className="flex items-center w-full gap-6">
-                  <PaintbrushVertical size={36} color="#4461F2" />
+            <div className="w-[40%] mb-[20px] md:mb-0">
+              <ul className="text-[20px] font-medium text-strong-blue font-raleway h-full flex flex-col gap-6 justify-center">
+                <li className="flex text-[1.32rem] items-center w-full gap-4">
                   <p>
-                    <strong className="text-dark-blue">Crea</strong> tu evento
-                    utilizando nuestra Api.
+                    <strong className="text-stellar-blue">Beneficios de nuestra API:</strong>{" "}
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
-                  <BookOpen size={36} color="#4461F2" />
+                  <strong className="text-light-yellow">●</strong>
                   <p>
-                    <strong className="text-dark-blue">Implementa</strong>{" "}
-                    fácilmente en tu página.
+                    <strong className="text-light-blue">Crea</strong> tu evento
+                    utilizando nuestra API.
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
-                  <ArrowUp01 size={36} color="#4461F2" />
+                  <strong className="text-light-yellow">●</strong>
+                  <p>
+                    <strong className="text-light-blue">Implementa</strong>{" "}
+                    fácilmente en tu página tecnología BlockChain.
+                  </p>
+                </li>
+                <li className="flex items-center w-full gap-6">
+                  <strong className="text-light-yellow">●</strong>
                   <p>
                     {" "}
-                    Obtén <strong className="text-dark-blue">
+                    Analiza las <strong className="text-light-blue">
                       métricas
                     </strong>{" "}
-                    importantes de tus eventos.
+                    más importantes de tus eventos.
                   </p>
                 </li>
               </ul>
             </div>
-            <div className="w-full md:w-[46%]">
+            <div className="w-[35%]">
               <TerminalComponent>
                 <div className="flex items-center mb-4">
                   <TerminalIcon className="text-blue-600 mr-2" />
@@ -189,7 +196,6 @@ export default function LandingPage() {
           </article>
         </section>
       </main>
-
       <FooterComponent />
     </>
   );

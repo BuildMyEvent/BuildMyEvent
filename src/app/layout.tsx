@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "BuildMyEvent",
   description: "This is Build My Event",
+  icons: { icon: '../../public/BME-Logos/BME.svg' },
 };
 
 export default function RootLayout({

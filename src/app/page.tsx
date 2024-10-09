@@ -1,3 +1,4 @@
+'use client'
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
@@ -18,7 +19,10 @@ import Card from "@/components/Card";
 import NavBarComponent from "@/components/NavBar";
 import FooterComponent from "@/components/LadingFooter";
 import CreateEvent from "@/landing-sections/CreateEvent";
-
+import CreateEventLanding from "@/components/CreateEventLanding";
+import { useState } from "react";
+import BMELogo from '../../public/BME-Logos/BME-Logo-Over-White1.svg';
+import BMELogo2 from '../../public/BME-Logos/BME-Logo-Full-Strong-Blue.svg';
 
 const notifications: Item[] = [
   {
@@ -48,12 +52,14 @@ const notifications: Item[] = [
 ];
 
 export default function LandingPage() {
+  const [logo, setLogo] = useState(BMELogo);
   return (
     <>
-      <header id="hero" className="mb-[10rem] ">
+      {/* <header id="hero" className="mb-[10rem] ">
         <NavBarComponent />
-      </header>
-      <main className="flex-1 ">
+      </header> */}
+      <NavBarComponent logo={logo}  />
+      <main className="flex-1 mt-[10rem]">
 
         <section className="flex min-h-3/4 flex-col items-center md:items-stretch md:flex-row w-full mt-[0] md:mt-[4rem] justify-evenly">
           <div className="flex w-full md:w-[40%] flex-col gap-7 md:mt-20 mt-0 md:h-auto h-[300px]">
@@ -88,7 +94,7 @@ export default function LandingPage() {
             crear tus diferentes{" "}
             <strong className="text-light-blue">eventos</strong>!
           </h2>
-          <CreateEvent />
+          <CreateEventLanding />
         </section>
 
         <section className="mt-[6rem] md:p-0 p-[10px]">

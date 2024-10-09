@@ -53,7 +53,6 @@ export default function LandingPage() {
         <NavBarComponent />
       </header>
       <main className="flex-1 ">
-
         <section className="flex min-h-3/4 flex-col items-center md:items-stretch md:flex-row w-full mt-[0] md:mt-[4rem] justify-evenly">
           <div className="flex w-full md:w-[40%] flex-col gap-7 md:mt-20 mt-0 md:h-auto h-[300px]">
             <h1 className="text-strong-blue font-medium text-3xl text-center">
@@ -63,11 +62,13 @@ export default function LandingPage() {
             </h1>
 
             <div className="flex items-center justify-center">
-              <ShimmerButton className="shadow-2xl">
-                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  ¡Crea el tuyo ya mismo!
-                </span>
-              </ShimmerButton>
+              <Link href="/register">
+                <ShimmerButton className="shadow-2xl">
+                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                    ¡Crea el tuyo ya mismo!
+                  </span>
+                </ShimmerButton>
+              </Link>
             </div>
           </div>
           <div className="flex w-full md:w-[40%] mt-[-80px] flex-col gap-5">
@@ -82,49 +83,49 @@ export default function LandingPage() {
         </section>
 
         <section className="mt-[10rem] flex gap-16 flex-col md:p-0 p-[10px]">
-        <h2 className="text-3xl text-center font-medium text-strong-blue">
-          ¡Con <strong className="text-light-blue">BuildMyEvent</strong> puedes
-          crear tus diferentes{" "}
-          <strong className="text-light-blue">eventos</strong>!
-        </h2>
-        <article className="flex w-full justify-evenly md:flex-row-reverse flex-col">
-          <div className="w-[40%] flex animate-float">
-            <Card>
-              <AnimatedBeamMultipleOutputDemo />
-            </Card>
-          </div>
-          <div className="w-[40%] mt-[15px] md:mt-0 ">
-            <ul className="text-[1.26rem] font-raleway h-full flex flex-col gap-6 justify-center">
-            <li className="flex text-[1.32rem] items-center w-full gap-4">
-                <p>
-                  <strong className="text-stellar-blue">Beneficios de BuildMyEvent:</strong>{" "}
-                </p>
-              </li> 
-              <li className="flex items-center w-full gap-4">
-                <strong className="text-light-yellow">●</strong>
-                <p>
-                  <strong className="text-light-blue">Personalización</strong>{" "}
-                  completa del evento!
-                </p>
-              </li>
-              <li className="flex items-center w-full gap-4">
-                <strong className="text-light-green">●</strong>
-                <p>
-                  Gestión y organización{" "}
-                  <strong className="text-light-blue">descentralizada</strong>.
-                </p>
-              </li>
-              <li className="flex items-center w-full gap-4">
-                <strong className="text-red-500">●</strong>
-                <p>
-                  Tu solución a unos clics, gracias a nuestra tecnología{" "}
-                  <strong className="text-light-blue">No Code</strong>.
-                </p>
-              </li>
-            </ul>
-          </div>
-        </article>
-      </section>
+          <h2 className="text-3xl text-center font-medium text-strong-blue">
+            ¡Con <strong className="text-light-blue">BuildMyEvent</strong> puedes
+            crear tus diferentes{" "}
+            <strong className="text-light-blue">eventos</strong>!
+          </h2>
+          <article className="flex w-full justify-evenly md:flex-row-reverse flex-col">
+            <div className="w-[40%] flex animate-float">
+              <Card>
+                <AnimatedBeamMultipleOutputDemo />
+              </Card>
+            </div>
+            <div className="w-[40%] mt-[15px] md:mt-0 ">
+              <ul className="text-[1.26rem] font-raleway h-full flex flex-col gap-6 justify-center">
+                <li className="flex text-[1.32rem] items-center w-full gap-4">
+                  <p>
+                    <strong className="text-stellar-blue">Beneficios de BuildMyEvent:</strong>{" "}
+                  </p>
+                </li>
+                <li className="flex items-center w-full gap-4">
+                  <strong className="text-light-yellow">●</strong>
+                  <p>
+                    <strong className="text-light-blue">Personalización</strong>{" "}
+                    completa del evento!
+                  </p>
+                </li>
+                <li className="flex items-center w-full gap-4">
+                  <strong className="text-light-yellow">●</strong>
+                  <p>
+                    Gestión y organización{" "}
+                    <strong className="text-light-blue">descentralizada</strong>.
+                  </p>
+                </li>
+                <li className="flex items-center w-full gap-4">
+                  <strong className="text-light-yellow">●</strong>
+                  <p>
+                    Tu solución a unos clics, gracias a nuestra tecnología{" "}
+                    <strong className="text-light-blue">No Code</strong>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </section>
 
         <section className="mt-[6rem] md:p-0 p-[10px]">
           <h2 className="text-3xl text-center font-medium text-strong-blue">
@@ -157,31 +158,36 @@ export default function LandingPage() {
             className="text-3xl text-center font-medium text-strong-blue"
             id="docs"
           >
-            Si eres desarrollador ¡dale un vistazo a nuestra{" "}
+            Si eres <strong className="text-light-blue">desarrollador</strong>  un vistazo a nuestra{" "}
             <strong className="text-light-blue">Documentación</strong>!
           </h2>
           <article className="flex w-full justify-evenly flex-col md:flex-row md:p-0 p-[10px]">
             <div className="w-[40%] mb-[20px] md:mb-0">
-              <ul className="text-xl font-raleway h-full flex flex-col gap-6 justify-center">
-                <li className="flex items-center w-full gap-6">
-                  <PaintbrushVertical size={26} color="#4461F2" />
+              <ul className="text-[20px] font-medium text-strong-blue font-raleway h-full flex flex-col gap-6 justify-center">
+                <li className="flex text-[1.32rem] items-center w-full gap-4">
                   <p>
-                    <strong className="text-dark-blue">Crea</strong> tu evento
+                    <strong className="text-stellar-blue">Beneficios de nuestra API:</strong>{" "}
+                  </p>
+                </li>
+                <li className="flex items-center w-full gap-6">
+                  <strong className="text-light-yellow">●</strong>
+                  <p>
+                    <strong className="text-light-blue">Crea</strong> tu evento
                     utilizando nuestra API.
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
-                  <BookOpen size={26} color="#4461F2" />
+                  <strong className="text-light-yellow">●</strong>
                   <p>
-                    <strong className="text-dark-blue">Implementa</strong>{" "}
+                    <strong className="text-light-blue">Implementa</strong>{" "}
                     fácilmente en tu página tecnología BlockChain.
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
-                  <ArrowUp01 size={26} color="#4461F2" />
+                  <strong className="text-light-yellow">●</strong>
                   <p>
                     {" "}
-                    Analiza las <strong className="text-dark-blue">
+                    Analiza las <strong className="text-light-blue">
                       métricas
                     </strong>{" "}
                     más importantes de tus eventos.
@@ -218,7 +224,6 @@ export default function LandingPage() {
           </article>
         </section>
       </main>
-
       <FooterComponent />
     </>
   );

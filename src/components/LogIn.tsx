@@ -1,6 +1,7 @@
 "use client";
 import { User, Mail, KeyRound, Eye } from "lucide-react";
-import BME from "../../../../public/BME-Logos/BME-Logo-Over-White1.svg";
+// import BME from "public/BME-Logos/BME-Logo-Over-White1.svg";
+import BME from "@public/BME-Logos/BME.svg";
 import Image from "next/image";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 // import "animate.css";
@@ -8,10 +9,10 @@ import Link from "next/link";
 
 export default function LogIn() {
   return (
-    <div className="animate__animated animate__fadeInRight overflow-x-hidden min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4 w-full">
+    <div className="animate__animated animate__fadeInRight overflow-x-hidden  bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4 w-full">
       <div className="max-w-md w-full">
         <div className="flex justify-center items-center w-full flex-col">
-          <Image src={BME} alt="BuildMyEvent logo" width={350} />
+          <Image src={BME} alt="BuildMyEvent logo" width={150} />
           <p className="text-[22px] text-stellar-blue font-semibold">
             Crea eventos increíbles en minutos
           </p>
@@ -20,12 +21,12 @@ export default function LogIn() {
           <div className="p-8">
             <form className="space-y-6">
               <article className="flex justify-between ">
-                <h2 className="text-2xl text-stellar-blue font-medium">¡Registrate!</h2>
-                <Link href="/register">
+                <h2 className="text-2xl text-stellar-blue font-medium">Inicia Sesión!</h2>
+                {/* <Link href="/register">
                   <div className=" bg-amber-100 text-orange-400 px-2 py-1 rounded">
                     ¿no tienes cuenta?
                   </div>
-                </Link>
+                </Link> */}
               </article>
               <div className="relative">
                 <label

@@ -3,12 +3,15 @@ import { useEffect, useState } from "react";
 import { NavBarInterface } from "@/types/interfaces";
 import Link from "next/link";
 import Image from "next/image";
+import BMELogo from '../../public/BME-Logos/BME-Logo-Over-White1.svg';
+import { AvatarButton } from "./AvatarButton";
+import { LoginButton } from "./LogInButton";
 
 const navItems: NavBarInterface[] = [
-  { title: "Inicio", url: "#modules" },
-  { title: "Funcionalidades", url: "#opinions" },
-  { title: "Events", url: "#events" },
-  { title: "Documentación", url: "#docs" },
+  { title: "Inicio", url: "/#modules" },
+  { title: "Funcionalidades", url: "/#opinions" },
+  { title: "Events", url: "/#events" },
+  { title: "Documentación", url: "/#docs" },
 ];
 
 interface NavBarComponentProps {
@@ -61,7 +64,7 @@ const NavBarComponent = ({ logo }: NavBarComponentProps) => {
           }`}
       >
         <Image
-          src={logo ?? ''} // Usa el estado del logo aquí
+          src={logo ?? BMELogo} // Usa el estado del logo aquí
           alt="Logo"
           width={40}
           height={40}
@@ -87,6 +90,8 @@ const NavBarComponent = ({ logo }: NavBarComponentProps) => {
               </Link>
             </li>
           ))}
+          {/* <AvatarButton /> */}
+          <LoginButton />
         </ul>
 
         {/* Mobile Menu Button */}

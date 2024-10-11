@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from '../../node_modules/next/link';
 import { AvatarButton } from './AvatarButton';
 import { useState } from "react"
@@ -15,12 +15,14 @@ import {
 import { Paypal } from "./Paypal"
 import LogIn from './LogIn';
 import Register from './Register';
+import { AuthContext } from '@/context/AuthContext';
 
 interface Props {
 
 }
 
 export const LoginButton: React.FC<Props> = ({ }) => {
+  const { user, login, logout } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false)
   const [isLogInOpen, setIsLogInOpen] = useState(false)
   const [isRegisterOpen, setIsRegisterOpen] = useState(false)
@@ -28,7 +30,7 @@ export const LoginButton: React.FC<Props> = ({ }) => {
 
   return (
     <>
-      {!loggedIn &&
+      {!user &&
         <div className='my-auto flex'>
           <Button className='reg bg-light-blue text-white cursor-pointer rounded font-semibold mx-2 w-min py-2 shadow-lg transition duration-400 hover:bg-light-blue hover:shadow-light-blue'
             onClick={() => {
@@ -43,8 +45,14 @@ export const LoginButton: React.FC<Props> = ({ }) => {
             }}>
             Sign Up
           </Button>
-        
+
           {/* <Button className='' href={'/register'}>Sign Up</Button> */}
+        </div>
+      }
+
+      {user &&
+        <div className='hidden md:block mx-auto'>
+          <AvatarButton userInfo={{ id: user?.id }} />
         </div>
       }
 
@@ -80,11 +88,7 @@ export const LoginButton: React.FC<Props> = ({ }) => {
         </DialogContent>
       </Dialog>
 
-      {loggedIn &&
-        <div className='hidden md:block mx-auto'>
-          <AvatarButton />
-        </div>
-      }
+
     </>
   );
 };

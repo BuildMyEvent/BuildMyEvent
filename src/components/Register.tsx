@@ -1,12 +1,15 @@
 "use client";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { User, Mail, KeyRound, Eye } from "lucide-react";
 import BME from "@public/BME-Logos/BME.svg";
 import Image from "next/image";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import Link from "next/link";
+import { AuthContext } from "@/context/AuthContext";
 
 export default function Register() {
+  const { login } = useContext(AuthContext);
+
   const [formData, setFormData] = useState({
     name: "",
     lastname: "",
@@ -42,7 +45,6 @@ export default function Register() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${bearerToken}`,
         },
         body: JSON.stringify({
           name: formData.name,
@@ -50,21 +52,56 @@ export default function Register() {
           email: formData.email,
           password: formData.password,
         }),
-        mode: "no-cors",
       });
 
       console.log('response', response);
 
       if (response.ok) {
         // Handle success (e.g., redirect or display a success message)
+        const data = await response.json();
+        console.log('data', data);
+        login(data.user); 
         console.log("Registration successful");
       } else {
+        const errorData = await response.json();
+
+        console.log('errorData', errorData);
+
         // Handle error (e.g., display an error message)
         console.log("Registration failed");
       }
     } catch (error) {
       console.error("Error during registration:", error);
     }
+
+    // try {
+    //   // --wallet: formData.wallet,
+    //   const response = await fetch("https://api.buildmyevent.xyz/auth/register", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       name: formData.name,
+    //       lastname: formData.lastname,
+    //       email: formData.email,
+    //       password: formData.password,
+    //     }),
+    //     mode: "no-cors",
+    //   });
+
+    //   console.log('response', response);
+
+    //   if (response.ok) {
+    //     // Handle success (e.g., redirect or display a success message)
+    //     console.log("Registration successful");
+    //   } else {
+    //     // Handle error (e.g., display an error message)
+    //     console.log("Registration failed");
+    //   }
+    // } catch (error) {
+    //   console.error("Error during registration:", error);
+    // }
   };
 
   // {

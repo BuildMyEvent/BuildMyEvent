@@ -12,8 +12,8 @@ export default function CreateEvent() {
           </Card>
         </div>
         <div className="w-full md:w-[35%] mt-[15px] md:mt-0 ">
-          <ul className="text-[1.32rem] font-raleway h-full flex flex-col gap-6 justify-center">
-            <li className="flex text-[1.5rem] items-center w-full gap-4">
+          <ul className="text-[1.24rem] font-raleway h-full flex flex-col gap-6 justify-center">
+            <li className="flex text-[1.3rem] items-center w-full gap-4">
               <p>
                 <strong className="text-stellar-blue">Beneficios de BuildMyEvent</strong>{" "}
               </p>

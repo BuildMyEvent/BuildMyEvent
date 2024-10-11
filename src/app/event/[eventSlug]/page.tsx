@@ -59,8 +59,6 @@ export default function EventPage() {
           </Button> */}
         </section>
       </div>
-
-      {/* Aquí puedes agregar más detalles sobre el evento */}
     </div>
   );
 }

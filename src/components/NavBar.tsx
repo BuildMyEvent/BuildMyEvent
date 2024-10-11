@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { NavBarInterface } from "@/types/interfaces";
 import Link from "next/link";
 import Image from "next/image";
-import BMELogo from '../../public/BME-Logos/BME-Logo-Over-White1.svg';
+import BMELogo from "../../public/BME-Logos/BME-Logo-Over-White1.svg";
 import { AvatarButton } from "./AvatarButton";
 import { LoginButton } from "./LogInButton";
 
@@ -15,7 +15,7 @@ const navItems: NavBarInterface[] = [
 ];
 
 interface NavBarComponentProps {
-  logo?: string
+  logo?: string;
 }
 
 const NavBarComponent = ({ logo }: NavBarComponentProps) => {
@@ -46,44 +46,51 @@ const NavBarComponent = ({ logo }: NavBarComponentProps) => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  });
 
   return (
     <header
-      className={`fixed top-0 z-10 w-full mx-auto transition-all duration-300 px-4 ${isScrolled ? "mt-2" : "md:mt-0 mt-0"
-        }`}
+      className={`fixed top-0 z-30 w-full mx-auto transition-all duration-300 px-4 ${
+        isScrolled ? "mt-2" : "md:mt-0 mt-0"
+      }`}
     >
       <nav
-        className={`flex items-center justify-between transition-[max-width] duration-500 px-4 
+        className={` flex items-center justify-between transition-[max-width] duration-500 px-4 
              mx-auto
             ${isScrolled ? "py-2" : "py-4"}
             ${isScrolled ? "md:w-max" : "max-w-full"} 
-            text-[16px] font-medium rounded-full ${isScrolled
-            ? "text-gray-600 dark:text-gray-200 bg-white/50 shadow-lg ring-1 backdrop-blur ring-white/10"
-            : ""
-          }`}
+            text-[16px] font-medium rounded-full ${
+              isScrolled
+                ? "text-gray-600 dark:text-gray-200 bg-white/50 shadow-lg ring-1 backdrop-blur ring-white/10"
+                : ""
+            }`}
       >
         <Image
-          src={logo ?? BMELogo} // Usa el estado del logo aquí
+          src={logo ?? BMELogo} 
           alt="Logo"
           width={40}
           height={40}
-          className={`mr-6 cursor-pointer transition-all duration-200 ${isScrolled ? "h-[2rem] ml-2 mt-[3.5px] w-auto" : "md:h-[4rem] h-[3rem] w-auto"}`}
-        // onClick={() => (window.location.href = "/#")}
+          className={`mr-6 cursor-pointer transition-all duration-200 ${
+            isScrolled
+              ? "h-[2rem] ml-2 mt-[3.5px] w-auto"
+              : "md:h-[4rem] h-[3rem] w-auto"
+          }`}
         />
 
         {/* Desktop Navigation */}
         <ul
-          className={`hidden md:flex space-x-4 transition-all duration-300 ${isScrolled ? "text-[17.5px]" : "text-lg"
-            }`}
+          className={`hidden md:flex space-x-4 transition-all duration-300 ${
+            isScrolled ? "text-[17.5px]" : "text-lg"
+          }`}
         >
           {navItems.map(({ title, url }: NavBarInterface) => (
             <li key={title}>
               <Link
-                className={`relative hover:text-blue-500 block px-2 py-2 transition-colors duration-300 ${activeSection === url.slice(1)
-                  ? "text-blue-500"
-                  : "text-gray-600"
-                  }`}
+                className={`relative hover:text-blue-500 block px-2 py-2 transition-colors duration-300 ${
+                  activeSection === url.slice(1)
+                    ? "text-blue-500"
+                    : "text-gray-600"
+                }`}
                 href={url}
               >
                 {title}
@@ -134,10 +141,11 @@ const NavBarComponent = ({ logo }: NavBarComponentProps) => {
             {navItems.map(({ title, url }: NavBarInterface) => (
               <li key={title}>
                 <Link
-                  className={`block hover:text-blue-500 px-2 py-2 transition-colors duration-300 ${activeSection === url.slice(1)
-                    ? "text-blue-500"
-                    : "text-gray-600"
-                    }`}
+                  className={`block hover:text-blue-500 px-2 py-2 transition-colors duration-300 ${
+                    activeSection === url.slice(1)
+                      ? "text-blue-500"
+                      : "text-gray-600"
+                  }`}
                   href={url}
                   onClick={() => setIsMenuOpen(false)} // Close menu on link click
                 >

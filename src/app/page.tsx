@@ -1,28 +1,21 @@
-'use client'
+"use client";
 import ShimmerButton from "@/components/magicui/shimmer-button";
-import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
 import TerminalComponent from "@/components/Terminal";
 import Iphone15Pro from "@/components/Iphone15pro";
 import { MarqueeDemo } from "@/components/Marquee";
 import { Item } from "@/types/interfaces";
-import {
-  ArrowUp01,
-  BookOpen,
-  PaintbrushVertical,
-  TerminalIcon,
-} from "lucide-react";
+import { TerminalIcon } from "lucide-react";
 import Link from "next/link";
 import "../app/globals.css";
 import Tickets from "@/components/Tickets";
 import NavBarComponent from "@/components/NavBar";
 import FooterComponent from "@/components/LadingFooter";
-import CreateEvent from "@/landing-sections/CreateEvent";
 import CreateEventLanding from "@/components/CreateEventLanding";
 import { useState } from "react";
-import BMELogo from '../../public/BME-Logos/BME-Logo-Over-White1.svg';
-import BMELogo2 from '../../public/BME-Logos/BME-Logo-Full-Strong-Blue.svg';
-import { Card } from "@/components/ui/card";
+import BMELogo from "../../public/BME-Logos/BME-Logo-Over-White1.svg";
+import TweetCard from "@/components/TweetCard";
+import { getTalentProtocolScore } from "@/utils/get-TP-score";
 
 const notifications: Item[] = [
   {
@@ -55,17 +48,13 @@ export default function LandingPage() {
   const [logo, setLogo] = useState(BMELogo);
   return (
     <>
-      {/* <header id="hero" className="mb-[10rem] ">
-        <NavBarComponent />
-      </header> */}
-      <NavBarComponent logo={logo}  />
+      <NavBarComponent logo={logo} />
       <main className="flex-1 mt-[10rem]">
-
         <section className="flex min-h-3/4 flex-col items-center md:items-stretch md:flex-row w-full mt-[0] md:mt-[4rem] justify-evenly">
           <div className="flex w-full md:w-[40%] flex-col gap-7 md:mt-20 mt-0 md:h-auto h-[300px]">
             <h1 className="text-strong-blue font-medium text-3xl text-center">
-              Con <strong className="text-light-blue">BuildMyEvent</strong> ¡Nunca
-              había sido tan sencillo crear tu propios{" "}
+              Con <strong className="text-light-blue">BuildMyEvent</strong>{" "}
+              ¡Nunca había sido tan sencillo crear tu propios{" "}
               <strong className="text-light-blue">eventos</strong>!
             </h1>
 
@@ -92,14 +81,14 @@ export default function LandingPage() {
 
         <section className="mt-[10rem] flex gap-16 flex-col md:p-0 p-[10px]">
           <h2 className="text-3xl text-center font-medium text-strong-blue">
-            ¡Con <strong className="text-light-blue">BuildMyEvent</strong> puedes
-            crear tus diferentes{" "}
+            ¡Con <strong className="text-light-blue">BuildMyEvent</strong>{" "}
+            puedes crear tus diferentes{" "}
             <strong className="text-light-blue">eventos</strong>!
           </h2>
           <CreateEventLanding />
         </section>
 
-        <section className="mt-[6rem] md:p-0 p-[10px]">
+        <section className="mt-[8rem] md:p-0 p-[10px]">
           <h2 className="text-3xl text-center font-medium text-strong-blue">
             ¡Crea distintos tipos de{" "}
             <strong className="text-light-blue">Tickets</strong> para tus{" "}
@@ -110,13 +99,73 @@ export default function LandingPage() {
           </article>
         </section>
 
-        <section className="flex flex-col gap-8 items-center mt-[6rem]">
+        <section className="flex flex-col gap-8 items-center mt-[8rem]">
           <h2
             className="text-3xl text-center font-medium text-strong-blue"
             id="events"
           >
-            ¡Dale un vistazo a los eventos actuales que están en{" "}
-            <strong className="text-light-blue">BuildMyEvent</strong>!
+            ¿Qué es el Ticket de{" "}
+            <strong className="text-light-yellow">Builder</strong> y qué es
+            <strong className="text-light-blue"> Talent Protocol</strong>?
+          </h2>
+          <article className="w-full flex justify-evenly items-center">
+            <div className="w-[42%] flex justify-center">
+              <ul className="text-[1.08rem] flex-wrap font-raleway w-[90%] h-full flex flex-col gap-6 justify-center ">
+                <li className="flex text-[1.5rem] gap-4 ">
+                  <p>
+                    <strong className="text-stellar-blue">
+                      Talent Protocol es:
+                    </strong>{" "}
+                  </p>
+                </li>
+                <li className="flex w-full gap-4 justify-center">
+                  <strong className="text-light-yellow">●</strong>
+                  <p>
+                    <strong className="text-light-blue">Talent Protocol</strong>{" "}
+                    es una plataforma que conecta a profesionales y talentos
+                    emergentes con inversores.
+                  </p>
+                </li>
+                <li className="flex items-center w-full gap-4 justify-center">
+                  <strong className="text-light-green">●</strong>
+                  <p>
+                    Con{" "}
+                    <strong className="text-light-blue">Talent Protocol</strong>{" "}
+                    se puede ganar puntos de diferentes maneras, para tener más
+                    visibilidad en la plataforma.
+                  </p>
+                </li>
+                <li className="flex text-[1.5rem] items-center w-full gap-4 ">
+                  <p>
+                    <strong className="text-stellar-blue">
+                      El ticket Builder es:
+                    </strong>{" "}
+                  </p>
+                </li>
+                <li className="flex items-center w-full gap-4 justify-center">
+                  <strong className="text-red-500">●</strong>
+                  <p>
+                    Es un ticket especial dentro de <strong className="text-light-blue">BuildMyEvent</strong>, el cual solo
+                    puede ser comprado por la persona que tenga cierta cantidad
+                    de puntos en <strong className="text-light-blue">Talent Protocol</strong>.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div className="w-[40%] flex justify-center">
+              <TweetCard />
+            </div>
+          </article>
+        </section>
+
+        <section className="flex flex-col gap-8 items-center mt-[8rem]">
+          <h2
+            className="text-3xl text-center font-medium text-strong-blue"
+            id="events"
+          >
+            ¡Con <strong className="text-light-blue">BuildMyEvent</strong> se
+            pueden crear distintos tipos de{" "}
+            <strong className="text-light-blue">Eventos</strong>!
           </h2>
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
             <MarqueeDemo />
@@ -130,7 +179,8 @@ export default function LandingPage() {
             className="text-3xl text-center font-medium text-strong-blue"
             id="docs"
           >
-            Si eres <strong className="text-light-blue">desarrollador</strong>  un vistazo a nuestra{" "}
+            Si eres <strong className="text-light-blue">desarrollador</strong>{" "}
+            un vistazo a nuestra{" "}
             <strong className="text-light-blue">Documentación</strong>!
           </h2>
           <article className="flex w-full justify-evenly flex-col md:flex-row md:p-0 p-[10px]">
@@ -138,7 +188,9 @@ export default function LandingPage() {
               <ul className="text-[20px] font-medium text-strong-blue font-raleway h-full flex flex-col gap-6 justify-center">
                 <li className="flex text-[1.32rem] items-center w-full gap-4">
                   <p>
-                    <strong className="text-stellar-blue">Beneficios de nuestra API:</strong>{" "}
+                    <strong className="text-stellar-blue">
+                      Beneficios de nuestra API:
+                    </strong>{" "}
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
@@ -159,10 +211,9 @@ export default function LandingPage() {
                   <strong className="text-light-yellow">●</strong>
                   <p>
                     {" "}
-                    Analiza las <strong className="text-light-blue">
-                      métricas
-                    </strong>{" "}
-                    más importantes de tus eventos.
+                    Analiza las{" "}
+                    <strong className="text-light-blue">métricas</strong> más
+                    importantes de tus eventos.
                   </p>
                 </li>
               </ul>

@@ -126,11 +126,11 @@ export default function Register() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <article className="flex justify-between ">
                 <h2 className="text-2xl text-stellar-blue font-medium">¡Registrate!</h2>
-                <Link href="/auth/logIn">
+                {/* <Link href="/auth/logIn">
                   <div className="bg-amber-100 text-orange-400 px-2 py-1 rounded cursor-pointer">
                     ¿Ya tienes cuenta?
                   </div>
-                </Link>
+                </Link> */}
               </article>
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative">

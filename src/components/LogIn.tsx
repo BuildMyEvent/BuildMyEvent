@@ -1,15 +1,72 @@
 "use client";
-import { User, Mail, KeyRound, Eye } from "lucide-react";
-// import BME from "public/BME-Logos/BME-Logo-Over-White1.svg";
+import { useContext, useState } from "react";
+import { Mail, KeyRound, Eye } from "lucide-react";
 import BME from "@public/BME-Logos/BME.svg";
 import Image from "next/image";
 import ShimmerButton from "@/components/magicui/shimmer-button";
-// import "animate.css";
 import Link from "next/link";
+import { AuthContext } from "@/context/AuthContext";
 
-export default function LogIn() {
+interface LogInProps {
+  onLoginSuccess: () => void;
+}
+
+export default function LogIn({ onLoginSuccess }: LogInProps) {
+  const { login } = useContext(AuthContext);
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+
+
+  const handleChange = (e: any) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    console.log('login data', {
+      email: formData.email,
+      password: formData.password,
+    });
+
+    try {
+      const response = await fetch("http://localhost:4000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+
+      console.log('response', response);
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('data', data);
+        login(data.user);
+        onLoginSuccess();
+        console.log("Login successful");
+      } else {
+        const errorData = await response.json();
+        setError(errorData.message || "Login failed. Please check your credentials.");
+        console.log('errorData', errorData);
+        console.log("Login failed");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
+
   return (
-    <div className="animate__animated animate__fadeInRight overflow-x-hidden  bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4 w-full">
+    <div className="animate__animated animate__fadeInRight overflow-x-hidden bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4 w-full">
       <div className="max-w-md w-full">
         <div className="flex justify-center items-center w-full flex-col">
           <Image src={BME} alt="BuildMyEvent logo" width={150} />
@@ -19,20 +76,17 @@ export default function LogIn() {
         </div>
         <div className="bg-white mt-4 bg-opacity-30 backdrop-filter backdrop-blur-sm rounded-3xl shadow-lg overflow-hidden border-2 border-gray-300 w-full">
           <div className="p-8">
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <article className="flex justify-between ">
                 <h2 className="text-2xl text-stellar-blue font-medium">Inicia Sesión!</h2>
                 {/* <Link href="/register">
-                  <div className=" bg-amber-100 text-orange-400 px-2 py-1 rounded">
-                    ¿no tienes cuenta?
+                  <div className="bg-amber-100 text-orange-400 px-2 py-1 rounded">
+                    ¿No tienes cuenta?
                   </div>
                 </Link> */}
               </article>
               <div className="relative">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-light-blue mb-1"
-                >
+                <label htmlFor="email" className="block text-sm font-medium text-light-blue mb-1">
                   Correo electrónico
                 </label>
                 <div className="relative">
@@ -40,6 +94,8 @@ export default function LogIn() {
                   <input
                     id="email"
                     type="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full pl-10 pr-4 py-2 bg-white bg-opacity-50 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-200 focus:border-transparent transition duration-200 ease-in-out text-blue-600"
                     placeholder="kevin@ejemplo.com"
                     required
@@ -47,10 +103,7 @@ export default function LogIn() {
                 </div>
               </div>
               <div className="relative">
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-light-blue mb-1"
-                >
+                <label htmlFor="password" className="block text-sm font-medium text-light-blue mb-1">
                   Contraseña
                 </label>
                 <div className="relative">
@@ -58,6 +111,8 @@ export default function LogIn() {
                   <input
                     id="password"
                     type="password"
+                    value={formData.password}
+                    onChange={handleChange}
                     className="w-full pl-10 pr-10 py-2 bg-white bg-opacity-50 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-200 focus:border-transparent transition duration-200 ease-in-out text-blue-600"
                     placeholder="••••••••"
                     required
@@ -65,8 +120,13 @@ export default function LogIn() {
                   <Eye className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
                 </div>
               </div>
+              {error && (
+                <p className="text-red-500 text-sm mt-2">
+                  {error}
+                </p>
+              )}
               <div className="flex justify-center">
-                <ShimmerButton>¡Estoy Listo!</ShimmerButton>
+                <ShimmerButton type="submit">¡Estoy Listo!</ShimmerButton>
               </div>
             </form>
           </div>

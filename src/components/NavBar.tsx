@@ -65,41 +65,43 @@ const NavBarComponent = ({ logo }: NavBarComponentProps) => {
                 : ""
             }`}
       >
-        <Image
-          src={logo ?? BMELogo} 
-          alt="Logo"
-          width={40}
-          height={40}
-          className={`mr-6 cursor-pointer transition-all duration-200 ${
-            isScrolled
-              ? "h-[2rem] ml-2 mt-[3.5px] w-auto"
-              : "md:h-[4rem] h-[3rem] w-auto"
-          }`}
-        />
+        <Link href="/">
+          <Image
+            src={logo ?? BMELogo} // Usa el estado del logo aquí
+            alt="Logo"
+            width={40}
+            height={40}
+            className={`mr-6 cursor-pointer transition-all duration-200 ${isScrolled ? "h-[2rem] ml-2 mt-[3.5px] w-auto" : "md:h-[4rem] h-[3rem] w-auto"}`}
+          // onClick={() => (window.location.href = "/#")}
+          />
+        </Link>
 
         {/* Desktop Navigation */}
-        <ul
-          className={`hidden md:flex space-x-4 transition-all duration-300 ${
-            isScrolled ? "text-[17.5px]" : "text-lg"
-          }`}
-        >
-          {navItems.map(({ title, url }: NavBarInterface) => (
-            <li key={title}>
-              <Link
-                className={`relative hover:text-blue-500 block px-2 py-2 transition-colors duration-300 ${
-                  activeSection === url.slice(1)
+        <div className="flex">
+          <ul
+            className={`my-auto hidden md:flex space-x-4 transition-all duration-300 ${isScrolled ? "text-[17.5px]" : "text-lg"
+              }`}
+          >
+            {navItems.map(({ title, url }: NavBarInterface) => (
+              <li key={title}>
+                <Link
+                  className={`relative hover:text-blue-500 block px-2 py-2 transition-colors duration-300 ${activeSection === url.slice(1)
                     ? "text-blue-500"
                     : "text-gray-600"
-                }`}
-                href={url}
-              >
-                {title}
-              </Link>
-            </li>
-          ))}
-          {/* <AvatarButton /> */}
-          <LoginButton />
-        </ul>
+                    }`}
+                  href={url}
+                >
+                  {title}
+                </Link>
+              </li>
+            ))}
+            {/* <AvatarButton /> */}
+
+          </ul>
+          <div className="ml-2">
+            <LoginButton />
+          </div>
+        </div>
 
         {/* Mobile Menu Button */}
         <button

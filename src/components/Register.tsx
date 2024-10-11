@@ -7,7 +7,12 @@ import ShimmerButton from "@/components/magicui/shimmer-button";
 import Link from "next/link";
 import { AuthContext } from "@/context/AuthContext";
 
-export default function Register() {
+interface RegisterProps {
+  onRegisterSuccess: () => void;
+}
+
+export default function Register({ onRegisterSuccess }: RegisterProps) {
+
   const { login } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
@@ -60,7 +65,8 @@ export default function Register() {
         // Handle success (e.g., redirect or display a success message)
         const data = await response.json();
         console.log('data', data);
-        login(data.user); 
+        login(data.user);
+        onRegisterSuccess();
         console.log("Registration successful");
       } else {
         const errorData = await response.json();

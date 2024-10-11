@@ -27,6 +27,9 @@ export const LoginButton: React.FC<Props> = ({ }) => {
   const [isLogInOpen, setIsLogInOpen] = useState(false)
   const [isRegisterOpen, setIsRegisterOpen] = useState(false)
   const loggedIn = false
+  const handleLoginSuccess = () => {
+    setIsOpen(false);
+  };
 
   return (
     <>
@@ -77,11 +80,11 @@ export const LoginButton: React.FC<Props> = ({ }) => {
           </DialogHeader>
           <div>
             {isLogInOpen &&
-              <LogIn />
+              <LogIn onLoginSuccess={handleLoginSuccess} />
             }
 
             {isRegisterOpen &&
-              <Register />
+              <Register onRegisterSuccess={handleLoginSuccess} />
             }
           </div>
           {/* <SampleComponent /> */}

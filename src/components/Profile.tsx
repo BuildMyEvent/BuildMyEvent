@@ -59,11 +59,11 @@ export const Profile = ({ userData }: ProfileProps) => {
       <div className="mt-8 px-4">
         <h2 className="text-xl font-semibold mb-4">Upcoming Event Tickets</h2>
         <div className="grid gap-4 md:grid-cols-2">
-          {upcomingEvents.map((event) => (
+          {upcomingEvents.map((event: any) => (
             <Card key={event.id}>
               <CardContent className="p-4 flex items-center space-x-4">
-                {event.image && <div>
-                  <img src={event.image} alt={event.name} className="w-16 h-16 rounded-md object-cover" />
+                {event?.image && <div>
+                  <img src={event?.image} alt={event.name} className="w-16 h-16 rounded-md object-cover" />
                 </div>}
                 <div>
                   <h3 className="font-semibold">{event.name}</h3>

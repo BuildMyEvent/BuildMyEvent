@@ -11,11 +11,7 @@ export default function EventPage() {
   const { id } = useParams();
   const [userData, setUserData] = useState(null);
 
-  const getEventBySlug = (slug) => {
-    return events.find(event => event.slug === slug);
-  };
-
-  const fetchUserById = async (userId) => {
+  const fetchUserById = async (userId: string | string[]) => {
     try {
       const userResponse = await fetch(`http://localhost:4000/users/by-id/${userId}`, {
         method: "GET",
@@ -57,7 +53,7 @@ export default function EventPage() {
 
   return (
     <div>
-      <NavBarComponent logo={BMELogo}  />
+      <NavBarComponent logo={BMELogo} />
       <div className="flex flex-col min-h-screen mt-[80px]">
         {/* Display user name if available */}
         {/* {userData ? (

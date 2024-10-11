@@ -1,5 +1,3 @@
-import { log } from "console";
-
 export const getTalentProtocolScore = async (): Promise<number | null> => {
     try {
         const response = await fetch('https://api.talentprotocol.com/api/v2/passports/0xc1d457128dEcAE1CC092728262469Ee796F1Ac45', {

@@ -15,81 +15,8 @@ import CheckoutModal from './CheckoutModal'
 // import GroupTicket from '/placeholder.svg?height=120&width=120'
 // import StudentTicket from '/placeholder.svg?height=120&width=120'
 
-const ticketTypes = [
-  {
-    title: "Ticket General",
-    price: "$6",
-    description: "Acceso a todas las charlas y oportunidades de networking en el meetup de Base en Costa Rica.",
-    features: [
-      "Acceso completo a las charlas",
-      "Networking con profesionales"
-    ],
-    image: 'https://www.hallos.io/_next/image?url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmQK62wSnNrKCuJgbaPMEetevFE1AfMKvrz553dYmHCLnL%2F5.png&w=3840&q=75'
-    // image: GeneralTicket
-  },
-  {
-    title: "Ticket VIP",
-    price: "$12",
-    description: "Acceso premium con beneficios adicionales para una experiencia mejorada en el meetup.",
-    features: [
-      "Todo lo incluido en Ticket General",
-      "Asientos preferenciales",
-      "Sesión exclusiva de Q&A"
-    ],
-    image: 'https://www.hallos.io/_next/image?url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmQK62wSnNrKCuJgbaPMEetevFE1AfMKvrz553dYmHCLnL%2F5.png&w=3840&q=75'
-    // image: VIPTicket
-  },
-  {
-    title: "Ticket Premium",
-    price: "$20",
-    description: "La experiencia más completa con acceso total y beneficios exclusivos.",
-    features: [
-      "Todo lo incluido en Ticket VIP",
-      "Cena con los ponentes",
-      "Merchandising exclusivo"
-    ],
-    image: 'https://www.hallos.io/_next/image?url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmQK62wSnNrKCuJgbaPMEetevFE1AfMKvrz553dYmHCLnL%2F5.png&w=3840&q=75'
-    // image: PremiumTicket
-  },
-  {
-    title: "Early Bird Ticket",
-    price: "$4",
-    description: "Oferta especial por tiempo limitado. Acceso general a precio reducido.",
-    features: [
-      "Acceso completo a las charlas",
-      "Networking con profesionales",
-      "Descuento especial"
-    ],
-    image: 'https://www.hallos.io/_next/image?url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmQK62wSnNrKCuJgbaPMEetevFE1AfMKvrz553dYmHCLnL%2F5.png&w=3840&q=75'
-    // image: EarlyBirdTicket
-  },
-  {
-    title: "Group Ticket",
-    price: "$20",
-    description: "Ideal para equipos. Precio especial para grupos de 4 personas.",
-    features: [
-      "Acceso para 4 personas",
-      "Networking grupal",
-      "Sesión de fotos grupal"
-    ],
-    image: 'https://www.hallos.io/_next/image?url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmQK62wSnNrKCuJgbaPMEetevFE1AfMKvrz553dYmHCLnL%2F5.png&w=3840&q=75'
-    // image: GroupTicket
-  },
-  {
-    title: "Student Ticket",
-    price: "$3",
-    description: "Tarifa especial para estudiantes. Requiere identificación válida.",
-    features: [
-      "Acceso completo a las charlas",
-      "Networking con profesionales",
-      "Sesión de orientación profesional"
-    ],
-    image: 'https://www.hallos.io/_next/image?url=https%3A%2F%2Fipfs.io%2Fipfs%2FQmQK62wSnNrKCuJgbaPMEetevFE1AfMKvrz553dYmHCLnL%2F5.png&w=3840&q=75'
-    // image: StudentTicket
-  }
-]
 
-export default function TicketsSlider() {
+export default function TicketsSlider({ tickets }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'start' })
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [canScrollPrev, setCanScrollPrev] = useState(false)
@@ -116,7 +43,7 @@ export default function TicketsSlider() {
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="embla overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex">
-          {ticketTypes.map((ticket, index) => (
+          {tickets.map((ticket, index) => (
             <div key={index} className="embla__slide flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] pr-4">
               <Card className="h-full flex flex-col">
                 <CardHeader>
@@ -143,7 +70,10 @@ export default function TicketsSlider() {
                 <CardFooter className="mt-auto">
                   {/* <Button className="w-full">Obtener Tickets</Button> */}
 
-                  <CheckoutModal />
+                  <CheckoutModal 
+                  hasBuilderScore={true}
+                  
+                  disabled={(!ticket.builderScore || ticket.builderScore == 0) ? false : ticket.builderScore < 20 ? true : false} />
                 </CardFooter>
               </Card>
             </div>

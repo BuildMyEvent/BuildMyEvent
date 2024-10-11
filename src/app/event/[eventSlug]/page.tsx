@@ -48,7 +48,7 @@ export default function EventPage() {
           </div>
         </section>
 
-        <TicketsSlider />
+        <TicketsSlider tickets={eventData?.location} />
 
         {/* CTA Section */}
         <section className="py-12 px-4 md:px-8 bg-primary text-primary-foreground text-center">

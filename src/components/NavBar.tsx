@@ -10,7 +10,7 @@ import { LoginButton } from "./LogInButton";
 const navItems: NavBarInterface[] = [
   { title: "Inicio", url: "/#modules" },
   { title: "Funcionalidades", url: "/#opinions" },
-  { title: "Events", url: "/#events" },
+  { title: "Eventos", url: "/#events" },
   { title: "Documentación", url: "/#docs" },
 ];
 

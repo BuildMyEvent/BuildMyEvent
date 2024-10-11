@@ -1,6 +1,5 @@
 "use client";
 import ShimmerButton from "@/components/magicui/shimmer-button";
-import { AnimatedBeamMultipleOutputDemo } from "@/components/Beam";
 import { AnimatedList } from "@/components/magicui/animated-list";
 import TerminalComponent from "@/components/Terminal";
 import Iphone15Pro from "@/components/Iphone15pro";
@@ -16,6 +15,7 @@ import CreateEventLanding from "@/components/CreateEventLanding";
 import { useState } from "react";
 import BMELogo from "../../public/BME-Logos/BME-Logo-Over-White1.svg";
 import TweetCard from "@/components/TweetCard";
+import { getTalentProtocolScore } from "@/utils/get-TP-score";
 
 const notifications: Item[] = [
   {
@@ -59,13 +59,13 @@ export default function LandingPage() {
             </h1>
 
             <div className="flex items-center justify-center">
-              <Link href="/register">
-                <ShimmerButton className="shadow-2xl">
-                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+              {/* <Link href="/register"> */}
+                <ShimmerButton onClick={getTalentProtocolScore} className="shadow-2xl">
+                  <span className="cursor-pointer whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                     ¡Crea el tuyo ya mismo!
                   </span>
                 </ShimmerButton>
-              </Link>
+              {/* </Link> */}
             </div>
           </div>
           <div className="flex w-full md:w-[40%] mt-[-80px] flex-col gap-5">

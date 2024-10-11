@@ -16,7 +16,7 @@ export default function Component() {
   return (
     <Card
       onClick={handleURL}
-      className="cursor-pointer mt-4 w-[92%] p-4 bg-white border-4 border-gray-200 rounded-2xl shadow-sm"
+      className="cursor-pointer mt-4 w-[92%] p-4 bg-white border-4 border-gray-300 rounded-2xl shadow-sm"
     >
       <section className="flex-1">
         <div className="flex justify-between">
@@ -51,7 +51,7 @@ export default function Component() {
             src={TweetPhoto}
             alt="Talent Protocol Tweet"
             className="rounded-2xl mt-3"
-            width={420}
+            width={440}
           />
         </div>
       </section>

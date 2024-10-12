@@ -7,43 +7,43 @@ import Link from "../../node_modules/next/link";
 const reviews: MarqueeInterface[] = [
   {
     title: "Base Ecosystem",
-    description: "Explora la infraestructura de Base y su ecosistema.",
+    description: "Explore the Base infrastructure and its ecosystem.",
     img: ImgMarquee.BASE,
     slug: 'base'
   },
   {
     title: "Optimism Scaling",
-    description: "Aprende cómo Optimism usa rollups optimistas.",
+    description: "Learn how Optimism uses optimistic rollups.",
     img: ImgMarquee.OPTIMISM,
     slug: 'base'
   },
   {
     title: "ETH Hackathon",
-    description: "Desarrolla soluciones innovadoras en Web3.",
+    description: "Develop innovative solutions in Web3.",
     img: ImgMarquee.ETH,
     slug: 'base'
   },
   {
     title: "Task Management on Base",
-    description: "Descubre cómo Base facilita la creación de soluciones Web3.",
+    description: "Discover how Base facilitates the creation of Web3 solutions.",
     img: ImgMarquee.BASE,
     slug: 'base'
   },
   {
     title: "Optimism Strategies",
-    description: "Descubre como crear proyectos con el Stack de Optimism.",
+    description: "Discover how to create projects using the Optimism stack.",
     img: ImgMarquee.OPTIMISM,
     slug: 'base'
   },
   {
     title: "Base Networking",
-    description: "Conéctate con desarrolladores que construyen soluciones en Base.",
+    description: "Connect with developers building solutions on Base.",
     img: ImgMarquee.BASE,
     slug: 'base'
   },
   {
     title: "SuperChain",
-    description: "Conoce que es el SuperChain de Optimism.",
+    description: "Learn what Optimism's SuperChain is.",
     img: ImgMarquee.OPTIMISM,
     slug: 'base'
   }

@@ -15,7 +15,7 @@ export default function EventPage() {
   };
 
   if (!eventSlug) {
-    return <div>Error: No se encontró el nombre del evento.</div>;
+    return <div>Error: Event name not found.</div>;
   }
 
   const slug = Array.isArray(eventSlug) ? eventSlug[0] : eventSlug;
@@ -50,13 +50,12 @@ export default function EventPage() {
 
         <TicketsSlider tickets={eventData?.tickets} />
 
-
         {/* CTA Section */}
         <section className="py-12 px-4 md:px-8 bg-primary text-primary-foreground text-center">
-          <h2 className="text-3xl font-semibold mb-4">¿Listo para ser parte de {eventData?.name}?</h2>
-          <p className="mb-6">No te pierdas la oportunidad de ser parte del evento tecnológico del año.</p>
+          <h2 className="text-3xl font-semibold mb-4">Ready to be part of {eventData?.name}?</h2>
+          <p className="mb-6">Don't miss the opportunity to be part of the tech event of the year.</p>
           {/* <Button variant="secondary" size="lg">
-            Reserva tu lugar ahora
+            Reserve your spot now
           </Button> */}
         </section>
       </div>

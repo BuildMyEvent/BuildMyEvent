@@ -19,26 +19,26 @@ import { getTalentProtocolScore } from "@/utils/get-TP-score";
 
 const notifications: Item[] = [
   {
-    name: "Crea un nuevo evento",
-    description: "Crea tu evento en cuestión de minutos",
+    name: "Create a new event",
+    description: "Create your event in minutes",
     icon: "🚀",
     color: "#1E86FF",
   },
   {
-    name: "Personaliza tu evento",
-    description: "Tienes plantillas a tu disposición",
+    name: "Customize your event",
+    description: "Templates are available at your disposal",
     icon: "🎨",
     color: "#FF3D71",
   },
   {
-    name: "Recibe pagos",
-    description: "Recibe pagos de tus clientes",
+    name: "Receive payments",
+    description: "Receive payments from your clients",
     icon: "💸",
     color: "#00C9A7",
   },
   {
-    name: "Usa nuestra API",
-    description: "Puedes usar nuestra API",
+    name: "Use our API",
+    description: "You can use our API",
     icon: "👨🏻‍💻",
     color: "#FFB800",
   },
@@ -53,16 +53,16 @@ export default function LandingPage() {
         <section className="flex min-h-3/4 flex-col items-center md:items-stretch md:flex-row w-full mt-[0] md:mt-[4rem] justify-evenly">
           <div className="flex w-full md:w-[40%] flex-col gap-7 md:mt-20 mt-0 md:h-auto h-[300px]">
             <h1 className="text-strong-blue font-medium text-3xl text-center">
-              Con <strong className="text-light-blue">BuildMyEvent</strong>{" "}
-              ¡Nunca había sido tan sencillo crear tu propios{" "}
-              <strong className="text-light-blue">eventos</strong>!
+              With <strong className="text-light-blue">BuildMyEvent</strong> it
+              has never been easier to create your own{" "}
+              <strong className="text-light-blue">events</strong>!
             </h1>
 
             <div className="flex items-center justify-center">
               <Link href="/register">
                 <ShimmerButton className="shadow-2xl">
                   <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                    ¡Crea el tuyo ya mismo!
+                    Create yours right now!
                   </span>
                 </ShimmerButton>
               </Link>
@@ -81,18 +81,16 @@ export default function LandingPage() {
 
         <section className="mt-[10rem] flex gap-16 flex-col md:p-0 p-[10px]">
           <h2 className="text-3xl text-center font-medium text-strong-blue">
-            ¡Con <strong className="text-light-blue">BuildMyEvent</strong>{" "}
-            puedes crear tus diferentes{" "}
-            <strong className="text-light-blue">eventos</strong>!
+            With <strong className="text-light-blue">BuildMyEvent</strong> you
+            can create your different <strong className="text-light-blue">events</strong>!
           </h2>
           <CreateEventLanding />
         </section>
 
         <section className="mt-[8rem] md:p-0 p-[10px]">
           <h2 className="text-3xl text-center font-medium text-strong-blue">
-            ¡Crea distintos tipos de{" "}
-            <strong className="text-light-blue">Tickets</strong> para tus{" "}
-            <strong className="text-light-blue">eventos</strong>!
+            Create different types of <strong className="text-light-blue">Tickets</strong> for your{" "}
+            <strong className="text-light-blue">events</strong>!
           </h2>
           <article className="mt-[4rem]">
             <Tickets />
@@ -104,9 +102,8 @@ export default function LandingPage() {
             className="text-3xl text-center font-medium text-strong-blue"
             id="talentProtocol"
           >
-            ¿Qué es el Ticket de{" "}
-            <strong className="text-light-yellow">Builder</strong> y qué es
-            <strong className="text-light-blue"> Talent Protocol</strong>?
+            What is the <strong className="text-light-yellow">Builder Ticket</strong> and what is{" "}
+            <strong className="text-light-blue">Talent Protocol</strong>?
           </h2>
           <article className="w-full flex justify-evenly items-center">
             <div className="w-[42%] flex justify-center">
@@ -114,7 +111,7 @@ export default function LandingPage() {
                 <li className="flex text-[1.5rem] gap-4 ">
                   <p>
                     <strong className="text-stellar-blue">
-                      Talent Protocol es:
+                      Talent Protocol is:
                     </strong>{" "}
                   </p>
                 </li>
@@ -122,32 +119,27 @@ export default function LandingPage() {
                   <strong className="text-light-yellow">●</strong>
                   <p>
                     <strong className="text-light-blue">Talent Protocol</strong>{" "}
-                    es una plataforma que conecta a profesionales y talentos
-                    emergentes con inversores.
+                    is a platform that connects professionals and emerging talents with investors.
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-4 justify-center">
                   <strong className="text-light-green">●</strong>
                   <p>
-                    Con{" "}
-                    <strong className="text-light-blue">Talent Protocol</strong>{" "}
-                    se puede ganar puntos de diferentes maneras, para tener más
-                    visibilidad en la plataforma.
+                    With{" "}
+                    <strong className="text-light-blue">Talent Protocol</strong> you can earn points in various ways to gain more visibility on the platform.
                   </p>
                 </li>
                 <li className="flex text-[1.5rem] items-center w-full gap-4 ">
                   <p>
                     <strong className="text-stellar-blue">
-                      El ticket Builder es:
+                      The Builder Ticket is:
                     </strong>{" "}
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-4 justify-center">
                   <strong className="text-red-500">●</strong>
                   <p>
-                    Es un ticket especial dentro de <strong className="text-light-blue">BuildMyEvent</strong>, el cual solo
-                    puede ser comprado por la persona que tenga cierta cantidad
-                    de puntos en <strong className="text-light-blue">Talent Protocol</strong>.
+                    It is a special ticket within <strong className="text-light-blue">BuildMyEvent</strong>, which can only be purchased by a person who has a certain number of points in <strong className="text-light-blue">Talent Protocol</strong>.
                   </p>
                 </li>
               </ul>
@@ -163,9 +155,8 @@ export default function LandingPage() {
             className="text-3xl text-center font-medium text-strong-blue"
             id="events"
           >
-            ¡Con <strong className="text-light-blue">BuildMyEvent</strong> se
-            pueden crear distintos tipos de{" "}
-            <strong className="text-light-blue">Eventos</strong>!
+            With <strong className="text-light-blue">BuildMyEvent</strong> you can create different types of{" "}
+            <strong className="text-light-blue">Events</strong>!
           </h2>
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
             <MarqueeDemo />
@@ -179,9 +170,8 @@ export default function LandingPage() {
             className="text-3xl text-center font-medium text-strong-blue"
             id="docs"
           >
-            Si eres <strong className="text-light-blue">desarrollador</strong>{" "}
-            un vistazo a nuestra{" "}
-            <strong className="text-light-blue">Documentación</strong>!
+            If you are a <strong className="text-light-blue">developer</strong> take a look at our{" "}
+            <strong className="text-light-blue">Documentation</strong>!
           </h2>
           <article className="flex w-full justify-evenly flex-col md:flex-row md:p-0 p-[10px]">
             <div className="w-[40%] mb-[20px] md:mb-0">
@@ -189,31 +179,26 @@ export default function LandingPage() {
                 <li className="flex text-[1.32rem] items-center w-full gap-4">
                   <p>
                     <strong className="text-stellar-blue">
-                      Beneficios de nuestra API:
+                      Benefits of our API:
                     </strong>{" "}
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
                   <strong className="text-light-yellow">●</strong>
                   <p>
-                    <strong className="text-light-blue">Crea</strong> tu evento
-                    utilizando nuestra API.
+                    <strong className="text-light-blue">Create</strong> your event using our API.
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
                   <strong className="text-light-yellow">●</strong>
                   <p>
-                    <strong className="text-light-blue">Implementa</strong>{" "}
-                    fácilmente en tu página tecnología BlockChain.
+                    <strong className="text-light-blue">Easily implement</strong> Blockchain technology on your website.
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-6">
                   <strong className="text-light-yellow">●</strong>
                   <p>
-                    {" "}
-                    Analiza las{" "}
-                    <strong className="text-light-blue">métricas</strong> más
-                    importantes de tus eventos.
+                    Analyze the most important <strong className="text-light-blue">metrics</strong> of your events.
                   </p>
                 </li>
               </ul>
@@ -229,7 +214,7 @@ export default function LandingPage() {
                     <span className="text-blue-700">curl</span> -X GET \
                     <br />
                     <span className="text-indigo-500">
-                      https://api.ejemplo.com/v1/recurso
+                      https://api.example.com/v1/resource
                     </span>{" "}
                     \
                     <br />
@@ -239,7 +224,7 @@ export default function LandingPage() {
                 </div>
                 <div className="w-full flex justify-center mt-10">
                   <Link href="/docs">
-                    <ShimmerButton>Visita la documentación</ShimmerButton>
+                    <ShimmerButton>Visit the documentation</ShimmerButton>
                   </Link>
                 </div>
               </TerminalComponent>

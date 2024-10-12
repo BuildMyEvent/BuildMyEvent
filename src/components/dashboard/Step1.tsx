@@ -100,7 +100,7 @@ export const Step1 = ({ id, setStep, step, eventInfo, userInfo, isCreateEvent }:
     console.log('handleSubmitEvent data', data);
 
     try {
-      const response = await fetch(`http://localhost:4000/events/create`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_DOMAIN}events/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

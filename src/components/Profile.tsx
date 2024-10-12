@@ -39,6 +39,15 @@ export const Profile = ({ userData }: ProfileProps) => {
         {userData?.name &&
           <h1 className="text-2xl font-bold">{userData?.name}</h1>
         }
+
+        {userData?.wallet &&
+          <p className="text-lg font-semibold">
+            <span className="hidden sm:inline">{userData.wallet}</span>
+            <span className="inline sm:hidden">
+              {userData.wallet.slice(0, 6)}...{userData.wallet.slice(-4)}
+            </span>
+          </p>
+        }
         {userData?.email &&
           <div className="flex items-center mt-2 text-muted-foreground">
             <Mail className="w-4 h-4 mr-2" />

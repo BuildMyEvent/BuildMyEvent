@@ -19,14 +19,19 @@ const SampleComponent = () => (
   </div>
 )
 
-export default function CheckoutModal() {
+interface CheckoutModalProps {
+  isDisabled?: boolean
+  buttonText?: string
+}
+
+export default function CheckoutModal({ isDisabled, buttonText }: CheckoutModalProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         {/* <Button variant="outline">Open Modal</Button> */}
-        <Button className="w-full">Obtener Tickets</Button>
+        <Button className="w-full" disabled={isDisabled}>{buttonText ? buttonText : 'Obtener Tickets'}</Button>
       </DialogTrigger>
       <DialogContent className="w-full max-w-none">
         <DialogHeader>

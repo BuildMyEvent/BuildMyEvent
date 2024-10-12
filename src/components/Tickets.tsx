@@ -74,9 +74,9 @@ export default function Tickets() {
           </li>
         </ul>
         <div className="w-full flex justify-center">
-          <button className="border border-gray-700 text-black shadow-2xl py-2 px-4 rounded-xl w-[70%] pointer-events-auto">
+          <a href={'#events'} className="text-center border border-gray-700 text-black shadow-2xl py-2 px-4 rounded-xl w-[70%] pointer-events-auto">
             Obtener Tickets
-          </button>
+          </a>
         </div>
       </motion.div>
 
@@ -122,7 +122,11 @@ export default function Tickets() {
           </li>
         </ul>
         <div className="w-full flex justify-center">
-          <ShimmerButton className="pointer-events-auto">
+          <ShimmerButton className="pointer-events-auto"
+            onClick={() => {
+              window.location.href = '#events';
+            }}
+          >
             Obtener Tickets
           </ShimmerButton>
         </div>
@@ -164,9 +168,9 @@ export default function Tickets() {
           </li>
         </ul>
         <div className="w-full flex justify-center">
-          <button className="border border-gray-700 text-black shadow-2xl py-2 px-4 rounded-xl w-[70%] pointer-events-auto">
+          <a href={'#events'} className="text-center border border-gray-700 text-black shadow-2xl py-2 px-4 rounded-xl w-[70%] pointer-events-auto">
             Obtener Tickets
-          </button>
+          </a>
         </div>
       </motion.div>
     </section>

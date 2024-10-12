@@ -1,6 +1,6 @@
-export const getTalentProtocolScore = async (): Promise<number | null> => {
+export const getTalentProtocolScore = async (userAddress: string): Promise<number | null> => {
     try {
-        const response = await fetch('https://api.talentprotocol.com/api/v2/passports/0xc1d457128dEcAE1CC092728262469Ee796F1Ac45', {
+        const response = await fetch(`https://api.talentprotocol.com/api/v2/passports/${userAddress}`, {
             method: 'GET',
             headers: {
                 'X-API-KEY': process.env.NEXT_PUBLIC_TALENT_PROTOCOL_KEY || '',

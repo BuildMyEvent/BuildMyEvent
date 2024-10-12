@@ -1,5 +1,6 @@
 'use client'
 import React, { createContext, useState, useEffect } from "react";
+import { useAccount } from 'wagmi';
 
 interface User {
   semail?: string
@@ -23,6 +24,8 @@ export const AuthContext = createContext<AuthContextType>({
 });
 
 export const AuthProvider = ({ children }: any) => {
+  const { address } = useAccount();
+
   const [user, setUser] = useState<User | null>(null);
 
   console.log('user', user);
@@ -46,6 +49,16 @@ export const AuthProvider = ({ children }: any) => {
     setUser(null);
     localStorage.removeItem("user");
   };
+
+  useEffect(() => {
+    if (address) {
+      login({
+        wallet: address
+      })
+    } else {
+      //logout()
+    }
+  }, [address])
 
   return (
     <AuthContext.Provider value={{ user: user || null, login, logout }}>

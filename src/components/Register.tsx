@@ -46,7 +46,7 @@ export default function Register({ onRegisterSuccess }: RegisterProps) {
 
     try {
       // --wallet: formData.wallet,
-      const response = await fetch("http://localhost:4000/auth/register", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_DOMAIN}/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,35 +79,6 @@ export default function Register({ onRegisterSuccess }: RegisterProps) {
     } catch (error) {
       console.error("Error during registration:", error);
     }
-
-    // try {
-    //   // --wallet: formData.wallet,
-    //   const response = await fetch("https://api.buildmyevent.xyz/auth/register", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       name: formData.name,
-    //       lastname: formData.lastname,
-    //       email: formData.email,
-    //       password: formData.password,
-    //     }),
-    //     mode: "no-cors",
-    //   });
-
-    //   console.log('response', response);
-
-    //   if (response.ok) {
-    //     // Handle success (e.g., redirect or display a success message)
-    //     console.log("Registration successful");
-    //   } else {
-    //     // Handle error (e.g., display an error message)
-    //     console.log("Registration failed");
-    //   }
-    // } catch (error) {
-    //   console.error("Error during registration:", error);
-    // }
   };
 
   // {

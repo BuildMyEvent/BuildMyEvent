@@ -11,9 +11,13 @@ export default function EventPage() {
   const { id } = useParams();
   const [userData, setUserData] = useState(null);
 
+  const isWalletAddress = (input: string) => {
+    return /^0x[a-fA-F0-9]{40}$/.test(input);
+  };
+
   const fetchUserById = async (userId: string | string[]) => {
     try {
-      const userResponse = await fetch(`http://localhost:4000/users/by-id/${userId}`, {
+      const userResponse = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_DOMAIN}/users/by-id/${userId}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -34,22 +38,12 @@ export default function EventPage() {
   };
 
   useEffect(() => {
-    if (id) {
+    if (typeof id === 'string' && !isWalletAddress(id)) {
       fetchUserById(id);
     }
   }, [id]);
 
   console.log(id, 'userData', userData);
-
-  // Placeholder data
-  // const user = {
-  //   name: "Alex Johnson",
-  //   email: "alex@example.com",
-  //   avatar: "/placeholder.svg?height=100&width=100",
-  //   banner: "/placeholder.svg?height=300&width=1000",
-  //   twitter: "alexj",
-  //   instagram: "alex.johnson",
-  // }
 
   return (
     <div>
@@ -62,7 +56,9 @@ export default function EventPage() {
           <p>Loading user data...</p>
         )} */}
 
-        <Profile userData={userData} />
+        <Profile userData={userData ? userData : {
+          wallet: id
+        }} />
       </div>
     </div>
   );

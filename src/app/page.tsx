@@ -102,7 +102,7 @@ export default function LandingPage() {
         <section className="flex flex-col gap-8 items-center mt-[8rem]">
           <h2
             className="text-3xl text-center font-medium text-strong-blue"
-            id="events"
+            id="talentProtocol"
           >
             ¿Qué es el Ticket de{" "}
             <strong className="text-light-yellow">Builder</strong> y qué es

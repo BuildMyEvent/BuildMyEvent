@@ -5,6 +5,7 @@ import { events } from '@/data/events';
 import { useParams } from 'next/navigation';
 import { CalendarDays, MapPin } from 'lucide-react';
 import '../../../app/globals.css'
+import WalletWrapper from '@/components/WalletWrapper';
 
 export default function EventPage() {
   const { eventSlug } = useParams();
@@ -25,7 +26,6 @@ export default function EventPage() {
     <div>
       <div className="flex flex-col min-h-screen">
         {/* Banner */}
-
         <img src={eventData?.image} className="w-full h-[500px] object-cover" />
 
         {/* Event Description */}
@@ -48,7 +48,8 @@ export default function EventPage() {
           </div>
         </section>
 
-        <TicketsSlider />
+        <TicketsSlider tickets={eventData?.tickets} />
+
 
         {/* CTA Section */}
         <section className="py-12 px-4 md:px-8 bg-primary text-primary-foreground text-center">

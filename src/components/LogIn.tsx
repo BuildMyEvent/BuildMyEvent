@@ -6,6 +6,7 @@ import Image from "next/image";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import Link from "next/link";
 import { AuthContext } from "@/context/AuthContext";
+import WalletWrapper from "./WalletWrapper";
 
 interface LogInProps {
   onLoginSuccess: () => void;
@@ -35,7 +36,7 @@ export default function LogIn({ onLoginSuccess }: LogInProps) {
     });
 
     try {
-      const response = await fetch("http://localhost:4000/auth/login", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_DOMAIN}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -85,6 +86,17 @@ export default function LogIn({ onLoginSuccess }: LogInProps) {
                   </div>
                 </Link> */}
               </article>
+
+              {/* <div>
+                <WalletWrapper
+                  className="min-w-[90px] z-[100]"
+                  text="Log in"
+                  withWalletAggregator={true}
+                />
+              </div>
+
+              <hr className="" /> */}
+
               <div className="relative">
                 <label htmlFor="email" className="block text-sm font-medium text-light-blue mb-1">
                   Correo electrónico

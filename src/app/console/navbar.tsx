@@ -46,7 +46,7 @@ export default function Header() {
           <button
             key={option.route}
             onClick={() => router.push("/console" + option.route)}
-            className={`text-lg px-4 py-2 rounded-md transition-opacity duration-200 ${
+            className={`text-lg px-4 py-2 transition-opacity duration-200 ${
               selectedTab === option.route.slice(1)
                 ? "text-light-blue border-b-2 border-light-blue opacity-100"
                 : "text-gray-600 opacity-80 hover:opacity-100"

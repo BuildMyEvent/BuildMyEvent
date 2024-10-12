@@ -223,9 +223,9 @@ export default function LandingPage() {
                   </code>
                 </div>
                 <div className="w-full flex justify-center mt-10">
-                  <Link href="/docs">
+                  <a href="https://api.buildmyevent.xyz/api-docs/#/">
                     <ShimmerButton>Visit the documentation</ShimmerButton>
-                  </Link>
+                  </a>
                 </div>
               </TerminalComponent>
             </div>

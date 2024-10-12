@@ -36,7 +36,7 @@ export default function Tickets() {
 
   return (
     <section className="no-scrollbar flex flex-col lg:flex-row justify-center items-center gap-10 py-12 relative overflow-x-hidden">
-      {/* Left License Card */}
+      {/* Left Ticket Card */}
       <motion.div
         className="bg-[#f8f8f9] border-[0.1rem] rounded-2xl p-8 max-w-md w-full relative lg:-mr-12 lg:-mt-9 pointer-events-none"
         initial="hidden"
@@ -46,7 +46,7 @@ export default function Tickets() {
         viewport={{ once: false, amount: 0.2 }}
       >
         <h2 className="text-xl font-semibold mb-4">
-          Ticket <span className="text-light-yellow">General</span>
+          <span className="text-light-yellow">General</span> Ticket
         </h2>
         <div className="flex justify-center w-full mb-2">
           <Image
@@ -60,33 +60,30 @@ export default function Tickets() {
           <span className="text-3xl font-bold">$6</span>
         </div>
         <p className="mb-2 text-gray-700 pr-6">
-          Acceso a todas las charlas y oportunidades de networking en el meetup
-          de Base en Costa Rica.
+          Access to all talks and networking opportunities at the Base meetup in Costa Rica.
         </p>
         <ul className="mb-6 space-y-2">
           <li className="flex items-center">
-            <span className="text-yellow-500 mr-2">●</span> Acceso completo a
-            las charlas
+            <span className="text-yellow-500 mr-2">●</span> Full access to the talks
           </li>
           <li className="flex items-center">
-            <span className="text-yellow-500 mr-2">●</span> Networking con
-            profesionales
+            <span className="text-yellow-500 mr-2">●</span> Networking with professionals
           </li>
         </ul>
         <div className="w-full flex justify-center">
           <a href={'#events'} className="text-center border border-gray-700 text-black shadow-2xl py-2 px-4 rounded-xl w-[70%] pointer-events-auto">
-            Obtener Tickets
+            Get Tickets
           </a>
         </div>
       </motion.div>
 
-      {/* Center License Card */}
+      {/* Center Ticket Card */}
       <div className="bg-white shadow-2xl border-[0.1rem] rounded-2xl p-8 max-w-md w-full relative z-10 lg:-mt-12 lg:-ml-12 pointer-events-none">
         <div className="absolute top-4 right-4 bg-green-200 text-green-500 px-2 py-1 rounded">
-          Recomendada
+          Recommended
         </div>
         <h2 className="text-xl font-semibold mb-4">
-          Ticket para <span className="text-light-yellow">Builder</span>
+          <span className="text-light-yellow">Builder</span> Ticket
         </h2>
         <div className="flex justify-center w-full mb-2">
           <Image
@@ -100,7 +97,7 @@ export default function Tickets() {
           <span className="text-3xl font-bold">$10</span>
         </div>
         <span className="text-sm text-gray-500 mb-2 block">
-          Para comprar, necesitas 10 puntos en{" "}
+          To purchase, you need 10 points on{" "}
           <a
             href="https://www.talentprotocol.com/"
             className="font-bold text-light-blue"
@@ -109,16 +106,14 @@ export default function Tickets() {
           </a>
         </span>
         <p className="mb-2 text-gray-700">
-          Talleres prácticos y sesiones interactivas para aprender sobre este
-          Layer2 con expertos.
+          Practical workshops and interactive sessions to learn about this Layer2 with experts.
         </p>
         <ul className="mb-6 space-y-2">
           <li className="flex items-center">
-            <span className="text-light-yellow mr-2">●</span> Talleres prácticos
+            <span className="text-light-yellow mr-2">●</span> Practical workshops
           </li>
           <li className="flex items-center">
-            <span className="text-light-yellow mr-2">●</span> Recursos
-            exclusivos
+            <span className="text-light-yellow mr-2">●</span> Exclusive resources
           </li>
         </ul>
         <div className="w-full flex justify-center">
@@ -127,12 +122,12 @@ export default function Tickets() {
               window.location.href = '#events';
             }}
           >
-            Obtener Tickets
+            Get Tickets
           </ShimmerButton>
         </div>
       </div>
 
-      {/* Right License Card */}
+      {/* Right Ticket Card */}
       <motion.div
         className="bg-[#f8f8f9] border-[0.1rem] rounded-2xl p-8 max-w-md w-full relative lg:-ml-12 lg:-mt-9 pointer-events-none"
         initial="hidden"
@@ -142,7 +137,7 @@ export default function Tickets() {
         viewport={{ once: false, amount: 0.2 }}
       >
         <h2 className="text-xl font-semibold mb-4">
-          Ticket <span className="text-light-yellow">VIP</span>
+          <span className="text-light-yellow">VIP</span> Ticket
         </h2>
         <div className="flex justify-center w-full mb-2">
           <Image
@@ -156,20 +151,19 @@ export default function Tickets() {
           <span className="text-3xl font-bold">$8</span>
         </div>
         <p className="mb-2 text-gray-700">
-          Incluye acceso a sesiones privadas con ponentes y beneficios
-          exclusivos.
+          Includes access to private sessions with speakers and exclusive benefits.
         </p>
         <ul className="mb-6 space-y-2">
           <li className="flex items-center">
-            <span className="text-light-yellow mr-2">●</span> Sesiones privadas
+            <span className="text-light-yellow mr-2">●</span> Private sessions
           </li>
           <li className="flex items-center">
-            <span className="text-light-yellow mr-2">●</span> Regalos exclusivos
+            <span className="text-light-yellow mr-2">●</span> Exclusive gifts
           </li>
         </ul>
         <div className="w-full flex justify-center">
           <a href={'#events'} className="text-center border border-gray-700 text-black shadow-2xl py-2 px-4 rounded-xl w-[70%] pointer-events-auto">
-            Obtener Tickets
+            Get Tickets
           </a>
         </div>
       </motion.div>

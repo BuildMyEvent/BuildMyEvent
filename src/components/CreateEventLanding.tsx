@@ -15,28 +15,27 @@ export default function CreateEvent() {
           <ul className="text-[1.24rem] font-raleway h-full flex flex-col gap-6 justify-center">
             <li className="flex text-[1.3rem] items-center w-full gap-4">
               <p>
-                <strong className="text-stellar-blue">Beneficios de BuildMyEvent</strong>{" "}
+                <strong className="text-stellar-blue">Benefits of BuildMyEvent</strong>{" "}
               </p>
             </li>
             <li className="flex items-center w-full gap-4">
               <strong className="text-light-yellow">●</strong>
               <p>
-                <strong className="text-light-blue">¡Personalización</strong>{" "}
-                completa del evento!
+                <strong className="text-light-blue">Complete</strong> event customization!
               </p>
             </li>
             <li className="flex items-center w-full gap-4">
               <strong className="text-light-green">●</strong>
               <p>
-                Gestión y organización{" "}
-                <strong className="text-light-blue">descentralizada</strong>.
+                Decentralized{" "}
+                <strong className="text-light-blue">management and organization</strong>.
               </p>
             </li>
             <li className="flex items-center w-full gap-4">
               <strong className="text-red-500">●</strong>
               <p>
-                Tu solución a unos clics, gracias a nuestra tecnología{" "}
-                <strong className="text-light-blue">No Code</strong>.
+                Your solution just a few clicks away, thanks to our{" "}
+                <strong className="text-light-blue">No Code</strong> technology.
               </p>
             </li>
           </ul>

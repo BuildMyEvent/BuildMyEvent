@@ -11,10 +11,10 @@ import WalletWrapper from "./WalletWrapper";
 import { AuthContext } from "@/context/AuthContext";
 
 const navItems: NavBarInterface[] = [
-  { title: "Inicio", url: "/#modules" },
-  { title: "Funcionalidades", url: "/#opinions" },
-  { title: "Eventos", url: "/#events" },
-  { title: "Documentación", url: "/#docs" },
+  { title: "Home", url: "/#modules" },
+  { title: "Features", url: "/#opinions" },
+  { title: "Events", url: "/#events" },
+  { title: "Documentation", url: "/#docs" },
 ];
 
 interface NavBarComponentProps {
@@ -70,7 +70,7 @@ const NavBarComponent = ({ logo }: NavBarComponentProps) => {
       >
         <Link href="/">
           <Image
-            src={logo ?? BMELogo} // Usa el estado del logo aquí
+            src={logo ?? BMELogo} // Use the logo state here
             alt="Logo"
             width={40}
             height={40}
@@ -98,8 +98,6 @@ const NavBarComponent = ({ logo }: NavBarComponentProps) => {
                 </Link>
               </li>
             ))}
-            {/* <AvatarButton /> */}
-
           </ul>
           <div className="ml-2 my-auto">
             <LoginButton />

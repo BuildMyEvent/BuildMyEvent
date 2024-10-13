@@ -12,6 +12,7 @@ import { Ticket } from '@/types/interfaces';
 interface Event {
   slug: string;
   name: string;
+  title: string;
   description: string;
   date: string;
   location: string;
@@ -23,24 +24,25 @@ export default function EventPage() {
   const { eventSlug } = useParams();
   const [eventData, setEventData] = useState<Event | null>(null);
 
-  const getEventBySlug = (slug: string): Event | undefined => {
-    return events.find(event => event.slug === slug);
-  };
+  // const getEventBySlug = (slug: string): Event | undefined => {
+  //   return events.find(event => event.slug === slug);
+  // };
 
-  const fetchUserById = async (slug: string | string[]) => {
+  const fetchEventById = async (domain: string | string[]) => {
     try {
-      const userResponse = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_DOMAIN}/events/3`, {
+      const eventResponse = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_DOMAIN}/events/9`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
       });
 
-      if (userResponse.ok) {
-        const data = await userResponse.json();
+      if (eventResponse.ok) {
+        const data = await eventResponse.json();
+        setEventData(data.event);
         console.log('event data:', data);
       } else {
-        const errorData = await userResponse.json();
+        const errorData = await eventResponse.json();
         console.log('Failed to fetch event data:', errorData);
       }
     } catch (error) {
@@ -49,12 +51,7 @@ export default function EventPage() {
   };
 
   useEffect(() => {
-    if (eventSlug) {
-      fetchUserById(eventSlug);
-      const slug = Array.isArray(eventSlug) ? eventSlug[0] : eventSlug;
-      const event = getEventBySlug(slug);
-      setEventData(event || null);
-    }
+    fetchEventById(eventSlug);
   }, [eventSlug]);
 
   if (!eventSlug) {
@@ -71,23 +68,26 @@ export default function EventPage() {
     <div>
       <div className="flex flex-col min-h-screen">
         {/* Banner */}
-        {eventData.image && <img src={eventData.image} className="w-full h-[500px] object-cover" alt={eventData.name} />}
+        <img
+          src={eventData?.image ?? 'https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fc2ae16d9-481e-449e-b82c-0e529a4333a7%2FBanner-d3eaae72-a78a-431e-aec7-e3ed3cd22ba5?alt=media&token=2bfd2168-4f5e-4328-a490-d966eaaf00a0'}
+          className="w-full h-[500px] object-cover"
+        />
 
         {/* Event Description */}
         <section className="py-12 px-4 md:px-8 bg-background">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-semibold mb-4">{eventData.name}</h2>
+            <h2 className="text-3xl font-semibold mb-4">{eventData?.title}</h2>
             <p className="text-muted-foreground mb-6">
               {eventData.description}
             </p>
             <div className="flex justify-center space-x-4 text-muted-foreground">
               <div className="flex items-center">
                 <CalendarDays className="mr-2 h-5 w-5" />
-                <span>{eventData.date}</span>
+                <span>{eventData?.date ?? '10 Nov 2024'}</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="mr-2 h-5 w-5" />
-                <span>{eventData.location}</span>
+                <span>{eventData?.location??'San Jose, Costa Rica'}</span>
               </div>
             </div>
           </div>

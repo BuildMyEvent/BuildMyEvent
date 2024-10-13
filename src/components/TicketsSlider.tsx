@@ -59,7 +59,7 @@ export default function TicketsSlider({ tickets }: TicketsSliderProps) {
       return true; // User is empty, disable checkout
     }
 
-    if (!ticket.builderScore) {
+    if (!ticket.builderScore || ticket.builderScore == 0) {
       return false; // No builder score required, enable checkout
     }
 
@@ -99,14 +99,14 @@ export default function TicketsSlider({ tickets }: TicketsSliderProps) {
                     {ticket.description}
                   </p>
                   <ul className="mb-6 space-y-2">
-                    {ticket.features.map((feature: any, featureIndex: number) => (
+                    {ticket?.features?.map((feature: any, featureIndex: number) => (
                       <li key={featureIndex} className="flex items-center">
                         <span className="text-yellow-500 mr-2">●</span> {feature}
                       </li>
                     ))}
                   </ul>
                   <div>
-                    {ticket.builderScore &&
+                    {ticket.builderScore ?
                       <div>
                         {/* <p>This ticket need a minimum builder score of {ticket.builderScore}</p> */}
                         <div className='flex justify-center gap-2'>
@@ -114,6 +114,8 @@ export default function TicketsSlider({ tickets }: TicketsSliderProps) {
                           <BuilderScore score={userBuilderScore} loading={buiderScoreLoading} />
                         </div>
                       </div>
+                      :
+                      <></>
                     }
                   </div>
                 </CardContent>

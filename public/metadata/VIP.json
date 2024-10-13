@@ -1,0 +1,12 @@
+{
+  "name": "VIP",
+  "description": "VIP ticket for Base Community Meetup",
+  "external_url": "https://buildmyevent.xyz/event/base",
+  "image": "https://indigo-academic-mandrill-845.mypinata.cloud/ipfs/QmanMdteeVq1SQWYmSmhSpCNoKNRHG5hjwdjM3jxD53g33/VIP.png",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "VIP"
+    }
+  ]
+}

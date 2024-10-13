@@ -36,7 +36,9 @@ export default function LandingLayout({
             <body className="flex flex-col min-h-screen">
                 <header id="hero" className="mb-[5rem] ">
                     {/* <MobileNavbar logo={eventData?.logo} /> */}
-                    <NavBarComponent logo={eventData?.logo} />
+                    <NavBarComponent
+                    //logo={eventData?.logo} 
+                    />
                 </header>
                 <main className="flex-1">
                     {children}

@@ -74,9 +74,9 @@ export function AnimatedBeamMultipleOutputDemo({
           <Circle ref={div3Ref}>
             <Image src={Netlify} alt="Netlify Logo" width={200} />
           </Circle>
-          <Circle ref={div4Ref}>
+          {/* <Circle ref={div4Ref}>
             <Image src={Excel} alt="Excel Logo" width={200} />
-          </Circle>
+          </Circle> */}
           <Circle ref={div5Ref}>
             <Image src={TalentProtocol} alt="Talent Logo" width={200} />
           </Circle>

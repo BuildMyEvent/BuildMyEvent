@@ -26,7 +26,7 @@ const notifications: Item[] = [
   },
   {
     name: "Customize your event",
-    description: "Templates are available at your disposal",
+    description: "Templates are available for you to use",
     icon: "🎨",
     color: "#FF3D71",
   },
@@ -82,7 +82,7 @@ export default function LandingPage() {
         <section className="mt-[10rem] flex gap-16 flex-col md:p-0 p-[10px]">
           <h2 className="text-3xl text-center font-medium text-strong-blue">
             With <strong className="text-light-blue">BuildMyEvent</strong> you
-            can create your different <strong className="text-light-blue">events</strong>!
+            can easily create and customize all your <strong className="text-light-blue">events</strong>!
           </h2>
           <CreateEventLanding />
         </section>
@@ -119,14 +119,14 @@ export default function LandingPage() {
                   <strong className="text-light-yellow">●</strong>
                   <p>
                     <strong className="text-light-blue">Talent Protocol</strong>{" "}
-                    is a platform that connects professionals and emerging talents with investors.
+                    is an open and verifiable professional reputation system that makes great builders stand out.
                   </p>
                 </li>
                 <li className="flex items-center w-full gap-4 justify-center">
                   <strong className="text-light-green">●</strong>
                   <p>
                     With{" "}
-                    <strong className="text-light-blue">Talent Protocol</strong> you can earn points in various ways to gain more visibility on the platform.
+                    <strong className="text-light-blue">Talent Protocol</strong> you can claim credentials that increase your Builder Score.
                   </p>
                 </li>
                 <li className="flex text-[1.5rem] items-center w-full gap-4 ">
@@ -139,7 +139,7 @@ export default function LandingPage() {
                 <li className="flex items-center w-full gap-4 justify-center">
                   <strong className="text-red-500">●</strong>
                   <p>
-                    It is a special ticket within <strong className="text-light-blue">BuildMyEvent</strong>, which can only be purchased by a person who has a certain number of points in <strong className="text-light-blue">Talent Protocol</strong>.
+                    It is a special ticket within <strong className="text-light-blue">BuildMyEvent</strong>, which can only be purchased by a person who has a certain Builder Score in <strong className="text-light-blue">Talent Protocol</strong>.
                   </p>
                 </li>
               </ul>
@@ -214,7 +214,7 @@ export default function LandingPage() {
                     <span className="text-blue-700">curl</span> -X GET \
                     <br />
                     <span className="text-indigo-500">
-                      https://api.example.com/v1/resource
+                      https://api.buildmyevent.xyz/auth/register
                     </span>{" "}
                     \
                     <br />

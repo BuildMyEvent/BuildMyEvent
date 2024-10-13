@@ -80,7 +80,7 @@ export default function TicketsSlider({ tickets }: TicketsSliderProps) {
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="embla overflow-hidden" ref={emblaRef}>
         <div className="embla__container flex">
-          {tickets.map((ticket: any, index: number) => (
+          {tickets && tickets.map((ticket: any, index: number) => (
             <div key={index} className="embla__slide flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] pr-4">
               <Card className="h-full flex flex-col">
                 <CardHeader>

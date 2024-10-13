@@ -6,19 +6,49 @@ import { useParams } from 'next/navigation';
 import { CalendarDays, MapPin } from 'lucide-react';
 import '../../../app/globals.css'
 import WalletWrapper from '@/components/WalletWrapper';
+import { useEffect, useState } from 'react';
 
 export default function EventPage() {
   const { eventSlug } = useParams();
+  // const [eventData, setEventData] = useState<any>(null);
 
   const getEventBySlug = (slug: string) => {
     return events.find(event => event.slug === slug);
   };
+
+  const fetchUserById = async (domain: string | string[]) => {
+    try {
+      const userResponse = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_DOMAIN}/events/3`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (userResponse.ok) {
+        const data = await userResponse.json();
+        // setEventData(data.user);
+        console.log('event data:', data);
+      } else {
+        const errorData = await userResponse.json();
+        console.log('Failed to fetch event data:', errorData);
+      }
+    } catch (error) {
+      console.error("Error fetching event data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserById(eventSlug);
+  }, [eventSlug]);
 
   if (!eventSlug) {
     return <div>Error: Event name not found.</div>;
   }
 
   const slug = Array.isArray(eventSlug) ? eventSlug[0] : eventSlug;
+  // const eventData = getEventBySlug(slug)
+  
   const eventData = getEventBySlug(slug)
   console.log('eventData', eventData);
 
@@ -48,7 +78,7 @@ export default function EventPage() {
           </div>
         </section>
 
-        <TicketsSlider tickets={eventData?.tickets} />
+        {eventData?.tickets && <TicketsSlider tickets={eventData?.tickets} />}
 
         {/* CTA Section */}
         <section className="py-12 px-4 md:px-8 bg-primary text-primary-foreground text-center">

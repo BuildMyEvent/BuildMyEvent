@@ -99,7 +99,7 @@ export default function CheckoutModal({
                           className="w-full flex justify-between"
                           onClick={() => setPaymentMethod("metamask")}
                         >
-                          <p>Pay with MetaMask</p>
+                          <p>Pay with wallet</p>
                           <Image src={Metamask} width={29} alt="Metamask" />
                         </Button>
                       </div>

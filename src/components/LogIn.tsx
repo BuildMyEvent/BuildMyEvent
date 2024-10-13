@@ -6,7 +6,6 @@ import Image from "next/image";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import Link from "next/link";
 import { AuthContext } from "@/context/AuthContext";
-import WalletWrapper from "./WalletWrapper";
 
 interface LogInProps {
   onLoginSuccess: () => void;
@@ -20,7 +19,6 @@ export default function LogIn({ onLoginSuccess }: LogInProps) {
     password: "",
   });
   const [error, setError] = useState("");
-
 
   const handleChange = (e: any) => {
     const { id, value } = e.target;
@@ -72,34 +70,19 @@ export default function LogIn({ onLoginSuccess }: LogInProps) {
         <div className="flex justify-center items-center w-full flex-col">
           <Image src={BME} alt="BuildMyEvent logo" width={150} />
           <p className="text-[22px] text-stellar-blue font-semibold">
-            Crea eventos increíbles en minutos
+            Create amazing events in minutes
           </p>
         </div>
         <div className="bg-white mt-4 bg-opacity-30 backdrop-filter backdrop-blur-sm rounded-3xl shadow-lg overflow-hidden border-2 border-gray-300 w-full">
           <div className="p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <article className="flex justify-between ">
-                <h2 className="text-2xl text-stellar-blue font-medium">Inicia Sesión!</h2>
-                {/* <Link href="/register">
-                  <div className="bg-amber-100 text-orange-400 px-2 py-1 rounded">
-                    ¿No tienes cuenta?
-                  </div>
-                </Link> */}
+                <h2 className="text-2xl text-stellar-blue font-medium">Log In!</h2>
               </article>
-
-              {/* <div>
-                <WalletWrapper
-                  className="min-w-[90px] z-[100]"
-                  text="Log in"
-                  withWalletAggregator={true}
-                />
-              </div>
-
-              <hr className="" /> */}
 
               <div className="relative">
                 <label htmlFor="email" className="block text-sm font-medium text-light-blue mb-1">
-                  Correo electrónico
+                  Email
                 </label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -109,14 +92,14 @@ export default function LogIn({ onLoginSuccess }: LogInProps) {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full pl-10 pr-4 py-2 bg-white bg-opacity-50 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-200 focus:border-transparent transition duration-200 ease-in-out text-blue-600"
-                    placeholder="kevin@ejemplo.com"
+                    placeholder="kevin@example.com"
                     required
                   />
                 </div>
               </div>
               <div className="relative">
                 <label htmlFor="password" className="block text-sm font-medium text-light-blue mb-1">
-                  Contraseña
+                  Password
                 </label>
                 <div className="relative">
                   <KeyRound className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -138,7 +121,7 @@ export default function LogIn({ onLoginSuccess }: LogInProps) {
                 </p>
               )}
               <div className="flex justify-center">
-                <ShimmerButton type="submit">¡Estoy Listo!</ShimmerButton>
+                <ShimmerButton type="submit">I’m Ready!</ShimmerButton>
               </div>
             </form>
           </div>

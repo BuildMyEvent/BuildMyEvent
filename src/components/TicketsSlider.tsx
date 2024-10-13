@@ -9,9 +9,10 @@ import CheckoutModal from './CheckoutModal'
 import { AuthContext } from '@/context/AuthContext'
 import { getTalentProtocolScore } from '@/utils/get-TP-score'
 import BuilderScore from './BuilderScore'
+import { Ticket } from '@/types/interfaces'
 
 interface TicketsSliderProps {
-  tickets: any
+  tickets: Ticket[]
 }
 
 export default function TicketsSlider({ tickets }: TicketsSliderProps) {
@@ -127,6 +128,7 @@ export default function TicketsSlider({ tickets }: TicketsSliderProps) {
                   /> */}
 
                   <CheckoutModal
+                    ticket={ticket}
                     buttonText={getButtonText(user, userBuilderScore, ticket)}
                     isDisabled={isCheckoutDisabled(user, userBuilderScore, ticket)}
                   />

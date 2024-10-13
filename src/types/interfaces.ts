@@ -28,3 +28,14 @@ export interface MarqueeInterface {
     banner?: string
     slug?: string
 }
+
+export interface Ticket {
+    title: string;
+    price: string;
+    image?: string;
+    description: string;
+    features: string[];
+    builderScore?: number | undefined;
+  }
+  
+  

@@ -11,21 +11,16 @@ export default function RegisterForm() {
     <div className="animate__animated animate__fadeInRight overflow-x-hidden min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4 w-full">
       <div className="max-w-md w-full">
         <div className="flex justify-center items-center w-full flex-col">
-          <Image src={BME} alt="BuildMyEvent logo" width={320} />
+          <Image src={BME} alt="BuildMyEvent logo" width={320} draggable="false"/>
           <p className="text-[22px] text-stellar-blue font-semibold">
-            Crea eventos increíbles en minutos
+            Create amazing events in minutes
           </p>
         </div>
         <div className="bg-white mt-4 bg-opacity-30 backdrop-filter backdrop-blur-sm rounded-3xl shadow-lg overflow-hidden border-2 border-gray-300 w-full">
           <div className="p-8">
             <form className="space-y-6">
               <article className="flex justify-between ">
-                <h2 className="text-2xl text-stellar-blue font-medium">¡Registrate!</h2>
-                {/* <Link href="/auth/logIn">
-                  <div className=" bg-amber-100 text-orange-400 px-2 py-1 rounded cursor-pointer">
-                    ¿Ya tienes cuenta?
-                  </div>
-                </Link> */}
+                <h2 className="text-2xl text-stellar-blue font-medium">Sign Up!</h2>
               </article>
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative">
@@ -33,7 +28,7 @@ export default function RegisterForm() {
                     htmlFor="firstName"
                     className="block text-sm font-medium text-light-blue mb-1"
                   >
-                    Nombre
+                    First Name
                   </label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -51,7 +46,7 @@ export default function RegisterForm() {
                     htmlFor="lastName"
                     className="block text-sm font-medium text-light-blue mb-1"
                   >
-                    Apellido
+                    Last Name
                   </label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -70,7 +65,7 @@ export default function RegisterForm() {
                   htmlFor="email"
                   className="block text-sm font-medium text-light-blue mb-1"
                 >
-                  Correo electrónico
+                  Email
                 </label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -78,7 +73,7 @@ export default function RegisterForm() {
                     id="email"
                     type="email"
                     className="w-full pl-10 pr-4 py-2 bg-white bg-opacity-50 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-200 focus:border-transparent transition duration-200 ease-in-out text-blue-600"
-                    placeholder="kevin@ejemplo.com"
+                    placeholder="kevin@example.com"
                     required
                   />
                 </div>
@@ -88,7 +83,7 @@ export default function RegisterForm() {
                   htmlFor="password"
                   className="block text-sm font-medium text-light-blue mb-1"
                 >
-                  Contraseña
+                  Password
                 </label>
                 <div className="relative">
                   <KeyRound className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -108,7 +103,7 @@ export default function RegisterForm() {
                   htmlFor="confirmPassword"
                   className="block text-sm font-medium text-light-blue mb-1"
                 >
-                  Confirmar contraseña
+                  Confirm Password
                 </label>
                 <div className="relative">
                   <KeyRound className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -124,7 +119,7 @@ export default function RegisterForm() {
                 </div>
               </div>
               <div className="flex justify-center">
-                <ShimmerButton>¡Estoy Listo!</ShimmerButton>
+                <ShimmerButton>I’m Ready!</ShimmerButton>
               </div>
             </form>
           </div>

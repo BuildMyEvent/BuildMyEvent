@@ -7,17 +7,7 @@ import { CalendarDays, MapPin } from 'lucide-react';
 import '../../../app/globals.css';
 import WalletWrapper from '@/components/WalletWrapper';
 import { useEffect, useState } from 'react';
-
-interface Ticket {
-  title: string;
-  price: string; // Ajuste el tipo a string
-  image?: string;
-  description: string;
-  features: string[];
-  builderScore?: number | undefined;
-}
-
-
+import { Ticket } from '@/types/interfaces';
 
 interface Event {
   slug: string;

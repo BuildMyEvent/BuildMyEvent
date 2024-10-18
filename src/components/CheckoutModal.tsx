@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,6 +14,7 @@ import { Ticket } from "@/types/interfaces";
 import Image from "next/image";
 import Metamask from "../../public/metamask.png";
 import { CreditCard } from "lucide-react";
+import { AuthContext } from "@/context/AuthContext";
 
 interface CheckoutModalProps {
   isDisabled?: boolean;
@@ -26,6 +27,7 @@ export default function CheckoutModal({
   buttonText,
   ticket,
 }: CheckoutModalProps) {
+  const { login, user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
@@ -39,11 +41,44 @@ export default function CheckoutModal({
     new Promise((resolve) => {
       setTimeout(() => {
         resolve(true);
-      }, 5000);
+      }, 2000);
     }).then(() => {
+      const ticketId = getTicketIdByType(ticket?.type ?? '');
+      mintTicket(ticketId)
+
       setIsProcessing(false);
       setPaymentSuccess(true);
     });
+  };
+
+  const mintTicket = async (ticketId: number) => {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_DOMAIN}/mint/${ticketId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userAddress: user?.wallet,
+          eventId: 9,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('data', data);
+        // login(data.user);
+        // onLoginSuccess();
+        // console.log("Login successful");
+      } else {
+        const errorData = await response.json();
+        // setError(errorData.message || "Login failed. Please check your credentials.");
+        console.log('errorData', errorData);
+        // console.log("Login failed");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
   };
 
   const handleMetaMaskPayment = () => {
@@ -59,6 +94,19 @@ export default function CheckoutModal({
       setPaymentSuccess(true);
     });
   };
+
+  const getTicketIdByType = (ticketType: string) => {
+    switch (ticketType) {
+      case 'GENERAL':
+        return 0;
+      case 'VIP':
+        return 1;
+      case 'BUILDER':
+        return 2;
+      default:
+        return -1; // Return -1 if the input doesn't match any case
+    }
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>

@@ -36,6 +36,7 @@ export interface Ticket {
     description: string;
     features: string[];
     builderScore?: number | undefined;
+    type: string
   }
   
   

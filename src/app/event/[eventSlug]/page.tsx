@@ -59,7 +59,9 @@ export default function EventPage() {
   }
 
   if (!eventData) {
-    return <div>Loading...</div>;
+    return                   <div className="w-full h-screen flex justify-center items-center">
+    <div className="animate-spin rounded-full h-8 w-8 border-t-4 border-b-4 border-gray-900"></div>
+  </div>;
   }
 
   return (

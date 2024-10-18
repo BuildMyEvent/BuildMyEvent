@@ -82,7 +82,6 @@ export default function CheckoutModal({
   };
 
   const handleMetaMaskPayment = () => {
-    // Aquí puedes agregar la lógica de pago con MetaMask
     setIsProcessing(true);
 
     new Promise((resolve) => {

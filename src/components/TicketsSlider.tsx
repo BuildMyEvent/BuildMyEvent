@@ -10,6 +10,7 @@ import { AuthContext } from '@/context/AuthContext'
 import { getTalentProtocolScore } from '@/utils/get-TP-score'
 import BuilderScore from './BuilderScore'
 import { Ticket } from '@/types/interfaces'
+import { ExternalLink } from 'lucide-react'
 
 interface TicketsSliderProps {
   tickets: Ticket[]
@@ -70,6 +71,14 @@ export default function TicketsSlider({ tickets }: TicketsSliderProps) {
     return false; // All conditions met, enable checkout
   };
 
+  const isNotEnoughBuilderScore = (user: any, userBuilderScore: any, ticket: any) => {
+    if (userBuilderScore < ticket.builderScore) {
+      return true; // User's builder score is less than required, disable checkout
+    }
+
+    return false; // All conditions met, enable checkout
+  };
+
   const getButtonText = (user: any, userBuilderScore: any, ticket: any) => {
     if (user && ticket.builderScore && userBuilderScore < ticket.builderScore) {
       return 'You don’t have enough builder score';
@@ -91,7 +100,8 @@ export default function TicketsSlider({ tickets }: TicketsSliderProps) {
                     {ticket?.image && <img src={ticket?.image} alt={ticket.title} className='rounded-xl h-[300px] object-cover' />}
                   </div>
                   <div className="flex items-center mb-2">
-                    <span className="text-3xl font-bold">{ticket.price}</span>
+                    <span className="text-3xl font-bold mr-2">{ticket.title}</span> <br />
+                    <span className="text-3xl font-bold">${ticket.price}</span>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -126,12 +136,28 @@ export default function TicketsSlider({ tickets }: TicketsSliderProps) {
                     buttonText=''
                     isDisabled={(!ticket.builderScore || !user) ? false : userBuilderScore > ticket.builderScore ? false : true}
                   /> */}
+                  <div className='w-full'>
+                    <CheckoutModal
+                      ticket={ticket}
+                      buttonText={getButtonText(user, userBuilderScore, ticket)}
+                      isDisabled={isCheckoutDisabled(user, userBuilderScore, ticket)}
+                    />
 
-                  <CheckoutModal
-                    ticket={ticket}
-                    buttonText={getButtonText(user, userBuilderScore, ticket)}
-                    isDisabled={isCheckoutDisabled(user, userBuilderScore, ticket)}
-                  />
+                    {(ticket.builderScore && user?.wallet) ?
+                      <div>
+                        <a
+                          target="_blank" rel="nonreferrer"
+                          href={`https://passport.talentprotocol.com/profile/${user?.wallet}`}
+                          className="underline flex mt-2"
+                        >
+                          {isNotEnoughBuilderScore(user, userBuilderScore, ticket) ? 'Improve your builder score' : 'Go to your Talent Protocol profile'}
+                          <ExternalLink className="ml-1" />
+                        </a>
+
+                      </div>
+                      : ''
+                    }
+                  </div>
                 </CardFooter>
               </Card>
             </div>

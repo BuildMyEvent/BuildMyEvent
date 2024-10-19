@@ -36,16 +36,6 @@ export const AvatarButton = ({ userInfo }: any) => {
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem
-            className='p-0'
-          >
-            <Link
-              className='border-solid border-0 pl-2 p-1 pb-2 w-full'
-              href={`/u/${userInfo?.id}`}
-            >
-              Profile
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem
             className='cursor-pointer'
             onClick={() => {
               handleLogout()

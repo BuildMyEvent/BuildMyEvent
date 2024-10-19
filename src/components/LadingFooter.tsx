@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import BME from '@public/BME-Logos/BME-Logo-Full-White.svg'
+import Base from '@public/icons/base.svg'
 import GithubLogo from '@public/github-dark.svg';
 import Link from 'next/link';
 
@@ -12,6 +13,20 @@ export default function FooterComponent() {
       <p className="mt-2 text-white">
         &copy; {new Date().getFullYear()} BuildMyEvent. All rights reserved.
       </p>
+
+      <a className='flex' target="_blank" rel="nonreferrer" href='https://www.base.org/'>
+        <p className="mt-2 text-white my-auto mr-2 text-xl">
+          Build on
+        </p>
+        <Image
+          src={Base}
+          alt="Base Logo"
+          width={120}
+          height={120}
+        />
+
+      </a>
+
       <a target="_blank" rel="nonreferrer" href='https://github.com/BuildMyEvent'>
         <Image
           src={GithubLogo}

@@ -69,7 +69,7 @@ export default function EventPage() {
       <div className="flex flex-col min-h-screen">
         {/* Banner */}
         <img
-          src={eventData?.image ?? 'https://firebasestorage.googleapis.com/v0/b/checkmyticket-20.appspot.com/o/eventImages%2Fc2ae16d9-481e-449e-b82c-0e529a4333a7%2FBanner-d3eaae72-a78a-431e-aec7-e3ed3cd22ba5?alt=media&token=2bfd2168-4f5e-4328-a490-d966eaaf00a0'}
+          src={eventData?.image ?? 'https://images.ctfassets.net/sygt3q11s4a9/5kbm9b5W1gYOdCZpkb8nAV/e4d87acb605b07c9fb8b8ce094e067b4/Base_Blog_header.png'}
           className="w-full h-[500px] object-cover"
         />
 
@@ -97,7 +97,7 @@ export default function EventPage() {
 
         {/* CTA Section */}
         <section className="py-12 px-4 md:px-8 bg-primary text-primary-foreground text-center">
-          <h2 className="text-3xl font-semibold mb-4">Ready to be part of {eventData.name}?</h2>
+          <h2 className="text-3xl font-semibold mb-4">Ready to be part of {eventData.title}?</h2>
           <p className="mb-6">Don't miss the opportunity to be part of the tech event of the year.</p>
         </section>
       </div>

@@ -15,6 +15,11 @@ import Image from "next/image";
 import Metamask from "../../public/metamask.png";
 import { CreditCard } from "lucide-react";
 import { AuthContext } from "@/context/AuthContext";
+import {
+  PayEmbed,
+  getDefaultToken
+} from "thirdweb/react";
+import { getChainObject, productionTokens, thirdwebClient } from "@/utils/thirdweb";
 
 interface CheckoutModalProps {
   isDisabled?: boolean;
@@ -34,6 +39,7 @@ export default function CheckoutModal({
   const [paymentMethod, setPaymentMethod] = useState<
     "card" | "metamask" | null
   >(null);
+  const [successTransactionHash, setSuccessTransactionHash] = useState('');
 
   const handlePurchase = () => {
     setIsProcessing(true);
@@ -51,6 +57,9 @@ export default function CheckoutModal({
     });
   };
 
+  console.log('ticket', ticket);
+
+
   const mintTicket = async (ticketId: number) => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_DOMAIN}/mint/${ticketId}`, {
@@ -67,6 +76,7 @@ export default function CheckoutModal({
       if (response.ok) {
         const data = await response.json();
         console.log('data', data);
+        setSuccessTransactionHash(data.transactionHash)
         // login(data.user);
         // onLoginSuccess();
         // console.log("Login successful");
@@ -87,8 +97,10 @@ export default function CheckoutModal({
     new Promise((resolve) => {
       setTimeout(() => {
         resolve(true);
-      }, 5000);
+      }, 3000);
     }).then(() => {
+      const ticketId = getTicketIdByType(ticket?.type ?? '');
+      mintTicket(ticketId)
       setIsProcessing(false);
       setPaymentSuccess(true);
     });
@@ -110,7 +122,7 @@ export default function CheckoutModal({
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild className="w-full flex justify-center">
-        <Button disabled={isDisabled}>
+        <Button disabled={isDisabled} className="w-full">
           {buttonText ? buttonText : "Get Tickets"}
         </Button>
       </DialogTrigger>
@@ -211,12 +223,44 @@ export default function CheckoutModal({
                       <h3 className="text-lg font-semibold mb-4">
                         Pay with MetaMask
                       </h3>
-                      <Button
+
+                      <PayEmbed
+                        client={thirdwebClient}
+                        theme={"light"}
+                        supportedTokens={
+                          productionTokens
+                        }
+                        payOptions={{
+                          mode: "direct_payment",
+                          buyWithFiat: false,
+                          onPurchaseSuccess(info: any) {
+                            console.log('info', info?.status?.destination.transactionHash);
+
+                            handleMetaMaskPayment()
+                            // handleSuccessPurchase({
+                            //   purchaseTransactionHash: info?.status?.destination.transactionHash
+                            // })
+                          },
+                          paymentInfo: {
+                            amount: ticket?.price,
+                            chain: getChainObject('baseSepolia'),
+                            token: getDefaultToken(getChainObject('baseSepolia'), "USDC"),
+                            sellerAddress:
+                              "0x173874BfbD1BdCE49D25eF6bF2f20Aff7fcf2b56",
+                          },
+                          metadata: {
+                            name: ticket?.title,
+                            image: ticket?.image
+                          },
+                        }}
+                      />
+
+                      {/* <Button
                         className="mt-4 w-full"
                         onClick={handleMetaMaskPayment}
                       >
                         Confirm MetaMask Payment
-                      </Button>
+                      </Button> */}
                     </div>
                   )}
                 </>
@@ -237,7 +281,19 @@ export default function CheckoutModal({
               <h3 className="text-lg font-semibold mb-2">
                 Payment Successful!
               </h3>
-              <p className="mb-4">Your purchase has been completed.</p>
+              <p className="mb-2">Your purchase has been completed.</p>
+              <p className="">You receive this NFT collectible</p>
+              <img src={ticket?.image} className="max-w-[200px]" />
+              {successTransactionHash &&
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={`https://sepolia.basescan.org/tx/${successTransactionHash}`}
+                  className="underline mb-2"
+                >
+                  View on block explorer
+                </a>
+              }
               <Button onClick={() => setIsOpen(false)}>Close</Button>
             </div>
           )}

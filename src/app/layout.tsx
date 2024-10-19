@@ -4,6 +4,7 @@ import "./globals.css";
 import OnchainProviders from "@/components/OnchainProviders";
 import '@rainbow-me/rainbowkit/styles.css';
 import '@coinbase/onchainkit/styles.css';
+import { ThirdwebProvider } from "thirdweb/react"
 
 export default function RootLayout({
   children,
@@ -13,9 +14,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="flex flex-col min-h-screen text-gray-900">
-        <OnchainProviders>
+        <ThirdwebProvider>
+          <OnchainProviders>
             {children}
-        </OnchainProviders>
+          </OnchainProviders>
+        </ThirdwebProvider>
       </body>
     </html>
   );

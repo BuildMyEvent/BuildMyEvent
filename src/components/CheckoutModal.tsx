@@ -224,7 +224,7 @@ export default function CheckoutModal({
                         Pay with MetaMask
                       </h3>
 
-                      {/* <PayEmbed
+                      <PayEmbed
                         client={thirdwebClient}
                         theme={"light"}
                         supportedTokens={
@@ -253,7 +253,7 @@ export default function CheckoutModal({
                             image: ticket?.image
                           },
                         }}
-                      /> */}
+                      />
 
                       {/* <Button
                         className="mt-4 w-full"

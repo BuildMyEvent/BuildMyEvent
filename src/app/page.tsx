@@ -7,7 +7,6 @@ import { MarqueeDemo } from "@/components/Marquee";
 import { Item } from "@/types/interfaces";
 import { TerminalIcon } from "lucide-react";
 import Link from "next/link";
-import "../app/globals.css";
 import Tickets from "@/components/Tickets";
 import NavBarComponent from "@/components/NavBar";
 import FooterComponent from "@/components/LadingFooter";

@@ -1,10 +1,10 @@
 'use client'
 import { AuthProvider } from "@/context/AuthContext";
-import "./globals.css";
 import OnchainProviders from "@/components/OnchainProviders";
 import '@rainbow-me/rainbowkit/styles.css';
 import '@coinbase/onchainkit/styles.css';
 import { ThirdwebProvider } from "thirdweb/react"
+import "../app/globals.css";
 
 export default function RootLayout({
   children,

@@ -12,10 +12,6 @@
 - **Open Source**: Community-driven with continuous improvements.
 - **Built on Base**: Enjoy scalability, security, and blockchain integration from the ground up.
 
-# BuildMyEvent Frontend
-
-**BuildMyEvent** is the frontend for the BuildMyEvent platform, a no-code NFT ticketing solution for event organizers. This project enables organizers to create customizable event pages and manage ticket sales, with each ticket minted as an NFT to ensure security and authenticity. The platform is built on Base, leveraging the security and scalability of the blockchain. 
-
 ## Key Technologies
 - **Next.js (v14.2.14)**
 - **React (v18)**
